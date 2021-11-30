@@ -1,0 +1,2 @@
+class CountryItinerariesController < ApplicationController
+end
