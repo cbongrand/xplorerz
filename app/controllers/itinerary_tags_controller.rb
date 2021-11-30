@@ -1,0 +1,2 @@
+class ItineraryTagsController < ApplicationController
+end
