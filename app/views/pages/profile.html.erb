@@ -1,0 +1,23 @@
+<div class="container-profile">
+  <div class="profile-page">
+    <div class="profile-information">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class:"avatar-large"%>
+      <p>Name:</p>
+      <%= current_user.first_name %> <%= current_user.last_name %>
+      <p>Description:</p>
+      <%= current_user.description %>
+      <p>Email:</p>
+      <%= current_user.email %>
+      <p>Credits:</p>
+      <p>2</p>
+    </div>
+    <div class="profile-items">
+      <div class="bought-items">
+        <h4>added itinerary</h4>
+      </div>
+      <div class="created-items">
+        <h4>created itinerary</h4>
+      </div>
+    </div>
+  </div>
+</div>
