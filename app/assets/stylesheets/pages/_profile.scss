@@ -1,0 +1,23 @@
+.profile-page {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.profile-information {
+  margin-top: 3%;
+  padding: 2%;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: lightgray;
+  box-shadow: 2px 3px rgb(236, 236, 236);
+}
+
+.profile-information p {
+  padding-top: 4%;
+}
+
+.navbar-avatar:hover {
+  cursor: pointer;
+}
