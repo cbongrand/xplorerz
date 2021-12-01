@@ -1,0 +1,29 @@
+.button-1 {
+  background-color:#01B0BD;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: 0.5s;
+  color: white;
+  font-weight: 500;
+  width: 110px;
+  opacity: 1;
+}
+
+.button-1:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+.button-2  {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border-color: #494949;
+  color: #494949;
+  transition: 0.3s;
+  width: 110px;
+  opacity: 1;
+}
+
+.button-2:hover {
+  opacity: 0.6;
+}
