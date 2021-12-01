@@ -27,3 +27,19 @@
 .button-2:hover {
   opacity: 0.6;
 }
+
+.button-1-lg {
+  background-color:#4FADBB;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: 0.5s;
+  color: white;
+  font-weight: 500;
+  width: 400px;
+  opacity: 1;
+}
+
+.button-1-lg:hover {
+  opacity: 0.8;
+  color: white;
+}
