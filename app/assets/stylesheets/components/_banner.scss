@@ -1,0 +1,61 @@
+.banner {
+  background-image: url("banner_img.jpg");
+  height: 460px;
+  background-size: cover;
+  background-position: center 68%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#banner-slogan {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  width: 480px;
+  text-align: left;
+  font-size: 45px;
+  text-shadow: -1px 0px 9px rgb(0, 0, 0);
+  padding: 0 0 15px 10px;
+}
+
+#search-bar {
+  border-radius: 50px;
+  border: solid 1px black;
+  box-shadow: -4px 5px 16px 0px rgba(0,0,0,0.58);
+  padding-left: 35px;
+  width: 490px;
+  height: 60px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.banner-search {
+  position: relative;
+}
+
+.banner-objects {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#search-bar::placeholder  {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: rgb(140, 140, 140);
+}
+
+#search-submit-btn {
+  background-color: #4FADBB;
+  color: white;
+  border-radius: 50%;
+  padding: 13px;
+  font-size: 16px;
+  border: none;
+  height: 45px;
+  width: 45px;
+  position: absolute;
+  top: 7.5px;
+  left: 433px;
+}
