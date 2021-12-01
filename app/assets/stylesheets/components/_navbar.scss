@@ -1,6 +1,14 @@
-.navbar-lewagon {
+.navbar {
+  height: 100px;
   justify-content: space-between;
-  background: white;
+  border-bottom: solid;
+  border-bottom: solid 1px #4949492c;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  padding-left: 140px;
+  padding-right: 200px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,57 +16,5 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 4%;
-}
-
-.navbar-brand h2 {
-  padding-top: 3%;
-  padding-left: 4%;
-  margin: 0px;
-  height: 30px;
-  font-size: 24px;
-}
-
-.nav-item {
-  border-radius: 25px;
-  border: 1.5px solid;
-  border-color: rgb(1, 176, 189);
-  padding: 2px 16px;
-  width: 110px;
-  text-align: center;
-}
-
-.nav-item-signup {
-  border-radius: 25px;
-  border: 1.5px solid;
-  background-color: rgb(1, 176, 189);
-  padding: 2px 16px;
-}
-
-.nav-buttons {
-  display:  flex;
-  justify-content: space-between;
-  width: 231px;
-  margin-right: 60px;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color:black;
-}
-
-.nav-item-active{
-  margin-right: 60px;
-}
-
-.navbar-avatar {
-  width: 50px;
-  border-radius: 50%;
-  padding-top: 3px;
+  width: 180px;
 }
