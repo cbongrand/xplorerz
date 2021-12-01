@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Cleaning database..."
+Booking.destroy_all
+Itinerary.destroy_all
+User.destroy_all
+
 puts "Creating dummy itineraries..."
 4.times do |x|
   itin = Itinerary.create(title: "Test itinerary #{x + 1}",
@@ -26,6 +31,23 @@ puts "Creating dummy itineraries..."
     day.itinerary = itin
     day.save!
     puts "Day #{day.id} has been created."
+
+    puts "creating user..."
+    user = User.new(
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      email: Faker::Internet.email,
+      password: '123456',
+      description: Faker::Twitter.status,
+    )
+    puts "User #{user.id} has been created."
+    puts "creating booking..."
+    booking = Booking.new
+    booking.user = user
+    booking.itinerary = itin
+    booking.save!
+    puts "Booking #{booking.id} has been created."
   end
 end
+
 puts "Finished!"
