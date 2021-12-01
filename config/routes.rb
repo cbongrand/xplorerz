@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :itineraries, only: %i[create new show index] do
+    resources :days, only: %i[create new edit update]
     resources :bookings, only: %i[new create]
   end
 
