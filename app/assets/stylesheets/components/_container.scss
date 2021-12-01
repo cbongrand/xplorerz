@@ -1,12 +1,20 @@
-.trendy {
+.home {
     width: calc(100% - 140px);
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.home-header {
-  margin: 45px 0 40px 30px;
-  font-weight: 600;
-  color: #494949;
+.journey {
+  display: flex;
+  padding: 70px 170px 25px 170px ;
+}
+
+.lightgrey-container {
+  margin-top: 80px;
+  background-color: rgb(230, 230, 230);
+}
+
+.itinerary-button-container {
+  margin-bottom: 80px;
 }
