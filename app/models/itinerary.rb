@@ -5,5 +5,5 @@ class Itinerary < ApplicationRecord
   has_many :users, through: :bookings
   has_many :bookings
   validates :title, presence: true
-  validates :discription, presence: true
+  validates :description, presence: true
 end

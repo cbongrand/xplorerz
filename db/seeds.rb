@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Creating dummy itineraries..."
+4.times do |x|
+  itin = Itinerary.create(title: "Test itinerary #{x + 1}",
+                          description: "This is a test")
+  puts "Creating days..."
+
+  4.times do |i|
+    day = Day.new(
+      order: i + 1,
+      city: Faker::Address.city,
+      description: Faker::Lorem.sentence,
+      restaurant_info: Faker::Restaurant.name,
+      activity_info: Faker::Hobby.activity,
+      extra_info: Faker::Games::WorldOfWarcraft.quote,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
+    day.itinerary = itin
+    day.save!
+    puts "Day #{day.id} has been created."
+  end
+end
+puts "Finished!"
