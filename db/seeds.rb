@@ -12,6 +12,7 @@ Booking.destroy_all
 Itinerary.destroy_all
 User.destroy_all
 
+User.create(email: "whatevs@whatevs.com", password: "123456")
 
 puts "Creating dummy itineraries..."
 4.times do |x|
