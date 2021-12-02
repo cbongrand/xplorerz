@@ -1,1 +1,11 @@
-<p>new itinerary form here</p>
+<h3>You are just a couple steps away!</h3>
+<div class="days-form">
+  <div class="days-form-content">
+    <%= simple_form_for [ @itinerary] do |f| %>
+      <%= f.label "Create itinerary", class: "itinerary-form-title" %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.submit "Create", class: "btn button-1 itinerary-form-btn" %>
+    <% end %>
+  </div>
+</div>
