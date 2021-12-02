@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_235801) do
+ActiveRecord::Schema.define(version: 2021_12_01_214319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2021_11_29_235801) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_itineraries_on_user_id"
   end
 
   create_table "itinerary_tags", force: :cascade do |t|
@@ -98,6 +100,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_235801) do
   add_foreign_key "country_itineraries", "countries"
   add_foreign_key "country_itineraries", "itineraries"
   add_foreign_key "days", "itineraries"
+  add_foreign_key "itineraries", "users"
   add_foreign_key "itinerary_tags", "itineraries"
   add_foreign_key "itinerary_tags", "tags"
 end
