@@ -6,10 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Replace with more users if required
+puts "Create users..."
+User.create(email: "test@test.com", password: "123456")
+
+puts "Creating countries..."
+4.times do
+  country = Country.new(
+    name: Faker::Address.country
+  )
+  country.save!
+end
+puts "Done!"
+
 puts "Creating dummy itineraries..."
 4.times do |x|
   itin = Itinerary.create(title: "Test itinerary #{x + 1}",
-                          description: "This is a test")
+                          description: "This is a test", user: User.first)
   puts "Creating days..."
 
   4.times do |i|
