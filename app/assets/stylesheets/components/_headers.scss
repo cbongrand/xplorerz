@@ -19,3 +19,16 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-weight: 600;
   color: #494949;
 }
+
+#trip-description-header {
+  text-align: center;
+  font-weight: 600;
+  color: $xplorerz-gray;
+  margin-bottom: 10px;
+}
+
+#trip-description {
+  text-align: center;
+  font-weight: 600;
+  color: $xplorerz-gray;
+}
