@@ -11,13 +11,27 @@ puts "Cleaning database..."
 Booking.destroy_all
 Itinerary.destroy_all
 User.destroy_all
+Country.destroy_all
 
 User.create(email: "whatevs@whatevs.com", password: "123456")
 
+puts "Creating countries..."
+4.times do
+  country = Country.new(
+    name: Faker::Address.country
+  )
+  country.save!
+end
+puts "Done!"
+
 puts "Creating dummy itineraries..."
 4.times do |x|
-  itin = Itinerary.create(title: "Test itinerary #{x + 1}",
-                          description: "This is a test", user: User.first)
+  itin = Itinerary.create(
+    title: "Test itinerary #{x + 1}",
+    description: "This is a test",
+    user: User.first,
+    countries: Country.all.sample(2)
+  )
   puts "Creating days..."
 
   4.times do |i|
@@ -35,7 +49,7 @@ puts "Creating dummy itineraries..."
     day.save!
     puts "Day #{day.id} has been created."
 
-    puts "creating user..."
+    puts "Creating user..."
     user = User.new(
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
@@ -44,7 +58,7 @@ puts "Creating dummy itineraries..."
       description: Faker::Twitter.status,
     )
     puts "User #{user.id} has been created."
-    puts "creating booking..."
+    puts "Creating booking..."
     booking = Booking.new
     booking.user = user
     booking.itinerary = itin
@@ -52,15 +66,5 @@ puts "Creating dummy itineraries..."
     puts "Booking #{booking.id} has been created."
   end
 end
-
-puts "Creating countries..."
-4.times do
-  country = Country.new(
-    name: Faker::Address.country
-  )
-  country.save!
-end
-puts "Done!"
-
 
 puts "Finished!"
