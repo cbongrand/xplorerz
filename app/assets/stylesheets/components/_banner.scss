@@ -1,5 +1,25 @@
-.banner {
-  background-image: url("banner_img.jpg");
+.banner-home {
+  background-image: url("banner-home_img.jpg");
+  height: 460px;
+  background-size: cover;
+  background-position: center 68%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-index {
+  background-image: url("https://www.copaair.com/promotions/airtrfx-lp/cr-cover.jpg");
+  height: 460px;
+  background-size: cover;
+  background-position: center 68%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-show {
+  background-image: url("https://images.unsplash.com/photo-1552980870-139c7b393f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80");
   height: 460px;
   background-size: cover;
   background-position: center 68%;
@@ -16,6 +36,26 @@
   font-size: 45px;
   text-shadow: -1px 0px 9px rgb(0, 0, 0);
   padding: 0 0 15px 10px;
+}
+
+
+#banner-slogan-index {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  width: 480px;
+  text-align: center;
+  font-size: 45px;
+  text-shadow: -1px 0px 9px rgb(0, 0, 0);
+}
+
+#banner-slogan-show {
+  color: white;
+  font-family: 'Rock Salt', cursive;
+  font-weight: 600;
+  text-align: center;
+  font-size: 45px;
+  text-shadow: -1px 0px 9px rgb(0, 0, 0);
 }
 
 #search-bar {
