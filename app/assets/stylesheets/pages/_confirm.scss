@@ -1,0 +1,28 @@
+@import "../components/footer";
+@import "../components/headers";
+@import "../components/card";
+@import "../components/button";
+@import "../components/banner";
+@import "../components/container";
+
+h3 {
+  line-height: 2;
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* this vertically aligns the card & text */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* this vertically centers the container */
+.custom-vh-container{
+  height: 75vh !important;
+}
+
+.custom-vh-row{
+  height: 100% !important;
+}

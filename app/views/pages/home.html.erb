@@ -12,19 +12,15 @@
   </div>
 </div>
 
-<div class="trendy">
+<div class="home">
   <h1 class="home-header">Trendy routes</h1>
-
   <div class="container">
     <div class="row">
-
       <div class="col-4">
-            <div class="card">
-
+        <div class="card">
           <div class="cardbanner">
             <span>JUNGLE EVASION</span>
           </div>
-
           <div class="card-infos">
             <div class="card-infos-1">
               <h4>Costa Rica 🇨🇷</h4>
@@ -48,14 +44,11 @@
           </div>
         </div>
       </div>
-
       <div class="col-4">
-            <div class="card">
-
+        <div class="card">
           <div class="cardbanner">
             <span>JUNGLE EVASION</span>
           </div>
-
           <div class="card-infos">
             <div class="card-infos-1">
               <h4>Costa Rica 🇨🇷</h4>
@@ -79,14 +72,11 @@
           </div>
         </div>
       </div>
-
       <div class="col-4">
-            <div class="card">
-
+        <div class="card">
           <div class="cardbanner">
             <span>JUNGLE EVASION</span>
           </div>
-
           <div class="card-infos">
             <div class="card-infos-1">
               <h4>Costa Rica 🇨🇷</h4>
@@ -110,10 +100,56 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
+</div>
 
-
-
+<div class="lightgrey-container">
+  <div class="journey">
+    <div class="home">
+      <h1 class="home-other-header">Create a journey</h1>
+      <h5 class="home-text">The xplorerz community is constantly striving to create the best travel itineraries and get the most love in return. Start to create awesome itineraries now : you might even become the expert of a country, a continent and maybe the entire world. </h5>
+    </div>
+    <div class="avatar-constellation">
+    <div class="container">
+      <div class="row">
+        <div class="col-4 text-center">
+          <img class="avatar-large-bordered" alt="avatar-bordered" src="https://this-person-does-not-exist.com/img/avatar-ee3c2ed3bf75d6bc334d09d4b0bc02fa.jpg" />
+        </div>
+        <div class="col-4 text-center">
+          <img class="avatar-large-bordered" alt="avatar-bordered" src="https://this-person-does-not-exist.com/img/avatar-e93c79fd0b00edb55695e5292c3e4cf7.jpg" />
+        </div>
+        <div class="col-4 text-center">
+          <img class="avatar-large-bordered" alt="avatar-bordered" src="https://media.lelombrik.net/t/bd1973355949a5bf566b8552a83add10/f/bd1973355949a5bf566b8552a83add10.jpg" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 text-right">
+          <img class="avatar-large-bordered" alt="avatar-bordered avatar-large" src="https://thispersondoesnotexist.com/image" />
+        </div>
+        <div class="col-6 text-left">
+          <img class="avatar-large-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 text-center">
+          <img class="avatar-large-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+        </div>
+        <div class="col-4 text-center">
+          <img class="avatar-large-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/krokrob" />
+        </div>
+        <div class="col-4 text-center">
+          <img class="avatar-large-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
+  <div class="itinerary-button-container text-center">
+    <% if user_signed_in? %>
+    <%= link_to "Publish an itinerary", new_itinerary_path, class:"btn button-1-lg button-itinerary"%>
+    <% else %>
+    <%= link_to "Publish an itinerary", new_user_session_path, class:"btn button-1-lg button-itinerary"%>
+    <% end %>
+  </div>
+</div>

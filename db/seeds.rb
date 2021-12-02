@@ -7,17 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Replace with more users if required
-puts "Create users..."
-User.create(email: "test@test.com", password: "123456")
+puts "Cleaning database..."
+Booking.destroy_all
+Itinerary.destroy_all
+User.destroy_all
 
-puts "Creating countries..."
-4.times do
-  country = Country.new(
-    name: Faker::Address.country
-  )
-  country.save!
-end
-puts "Done!"
 
 puts "Creating dummy itineraries..."
 4.times do |x|
@@ -39,6 +33,33 @@ puts "Creating dummy itineraries..."
     day.itinerary = itin
     day.save!
     puts "Day #{day.id} has been created."
+
+    puts "creating user..."
+    user = User.new(
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      email: Faker::Internet.email,
+      password: '123456',
+      description: Faker::Twitter.status,
+    )
+    puts "User #{user.id} has been created."
+    puts "creating booking..."
+    booking = Booking.new
+    booking.user = user
+    booking.itinerary = itin
+    booking.save!
+    puts "Booking #{booking.id} has been created."
   end
 end
+
+puts "Creating countries..."
+4.times do
+  country = Country.new(
+    name: Faker::Address.country
+  )
+  country.save!
+end
+puts "Done!"
+
+
 puts "Finished!"

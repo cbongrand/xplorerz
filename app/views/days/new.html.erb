@@ -1,0 +1,12 @@
+<div class="days-form">
+  <div class="days-form-content">
+    <%= simple_form_for [ @itinerary, @day ] do |f| %>
+      <p><%= f.input :city %> <%= f.input :description %></p>
+      <%= f.input :restaurant_info %>
+      <%= f.input :activity_info %>
+      <%= f.input :extra_info %>
+      <%= f.input :order %>
+      <%= f.submit "Submit", class: "btn button-1" %>
+    <% end %>
+  </div>
+</div>
