@@ -63,3 +63,100 @@
     font-size: 36px;
   }
 }
+
+
+
+
+
+.card-little {
+  background-color: rgb(255, 255, 255);
+  width: 210px;
+  height: 210px;
+  border-radius: 16.2px;
+  border: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)  ;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cardbanner-little {
+  background-image: url(https://images.unsplash.com/photo-1552980870-139c7b393f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80);
+  border-top-left-radius: 16.2px;
+  display: table;
+  border-top-right-radius: 16.2px;
+  text-align: center;
+  height: 117.6px;
+  color: white;
+  vertical-align: middle;
+  background-size: cover;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)  ;
+  span {
+    display: table-cell;
+    font-size: 120%;
+    vertical-align: middle;
+    font-family: 'Rock Salt', cursive;
+    text-shadow: 2px 2px 20px #000000;
+  }
+}
+
+.card-infos-little {
+  padding: 6px;
+}
+
+
+.card-infos-1-little {
+  display: flex;
+  justify-content: space-between;
+  h4 {
+    font-size: 14.4px;
+    font-weight: 600;
+  }
+}
+
+.cards-tag-little {
+  font-size: 9.6px;
+}
+
+
+.card-infos-2-little {
+  h5 {
+    padding-top: 3px;
+    font-size: 7.8px;
+    color: #4FADBB;
+  }
+  h6 {
+    padding-top: 3px;
+    font-size: 7.8px;
+  }
+}
+
+.card-infos-3-little {
+  display: flex;
+  padding-top: 6px;
+  justify-content: space-between;
+  align-items: center;
+  .fa-heart {
+    font-size: 18px;
+  }
+}
+
+.card-infos-1-little-only-country {
+  display: flex;
+  justify-content: space-between;
+  h4 {
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+
+.card-infos-2-little-only-country {
+  h6 {
+    padding-top: 3px;
+    font-size: 11px;
+  }
+    h5 {
+    padding-top: 3px;
+    font-size: 10px;
+    color: #4FADBB;
+  }
+}
