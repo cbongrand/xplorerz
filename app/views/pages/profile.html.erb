@@ -16,25 +16,23 @@
         <h4>Bought itineraries</h4>
       </div>
       <div class="d-flex flex-wrap">
-        <% @booked_itineraries.each_slice(6) do |slice| %>
-          <% slice.each do |booking| %>
+        <% @booked_itineraries.each do |booking| %>
             <div class="col-4">
               <div class="card-little">
                 <div class="cardbanner-little">
-                  <span>JUNGLE EVASION</span>
+                  <span><%= booking.title %></span>
                 </div>
                 <div class="card-infos-little">
                   <div class="card-infos-1-little-only-country">
-                    <h4>Costa Rica 🇨🇷</h4>
+                    <h4><%= booking.countries.map{|country| country.name}.uniq.join(" - ") %></h4>
                   </div>
                   <div class="card-infos-2-little-only-country">
-                    <h6>San José - La Fortuna - Monteverde - Rio Celeste - Tamarindo</h6>
-                    <h5>5 DAYS, FROM 500 TO 700 $</h5>
+                    <h6><%= booking.days.map{|day| day.city}.uniq.join(", ") %></h6>
+                    <h5><%= booking.days.count %> DAYS</h5>
                   </div>
                 </div>
               </div>
             </div>
-            <% end %>
         <% end %>
       </div>
     </div>
@@ -43,25 +41,23 @@
         <h4>Created itineraries</h4>
       </div>
       <div class="d-flex flex-wrap">
-        <% @itineraries.each_slice(6) do |slice| %>
-            <% slice.each do |itinerary| %>
+        <% @itineraries.each do |itinerary| %>
               <div class="col-4">
                 <div class="card-little">
                   <div class="cardbanner-little">
-                    <span>JUNGLE EVASION</span>
+                    <span>itinerary.title</span>
                   </div>
                   <div class="card-infos-little">
                     <div class="card-infos-1-little-only-country">
-                      <h4>Costa Rica 🇨🇷</h4>
+                      <h4><%= itinerary.countries.map{|country| country.name}.uniq.join(" - ") %></h4>
                     </div>
                     <div class="card-infos-2-little-only-country">
-                      <h6>San José - La Fortuna - Monteverde - Rio Celeste - Tamarindo</h6>
-                      <h5>5 DAYS, FROM 500 TO 700 $</h5>
+                      <h6><%= itinerary.days.map{|day| day.city}.uniq.join(", ") %></h6>
+                      <h5><%= itinerary.days.count %> DAYS</h5>
                     </div>
                   </div>
                 </div>
               </div>
-            <% end %>
         <% end %>
       </div>
     </div>
