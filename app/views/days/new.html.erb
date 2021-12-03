@@ -12,9 +12,15 @@
       <%= f.input :restaurant_info %>
       <%= f.input :activity_info %>
       <%= f.input :extra_info %>
+
+      <%= f.input :order %>
+      <%= f.submit "Submit", class: "btn button-1" %>
+      <%= link_to "Go Back", edit_itinerary_path(@itinerary), method: :get, class: "btn button-1" %>
+
       <div class="day-buttons">
         <%= f.submit "Add day", class: "btn button-2" %>
       </div>
+
     <% end %>
   </div>
 </div>
