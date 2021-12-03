@@ -30,6 +30,7 @@
                     <h6><%= booking.days.map{|day| day.city}.uniq.join(", ") %></h6>
                     <h5><%= booking.days.count %> DAYS</h5>
                   </div>
+                  <%= link_to "", itinerary_path(booking), class: "stretched-link" %>
                 </div>
               </div>
             </div>
@@ -45,7 +46,7 @@
               <div class="col-4">
                 <div class="card-little">
                   <div class="cardbanner-little">
-                    <span>itinerary.title</span>
+                    <span><%= itinerary.title %></span>
                   </div>
                   <div class="card-infos-little">
                     <div class="card-infos-1-little-only-country">
@@ -56,6 +57,7 @@
                       <h5><%= itinerary.days.count %> DAYS</h5>
                     </div>
                   </div>
+                  <%= link_to "", edit_itinerary_path(itinerary), class: "stretched-link" %>
                 </div>
               </div>
         <% end %>
