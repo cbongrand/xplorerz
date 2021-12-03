@@ -590,6 +590,7 @@ country_itinerary10.save!
   end
 
   puts "Created #{Itinerary.count} itineraries..."
+
   puts "Created #{CountryItinerary.count} country_itineraries..."
 
 puts "Finished!"
