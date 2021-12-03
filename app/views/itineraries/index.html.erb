@@ -5,13 +5,14 @@
 </div>
 
 <div class="page-title">
-  <h1>Itineraries</h1>
+  <h1 class="index-header">Itineraries</h1>
 </div>
 <div class="itin-index">
-  <% @itineraries.each do |itinerary| %>
+  <% @itineraries.each_slice(3) do |slice| %>
     <div class="row">
-      <div class="col-12 col-lg-8">
-        <div class="card">
+      <% slice.each do |itinerary| %>
+        <div class="col-4">
+        <div class="card mt-4">
           <div class="cardbanner">
             <span><%= itinerary.title %></span>
           </div>
@@ -40,7 +41,8 @@
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
