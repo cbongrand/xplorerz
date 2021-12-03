@@ -25,7 +25,7 @@
             </div>
             <div class="card-infos-2">
               <h6><%= itinerary.days.map{|day| day.city}.uniq.join(", ") %></h6>
-              <%# <h5>5 DAYS, FROM 500 TO 700 $</h5> %>
+              <h5><%= itinerary.days.count %> DAYS, FROM 500 TO 700 $</h5>
             </div>
             <div class="card-infos-3">
               <span class="fa-layers fa-fw">
@@ -46,14 +46,3 @@
     </div>
   <% end %>
 </div>
-
-
-
-  <%# <div class="row">
-    <div class="col-12 col-lg-8">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-lg-8">
-    </div>
-  </div> %>
