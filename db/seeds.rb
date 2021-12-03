@@ -293,12 +293,15 @@ puts "Creating itineraries..."
 itin1 = Itinerary.create(
     title: "Colombia Coast",
     description: "Discover the Colombian Caribbean!",
-    user: User.all.sample,
-    # right now, we are selecting just one country
-    countries: Country.all.select { |country| country == "Colombia" }
+    user: User.all.sample
   )
 
-  3.times do |i|
+country_itinerary1 = CountryItinerary.new
+country_itinerary1.itinerary = itin1
+country_itinerary1.country = Country.find_by(name: "Colombia")
+country_itinerary1.save!
+
+3.times do |i|
     day = Day.new(
       order: i + 1,
       city: Faker::Address.city,
@@ -324,12 +327,15 @@ itin1 = Itinerary.create(
   itin2 = Itinerary.create(
     title: "Magical Peru",
     description: "Discover the beauties of Peru!",
-    user: User.all.sample,
-    # right now, we are selecting just one country
-    countries: Country.all.select { |country| country == "Peru" }
+    user: User.all.sample
   )
 
-    3.times do |i|
+country_itinerary2 = CountryItinerary.new
+country_itinerary2.itinerary = itin2
+country_itinerary2.country = Country.find_by(name: "Peru")
+country_itinerary2.save!
+
+  3.times do |i|
     day = Day.new(
       order: i + 1,
       city: Faker::Address.city,
@@ -348,10 +354,13 @@ itin1 = Itinerary.create(
   itin3 = Itinerary.create(
     title: "Wine in Provence",
     description: "Tour of the best wineries in Provence!",
-    user: User.all.sample,
-    # right now, we are selecting just one country
-    countries: Country.all.select { |country| country == "France" }
+    user: User.all.sample
   )
+
+country_itinerary3 = CountryItinerary.new
+country_itinerary3.itinerary = itin3
+country_itinerary3.country = Country.find_by(name: "France")
+country_itinerary3.save!
 
   3.times do |i|
     day = Day.new(
@@ -378,10 +387,13 @@ itin1 = Itinerary.create(
   itin4 = Itinerary.create(
     title: "Oaxaca City Food Markets",
     description: "The perfect guide for surrounding village markets in Oaxaca, MX!",
-    user: User.all.sample,
-    # right now, we are selecting just one country
-    countries: Country.all.select { |country| country == "Mexico" }
+    user: User.all.sample
   )
+
+country_itinerary4 = CountryItinerary.new
+country_itinerary4.itinerary = itin4
+country_itinerary4.country = Country.find_by(name: "Mexico")
+country_itinerary4.save!
 
   3.times do |i|
     day = Day.new(
@@ -409,10 +421,13 @@ itin1 = Itinerary.create(
   itin5 = Itinerary.create(
     title: "Barcelona on fire!",
     description: "Discover the hidden gems of the popular party capital of Europe!",
-    user: User.all.sample,
-    # right now, we are selecting just one country
-    countries: Country.all.select { |country| country == "Spain" }
+    user: User.all.sample
   )
+
+country_itinerary5 = CountryItinerary.new
+country_itinerary5.itinerary = itin5
+country_itinerary5.country = Country.find_by(name: "Spain")
+country_itinerary5.save!
 
   3.times do |i|
     day = Day.new(
@@ -433,10 +448,14 @@ itin1 = Itinerary.create(
   itin6 = Itinerary.create(
     title: "Chiapas Jungle",
     description: "Get an authentic experience from Chiapas!",
-    user: User.all.sample,
-    # right now, we are selecting just one country
-    countries: Country.all.select { |country| country == "Mexico" }
+    user: User.all.sample
   )
+
+country_itinerary6 = CountryItinerary.new
+country_itinerary6.itinerary = itin6
+country_itinerary6.country = Country.find_by(name: "Mexico")
+country_itinerary6.save!
+
 
   3.times do |i|
     day = Day.new(
@@ -454,13 +473,17 @@ itin1 = Itinerary.create(
     puts "Day #{day.id} has been created."
   end
 
-  itin7 = Itinerary.create(
-    title: "Ultimate Guide to Czech Beer",
-    description: "Discover the authentic taste of Czech breweries.",
-    user: User.all.sample,
-    # right now, we are selecting just one country
-    countries: Country.all.select { |country| country == "Czech Republic" }
-  )
+itin7 = Itinerary.create(
+  title: "Ultimate Guide to Czech Beer",
+  description: "Discover the authentic taste of Czech breweries.",
+  user: User.all.sample
+  # right now, we are selecting just one country
+)
+
+country_itinerary7 = CountryItinerary.new
+country_itinerary7.itinerary = itin7
+country_itinerary7.country = Country.find_by(name: "Czech Republic")
+country_itinerary7.save!
 
   3.times do |i|
     day = Day.new(
@@ -481,10 +504,13 @@ itin1 = Itinerary.create(
   itin8 = Itinerary.create(
     title: "Surroundings of Medellin",
     description: "Discover the infamous city of Pablo Escobar!",
-    user: User.all.sample,
-    # right now, we are selecting just one country
-    countries: Country.all.select { |country| country == "Colombia" }
+    user: User.all.sample
   )
+
+country_itinerary8 = CountryItinerary.new
+country_itinerary8.itinerary = itin8
+country_itinerary8.country = Country.find_by(name: "Colombia")
+country_itinerary8.save!
 
   3.times do |i|
     day = Day.new(
@@ -505,10 +531,13 @@ itin1 = Itinerary.create(
   itin9 = Itinerary.create(
     title: "Mexico City Streetfood Tour",
     description: "Learn where to get the best tacos de pastor in CDMX!",
-    user: User.all.sample,
-    # right now, we are selecting just one country
-    countries: Country.all.select { |country| country == "Mexico" }
+    user: User.all.sample
   )
+
+country_itinerary9 = CountryItinerary.new
+country_itinerary9.itinerary = itin9
+country_itinerary9.country = Country.find_by(name: "Mexico")
+country_itinerary9.save!
 
   3.times do |i|
     day = Day.new(
@@ -529,10 +558,13 @@ itin1 = Itinerary.create(
   itin10 = Itinerary.create(
     title: "Hitchhike in Portugal!",
     description: "The ultimate guide for backpackers in Portugal!",
-    user: User.all.sample,
-    # right now, we are selecting just one country
-    countries: Country.all.select { |country| country == "Portugal" }
+    user: User.all.sample
   )
+
+country_itinerary10 = CountryItinerary.new
+country_itinerary10.itinerary = itin10
+country_itinerary10.country = Country.find_by(name: "Portugal")
+country_itinerary10.save!
 
     3.times do |i|
     day = Day.new(
@@ -558,5 +590,7 @@ itin1 = Itinerary.create(
   end
 
   puts "Created #{Itinerary.count} itineraries..."
+
+  puts "Created #{CountryItinerary.count} country_itineraries..."
 
 puts "Finished!"
