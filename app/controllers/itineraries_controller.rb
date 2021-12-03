@@ -2,7 +2,13 @@ class ItinerariesController < ApplicationController
   before_action :find_itinerary, only: %i[edit show update]
 
   def index
-    @itineraries = Itinerary.all
+    if params[:query].present?
+      @query = params[:query]
+      sql_query = "countries.name ILIKE :query"
+      @itineraries = Itinerary.joins(:countries).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @itineraries = Itinerary.all
+    end
   end
 
   def new
