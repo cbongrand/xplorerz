@@ -1,12 +1,26 @@
 <div class="days-form">
+  <% if @itinerary.days.count >= 1 %>
+    <div>
+      <p> I' done adding days </p>
+      <%= link_to "Finish", itinerary_path(@itinerary), class: "btn button-1" %>
+    </div>
+  <% end %>
   <div class="days-form-content">
+    <p> Add day <%= @itinerary.days.count + 1 %> </p>
     <%= simple_form_for [ @itinerary, @day ] do |f| %>
       <p><%= f.input :city %> <%= f.input :description %></p>
       <%= f.input :restaurant_info %>
       <%= f.input :activity_info %>
       <%= f.input :extra_info %>
+
       <%= f.input :order %>
       <%= f.submit "Submit", class: "btn button-1" %>
+      <%= link_to "Go Back", edit_itinerary_path(@itinerary), method: :get, class: "btn button-1" %>
+
+      <div class="day-buttons">
+        <%= f.submit "Add day", class: "btn button-2" %>
+      </div>
+
     <% end %>
   </div>
 </div>
