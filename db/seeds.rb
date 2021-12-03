@@ -15,26 +15,290 @@ Country.destroy_all
 
 User.create(email: "whatevs@whatevs.com", password: "123456")
 
-puts "Creating countries..."
-4.times do
-  country = Country.new(
-    name: Faker::Address.country
+40.times do
+  puts "Creating user..."
+  user = User.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: '123456',
+    description: Faker::Twitter.status
   )
-  country.save!
+  user.save
+  puts "User #{user.id} has been created."
 end
-puts "Done!"
 
-puts "Creating dummy itineraries..."
-4.times do |x|
-  itin = Itinerary.create(
-    title: "Test itinerary #{x + 1}",
-    description: "This is a test",
-    user: User.first,
-    countries: Country.all.sample(2)
+# countries
+
+COUNTRIES = [
+  "Afghanistan",
+  "Aland Islands",
+  "Albania",
+  "Algeria",
+  "American Samoa",
+  "Andorra",
+  "Angola",
+  "Anguilla",
+  "Antarctica",
+  "Antigua And Barbuda",
+  "Argentina",
+  "Armenia",
+  "Aruba",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahamas",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bermuda",
+  "Bhutan",
+  "Bolivia",
+  "Bosnia and Herzegowina",
+  "Botswana",
+  "Bouvet Island",
+  "Brazil",
+  "British Indian Ocean Territory",
+  "Brunei Darussalam",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Cape Verde",
+  "Cayman Islands",
+  "Central African Republic",
+  "Chad",
+  "Chile",
+  "China",
+  "Christmas Island",
+  "Cocos (Keeling) Islands",
+  "Colombia",
+  "Comoros",
+  "Congo",
+  "Congo, the Democratic Republic of the",
+  "Cook Islands",
+  "Costa Rica",
+  "Cote d'Ivoire",
+  "Croatia",
+  "Cuba",
+  "Cyprus",
+  "Czech Republic",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Ethiopia",
+  "Falkland Islands (Malvinas)",
+  "Faroe Islands",
+  "Fiji",
+  "Finland",
+  "France",
+  "French Guiana",
+  "French Polynesia",
+  "French Southern Territories",
+  "Gabon",
+  "Gambia",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Gibraltar",
+  "Greece",
+  "Greenland",
+  "Grenada",
+  "Guadeloupe",
+  "Guam",
+  "Guatemala",
+  "Guernsey",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Heard and McDonald Islands",
+  "Holy See (Vatican City State)",
+  "Honduras",
+  "Hong Kong",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran, Islamic Republic of",
+  "Iraq",
+  "Ireland",
+  "Isle of Man",
+  "Israel",
+  "Italy",
+  "Jamaica",
+  "Japan",
+  "Jersey",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Korea, Democratic People's Republic of",
+  "Korea, Republic of",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Lao People's Democratic Republic",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libyan Arab Jamahiriya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Macao",
+  "Macedonia, The Former Yugoslav Republic Of",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Marshall Islands",
+  "Martinique",
+  "Mauritania",
+  "Mauritius",
+  "Mayotte",
+  "Mexico",
+  "Micronesia, Federated States of",
+  "Moldova, Republic of",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Montserrat",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands",
+  "Netherlands Antilles",
+  "New Caledonia",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "Niue",
+  "Norfolk Island",
+  "Northern Mariana Islands",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Palestinian Territory, Occupied",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines",
+  "Pitcairn",
+  "Poland",
+  "Portugal",
+  "Puerto Rico",
+  "Qatar",
+  "Reunion",
+  "Romania",
+  "Russian Federation",
+  "Rwanda",
+  "Saint Barthelemy",
+  "Saint Helena",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Pierre and Miquelon",
+  "Saint Vincent and the Grenadines",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Georgia and the South Sandwich Islands",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Svalbard and Jan Mayen",
+  "Swaziland",
+  "Sweden",
+  "Switzerland",
+  "Syrian Arab Republic",
+  "Taiwan, Province of China",
+  "Tajikistan",
+  "Tanzania, United Republic of",
+  "Thailand",
+  "Timor-Leste",
+  "Togo",
+  "Tokelau",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Turks and Caicos Islands",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "United States Minor Outlying Islands",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Venezuela",
+  "Viet Nam",
+  "Virgin Islands, British",
+  "Virgin Islands, U.S.",
+  "Wallis and Futuna",
+  "Western Sahara",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe"
+]
+
+puts "Creating countries..."
+
+COUNTRIES.each do |country|
+  Country.create(name: country)
+end
+
+puts "Done! #{Country.count} countries created!"
+
+# itineraries
+
+puts "Creating itineraries..."
+
+itin1 = Itinerary.create(
+    title: "Colombia Coast",
+    description: "Discover the Colombian Caribbean!",
+    user: User.all.sample,
+    # right now, we are selecting just one country
+    countries: Country.all.select { |country| country == "Colombia" }
   )
-  puts "Creating days..."
 
-  4.times do |i|
+  3.times do |i|
     day = Day.new(
       order: i + 1,
       city: Faker::Address.city,
@@ -45,26 +309,254 @@ puts "Creating dummy itineraries..."
       latitude: Faker::Address.latitude,
       longitude: Faker::Address.longitude
     )
-    day.itinerary = itin
+    day.itinerary = itin1
     day.save!
     puts "Day #{day.id} has been created."
 
-    puts "Creating user..."
-    user = User.new(
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      email: Faker::Internet.email,
-      password: '123456',
-      description: Faker::Twitter.status,
-    )
-    puts "User #{user.id} has been created."
     puts "Creating booking..."
     booking = Booking.new
-    booking.user = user
-    booking.itinerary = itin
+    booking.user = User.all.sample
+    booking.itinerary = itin1
     booking.save!
     puts "Booking #{booking.id} has been created."
   end
-end
+
+  itin2 = Itinerary.create(
+    title: "Magical Peru",
+    description: "Discover the beauties of Peru!",
+    user: User.all.sample,
+    # right now, we are selecting just one country
+    countries: Country.all.select { |country| country == "Peru" }
+  )
+
+    3.times do |i|
+    day = Day.new(
+      order: i + 1,
+      city: Faker::Address.city,
+      description: Faker::Lorem.sentence,
+      restaurant_info: Faker::Restaurant.name,
+      activity_info: Faker::Hobby.activity,
+      extra_info: Faker::Games::WorldOfWarcraft.quote,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
+    day.itinerary = itin2
+    day.save!
+    puts "Day #{day.id} has been created."
+  end
+
+  itin3 = Itinerary.create(
+    title: "Wine in Provence",
+    description: "Tour of the best wineries in Provence!",
+    user: User.all.sample,
+    # right now, we are selecting just one country
+    countries: Country.all.select { |country| country == "France" }
+  )
+
+  3.times do |i|
+    day = Day.new(
+      order: i + 1,
+      city: Faker::Address.city,
+      description: Faker::Lorem.sentence,
+      restaurant_info: Faker::Restaurant.name,
+      activity_info: Faker::Hobby.activity,
+      extra_info: Faker::Games::WorldOfWarcraft.quote,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
+    day.itinerary = itin3
+    day.save!
+    puts "Day #{day.id} has been created."
+    puts "Creating booking..."
+    booking = Booking.new
+    booking.user = User.all.sample
+    booking.itinerary = itin3
+    booking.save!
+    puts "Booking #{booking.id} has been created."
+  end
+
+  itin4 = Itinerary.create(
+    title: "Oaxaca City Food Markets",
+    description: "The perfect guide for surrounding village markets in Oaxaca, MX!",
+    user: User.all.sample,
+    # right now, we are selecting just one country
+    countries: Country.all.select { |country| country == "Mexico" }
+  )
+
+  3.times do |i|
+    day = Day.new(
+      order: i + 1,
+      city: Faker::Address.city,
+      description: Faker::Lorem.sentence,
+      restaurant_info: Faker::Restaurant.name,
+      activity_info: Faker::Hobby.activity,
+      extra_info: Faker::Games::WorldOfWarcraft.quote,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
+    day.itinerary = itin4
+    day.save!
+    puts "Day #{day.id} has been created."
+
+    puts "Creating booking..."
+    booking = Booking.new
+    booking.user = User.all.sample
+    booking.itinerary = itin4
+    booking.save!
+    puts "Booking #{booking.id} has been created."
+  end
+
+  itin5 = Itinerary.create(
+    title: "Barcelona on fire!",
+    description: "Discover the hidden gems of the popular party capital of Europe!",
+    user: User.all.sample,
+    # right now, we are selecting just one country
+    countries: Country.all.select { |country| country == "Spain" }
+  )
+
+  3.times do |i|
+    day = Day.new(
+      order: i + 1,
+      city: Faker::Address.city,
+      description: Faker::Lorem.sentence,
+      restaurant_info: Faker::Restaurant.name,
+      activity_info: Faker::Hobby.activity,
+      extra_info: Faker::Games::WorldOfWarcraft.quote,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
+    day.itinerary = itin5
+    day.save!
+    puts "Day #{day.id} has been created."
+  end
+
+  itin6 = Itinerary.create(
+    title: "Chiapas Jungle",
+    description: "Get an authentic experience from Chiapas!",
+    user: User.all.sample,
+    # right now, we are selecting just one country
+    countries: Country.all.select { |country| country == "Mexico" }
+  )
+
+  3.times do |i|
+    day = Day.new(
+      order: i + 1,
+      city: Faker::Address.city,
+      description: Faker::Lorem.sentence,
+      restaurant_info: Faker::Restaurant.name,
+      activity_info: Faker::Hobby.activity,
+      extra_info: Faker::Games::WorldOfWarcraft.quote,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
+    day.itinerary = itin6
+    day.save!
+    puts "Day #{day.id} has been created."
+  end
+
+  itin7 = Itinerary.create(
+    title: "Ultimate Guide to Czech Beer",
+    description: "Discover the authentic taste of Czech breweries.",
+    user: User.all.sample,
+    # right now, we are selecting just one country
+    countries: Country.all.select { |country| country == "Czech Republic" }
+  )
+
+  3.times do |i|
+    day = Day.new(
+      order: i + 1,
+      city: Faker::Address.city,
+      description: Faker::Lorem.sentence,
+      restaurant_info: Faker::Restaurant.name,
+      activity_info: Faker::Hobby.activity,
+      extra_info: Faker::Games::WorldOfWarcraft.quote,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
+    day.itinerary = itin7
+    day.save!
+    puts "Day #{day.id} has been created."
+  end
+
+  itin8 = Itinerary.create(
+    title: "Surroundings of Medellin",
+    description: "Discover the infamous city of Pablo Escobar!",
+    user: User.all.sample,
+    # right now, we are selecting just one country
+    countries: Country.all.select { |country| country == "Colombia" }
+  )
+
+  3.times do |i|
+    day = Day.new(
+      order: i + 1,
+      city: Faker::Address.city,
+      description: Faker::Lorem.sentence,
+      restaurant_info: Faker::Restaurant.name,
+      activity_info: Faker::Hobby.activity,
+      extra_info: Faker::Games::WorldOfWarcraft.quote,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
+    day.itinerary = itin8
+    day.save!
+    puts "Day #{day.id} has been created."
+  end
+
+  itin9 = Itinerary.create(
+    title: "Mexico City Streetfood Tour",
+    description: "Learn where to get the best tacos de pastor in CDMX!",
+    user: User.all.sample,
+    # right now, we are selecting just one country
+    countries: Country.all.select { |country| country == "Mexico" }
+  )
+
+  3.times do |i|
+    day = Day.new(
+      order: i + 1,
+      city: Faker::Address.city,
+      description: Faker::Lorem.sentence,
+      restaurant_info: Faker::Restaurant.name,
+      activity_info: Faker::Hobby.activity,
+      extra_info: Faker::Games::WorldOfWarcraft.quote,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
+    day.itinerary = itin9
+    day.save!
+    puts "Day #{day.id} has been created."
+  end
+
+  itin10 = Itinerary.create(
+    title: "Hitchhike in Portugal!",
+    description: "The ultimate guide for backpackers in Portugal!",
+    user: User.all.sample,
+    # right now, we are selecting just one country
+    countries: Country.all.select { |country| country == "Portugal" }
+  )
+
+    3.times do |i|
+    day = Day.new(
+      order: i + 1,
+      city: Faker::Address.city,
+      description: Faker::Lorem.sentence,
+      restaurant_info: Faker::Restaurant.name,
+      activity_info: Faker::Hobby.activity,
+      extra_info: Faker::Games::WorldOfWarcraft.quote,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude
+    )
+    day.itinerary = itin10
+    day.save!
+    puts "Day #{day.id} has been created."
+
+    puts "Creating booking..."
+    booking = Booking.new
+    booking.user = User.all.sample
+    booking.itinerary = itin10
+    booking.save!
+    puts "Booking #{booking.id} has been created."
+  end
+
+  puts "Created #{Itinerary.count} itineraries..."
 
 puts "Finished!"
