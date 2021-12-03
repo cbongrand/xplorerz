@@ -10,43 +10,60 @@
     <p>Credits:</p>
     <p>2</p>
   </div>
-  <div class="container-profile-items">
-    <h4>Bought itineraries</h4>
-    <div class="bought-items">
-      <% @booked_itineraries.each do |booking| %>
-        <%= booking.user_id %>
-      <% end %>
-    </div>
-    <h4>Created itineraries</h4>
-    <div class="row created-items">
-      <% @itineraries.each do |itinerary| %>
-        <div class="col-4">
-          <div class="media">
-            <img src="https://images.unsplash.com/photo-1552980870-139c7b393f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" class="align-self-start mr-3" height="64px" width="64px">
-            <div class="media-body">
-              <h5> <%= link_to itinerary.title, itinerary_path(itinerary) %> </h5>
-              <p><%= itinerary.description %></p>
+  <div class="profile-items">
+    <div class="booking-index">
+      <div class="header-profile">
+        <h4>Bought itineraries</h4>
+      </div>
+      <% @booked_itineraries.each_slice(6) do |slice| %>
+        <div class="row">
+          <% slice.each do |booking| %>
+            <div class="col-4">
+              <div class="card-little">
+                <div class="cardbanner-little">
+                  <span>JUNGLE EVASION</span>
+                </div>
+                <div class="card-infos-little">
+                  <div class="card-infos-1-little-only-country">
+                    <h4>Costa Rica 🇨🇷</h4>
+                  </div>
+                  <div class="card-infos-2-little-only-country">
+                    <h6>San José - La Fortuna - Monteverde - Rio Celeste - Tamarindo</h6>
+                    <h5>5 DAYS, FROM 500 TO 700 $</h5>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+            <% end %>
         </div>
       <% end %>
-     </div>
-   </div>
+    </div>
+    <div class="itin-index">
+      <div class="header-profile">
+        <h4>Created itineraries</h4>
+      </div>
+        <% @itineraries.each_slice(6) do |slice| %>
+          <div class="row">
+            <% slice.each do |itinerary| %>
+              <div class="col-4">
+                <div class="card-little">
+                  <div class="cardbanner-little">
+                    <span>JUNGLE EVASION</span>
+                  </div>
+                  <div class="card-infos-little">
+                    <div class="card-infos-1-little-only-country">
+                      <h4>Costa Rica 🇨🇷</h4>
+                    </div>
+                    <div class="card-infos-2-little-only-country">
+                      <h6>San José - La Fortuna - Monteverde - Rio Celeste - Tamarindo</h6>
+                      <h5>5 DAYS, FROM 500 TO 700 $</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
   </div>
 </div>
-
-
-  <div class="card-little">
-    <div class="cardbanner-little">
-      <span>JUNGLE EVASION</span>
-    </div>
-    <div class="card-infos-little">
-      <div class="card-infos-1-little-only-country">
-        <h4>Costa Rica 🇨🇷</h4>
-      </div>
-      <div class="card-infos-2-little-only-country">
-        <h6>San José - La Fortuna - Monteverde - Rio Celeste - Tamarindo</h6>
-        <h5>5 DAYS, FROM 500 TO 700 $</h5>
-      </div>
-    </div>
-  </div>

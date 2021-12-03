@@ -17,6 +17,7 @@ class DaysController < ApplicationController
 
   def edit
     @day = Day.find(params[:id])
+    @itinerary = @day.itinerary
   end
 
   def show
@@ -25,10 +26,8 @@ class DaysController < ApplicationController
 
   def update
     @day = Day.find(params[:id])
-    @itinerary = Itinerary.find(params[:itinerary_id])
-    @day.itinerary = @itinerary
-    if @day.save
-      redirect_to itinerary_path(@itinerary)
+    if @day.update(day_params)
+      redirect_to new_itinerary_day_path(@day.itinerary)
     else
       render :new
     end
