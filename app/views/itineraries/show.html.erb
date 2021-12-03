@@ -6,8 +6,9 @@
       </div>
       <div class="show-info-1">
         <div class="show-info-1-text">
-          <h6>San José - La Fortuna - San José - Rio Celeste - Tamarindo</h6>
-          <h5><%= @itinerary.days.count %> DAYS, FROM 500 TO 700 $</h5>
+          <h2><%= @itinerary.countries.map{|country| country.name}.uniq.join(" - ") %></h2>
+          <h6><%= @itinerary.days.map{|day| day.city}.uniq.join(", ") %></h6>
+          <h5><%= @itinerary.days.count %> DAYS</h5>
         </div>
         <div class="itin-info-1-heart">
           <div class="heart">
@@ -60,5 +61,3 @@
 <div class="itinerary-day"></div>
 
 </div>
-
-
