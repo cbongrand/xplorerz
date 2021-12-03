@@ -1,9 +1,23 @@
-.page-title{
-  text-align: center;
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-
 .itin-index{
   margin: auto;
 }
+
+.itin-contain{
+  border: solid 1px gray;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.show-btn{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+  // overflow-y: scroll;

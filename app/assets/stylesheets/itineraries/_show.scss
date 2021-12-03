@@ -1,0 +1,43 @@
+.big-itin-contain{
+  // border: solid 1px gray;
+  border-radius: 27px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)  ;
+  background-color: rgb(255, 255, 255);
+}
+.big-show-card{
+  background-image: url("https://images.unsplash.com/photo-1552980870-139c7b393f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80");
+  height: 260px;
+  background-size: cover;
+  background-position: center 68%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 27px;
+  border-top-right-radius: 27px;
+}
+
+.show-trip-description{
+  text-align: center;
+}
+
+.show-description{
+  text-align: center;
+  padding-top: 10px;
+}
+
+.itin-info-1-text{
+  max-width: 900px;
+  text-align: center;
+  h6 {
+    font-size: 23px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: $xplorerz-gray;
+  }
+  h5 {
+    color: #4FADBB;
+  }
+}
