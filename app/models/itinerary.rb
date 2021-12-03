@@ -1,7 +1,5 @@
 class Itinerary < ApplicationRecord
   belongs_to :user
-  has_many :days
-
   has_many :days, dependent: :destroy
   has_many :country_itineraries
   has_many :countries, through: :country_itineraries
