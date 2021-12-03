@@ -6,7 +6,10 @@
 
 .profile-information {
   height: 400px;
-  padding: 2%;
+  padding: 4%;
+  margin-top: 2%;
+  margin-left: 100px;
+  margin-right: 100px;
   text-align: center;
   border: 1px solid;
   border-radius: 5px;
@@ -24,4 +27,8 @@
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 1rem;
+}
+
+.booking-index {
+  text-align: center;
 }
