@@ -1,47 +1,59 @@
 <div class="big-itin-contain">
-  <div class="big-show-card">
-    <h1 id="banner-slogan-show">JUNGLE EVASION</h1>
-  </div>
-  <div class="show-info-1">
-    <div class="show-info-1-text">
-      <h6>San José - La Fortuna - San José - Rio Celeste - Tamarindo</h6>
-      <h5>5 DAYS, FROM 500 TO 700 $</h5>
-    </div>
-    <div class="itin-info-1-heart">
-      <div class="heart">
-            <%# likes might be in the wrong tabel %>
-          <span class="fa-layers fa-fw">
-            <i class="fas fa-heart"></i>
-            <span class="fa-layers-text fa-inverse" data-fa-transform="grow-6 right-19" style="font-weight:700">
-              1
-            </span>
-          </span>
+  <div class="flip-card">
+    <div class="flip-card-front">
+      <div class="big-show-card">
+        <h1 id="banner-slogan-show"><%= @itinerary.title %></h1>
+      </div>
+      <div class="show-info-1">
+        <div class="show-info-1-text">
+          <h6>San José - La Fortuna - San José - Rio Celeste - Tamarindo</h6>
+          <h5><%= @itinerary.days.count %> DAYS, FROM 500 TO 700 $</h5>
+        </div>
+        <div class="itin-info-1-heart">
+          <div class="heart">
+                <%# likes might be in the wrong tabel %>
+              <span class="fa-layers fa-fw">
+                <i class="fas fa-heart"></i>
+                <span class="fa-layers-text fa-inverse" data-fa-transform="grow-6 right-19" style="font-weight:700">
+                  1
+                </span>
+              </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="show-tags">
+        <div class="show-tag">
+          Tag 1
+        </div>
+        <div class="show-tag">
+          Tag 2
+        </div>
+        <div class="show-tag">
+          Tag 3
+        </div>
+      </div>
+      <div class="show-trip-description">
+        <h2 id="trip-description-header">Trip description</h1>
+        <div class="show-description">
+          <h6 id="trip-description"><%= @itinerary.description %></h6>
+        </div>
+      </div>
+
+      <div class="show-btn">
+        <%= link_to "Purchase itinerary", itinerary_bookings_path(@itinerary), method: :post, class: "btn btn-primary" %>
       </div>
     </div>
-  </div>
+    <div class="flip-card-back">
+       <div>
+       <p>more info</p>
+       </div>
+    </div>
 
-  <div class="show-tags">
-    <div class="show-tag">
-      Tag 1
-    </div>
-    <div class="show-tag">
-      Tag 2
-    </div>
-    <div class="show-tag">
-      Tag 3
-    </div>
-  </div>
-  <div class="show-trip-description">
-    <h2 id="trip-description-header">Trip description</h1>
-    <div class="show-description">
-      <h6 id="trip-description"><%= @itinerary.description %></h6>
-    </div>
-  </div>
-
-  <div class="show-btn">
-    <%= link_to "Purchase itinerary", itinerary_bookings_path(@itinerary), method: :post, class: "btn btn-primary" %>
   </div>
 </div>
+
+
 
 <div class="itinerary-details">
 
@@ -50,4 +62,3 @@
 </div>
 
 
-<%= link_to "Purchase itinerary", itinerary_bookings_path(@itinerary), method: :post, class: "btn btn-primary" %>

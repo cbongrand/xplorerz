@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :itineraries, except: :destroy do
-    resources :days, only: %i[create new edit update]
+    resources :days, only: %i[create new]
     resources :bookings, only: %i[new create]
   end
+
+  resources :days, only: %i[edit update]
 
   get "/profile", to: "pages#profile"
   get "/credits", to: "pages#credits"

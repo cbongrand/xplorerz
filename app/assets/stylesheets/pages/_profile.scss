@@ -1,23 +1,34 @@
 .container-profile-page{
   display: flex;
   justify-content: space-around;
+  margin-bottom: 3%;
 }
 
 .profile-information {
   height: 400px;
-  margin-top: 3%;
-  padding: 2%;
+  padding: 4%;
+  margin-top: 2%;
+  margin-left: 100px;
+  margin-right: 100px;
   text-align: center;
   border: 1px solid;
   border-radius: 5px;
   border-color: lightgray;
   box-shadow: 2px 3px rgb(236, 236, 236);
+  position: sticky;
+  top: 9rem;
 }
 
 .profile-information p {
   padding-top: 4%;
 }
 
-.created-items {
-  justify-content: space-around;
+.header-profile {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.booking-index {
+  text-align: center;
 }
