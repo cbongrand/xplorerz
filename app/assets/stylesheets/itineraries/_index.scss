@@ -15,3 +15,11 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: 0.6s;
+}
+
+  // overflow-y: scroll;
+
