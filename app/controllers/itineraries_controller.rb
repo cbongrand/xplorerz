@@ -41,6 +41,14 @@ class ItinerariesController < ApplicationController
 
   def show; end
 
+  #### add delete function
+
+  def destroy
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.destroy
+    redirect_to profile_path
+  end
+
   private
 
   def find_itinerary
