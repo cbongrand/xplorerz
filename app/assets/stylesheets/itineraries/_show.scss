@@ -67,3 +67,7 @@
 .flip-card-back {
   transform: rotateY(180deg);
 }
+
+.scroll {
+  overflow-y: auto;
+}
