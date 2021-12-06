@@ -76,7 +76,7 @@ TAGS.each do |tag|
   )
 end
 
-puts "Done! #{Country.count} countries created!"
+puts "Done! #{Tag.count} tags created!"
 
 # countries
 
