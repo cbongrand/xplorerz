@@ -25,3 +25,26 @@
   display: flex;
   justify-content: space-between;
 }
+
+.top-form {
+  display: flex;
+}
+
+.end-page-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-form a {
+  color: #01B0BD;
+  text-decoration: none;
+}
+
+.days-form-content input {
+    border-radius: 25px;
+}
+
+.top-header {
+  justify-content: center;
+  padding-left: 150px;
+}
