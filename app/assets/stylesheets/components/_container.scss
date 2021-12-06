@@ -38,6 +38,12 @@
     font-weight: 600;
     color: $xplorerz-gray;
   }
+  h4 {
+    font-size: 27px;
+    margin-bottom: 13px;
+    font-weight: 700;
+    color: $xplorerz-gray;
+  }
   h5 {
     color: #4FADBB;
   }
@@ -63,5 +69,45 @@
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
+}
+
+.day-container {
+  display: flex;
+  width: calc(100% - 140px);
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly;
+}
+
+.day-map {
+  position: sticky;
+}
+
+.day-purchased {
+  background-color:#03c7d5;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 27px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 40px ;
+}
+
+.day-informations {
+  text-align: center;
+  color: $xplorerz-gray;
+}
+
+.day-description {
+  width: 600px;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #494949;
+}
+
+.day-activity {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

@@ -43,3 +43,19 @@
   opacity: 0.8;
   color: white;
 }
+
+.purchase-btn {
+  background-color:#494949;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: 0.5s;
+  color: white;
+  font-weight: 500;
+  width: 400px;
+  opacity: 1;
+}
+
+.purchase-btn:hover {
+  opacity: 0.8;
+  color: white;
+}
