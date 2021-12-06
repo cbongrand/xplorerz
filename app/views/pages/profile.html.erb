@@ -1,6 +1,6 @@
 <div class="container-profile-page">
   <div class="profile-information">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class:"avatar-large"%>
+    <%= cl_image_tag current_user.photo.key, :class => 'avatar-large' %>
     <p>Name:</p>
     <%= current_user.first_name %> <%= current_user.last_name %>
     <p>Description:</p>
