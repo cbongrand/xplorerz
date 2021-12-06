@@ -351,6 +351,13 @@ country_itinerary1.itinerary = itin1
 country_itinerary1.country = Country.find_by(name: "Colombia")
 country_itinerary1.save!
 
+tag_itinerary1 = ItineraryTag.new
+tag_itinerary1.itinerary = itin1
+tag_itinerary1.tag = Tag.find_by(name: "Beach")
+tag_itinerary1.tag = Tag.find_by(name: "Tropical")
+tag_itinerary1.tag = Tag.find_by(name: "Private")
+tag_itinerary1.save!
+
 i = 0
 
 day1 = Day.new(
@@ -429,6 +436,13 @@ country_itinerary2.itinerary = itin2
 country_itinerary2.country = Country.find_by(name: "Peru")
 country_itinerary2.save!
 
+tag_itinerary2 = ItineraryTag.new
+tag_itinerary2.itinerary = itin2
+tag_itinerary2.tag = Tag.find_by(name: "Hiking")
+tag_itinerary2.tag = Tag.find_by(name: "Adventure")
+tag_itinerary2.tag = Tag.find_by(name: "Active Holiday")
+tag_itinerary2.save!
+
 i = 0
 day = Day.new(
   order: i + 1,
@@ -497,6 +511,13 @@ country_itinerary3.itinerary = itin3
 country_itinerary3.country = Country.find_by(name: "France")
 country_itinerary3.save!
 
+tag_itinerary3 = ItineraryTag.new
+tag_itinerary3.itinerary = itin3
+tag_itinerary3.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary3.tag = Tag.find_by(name: "Food")
+tag_itinerary3.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary3.save!
+
 i = 0
 
 day = Day.new(
@@ -546,6 +567,13 @@ country_itinerary4 = CountryItinerary.new
 country_itinerary4.itinerary = itin4
 country_itinerary4.country = Country.find_by(name: "Mexico")
 country_itinerary4.save!
+
+tag_itinerary4 = ItineraryTag.new
+tag_itinerary4.itinerary = itin4
+tag_itinerary4.tag = Tag.find_by(name: "Food")
+tag_itinerary4.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary4.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary4.save!
 
 i = 0
 day = Day.new(
@@ -652,6 +680,13 @@ country_itinerary5.itinerary = itin5
 country_itinerary5.country = Country.find_by(name: "Spain")
 country_itinerary5.save!
 
+tag_itinerary5 = ItineraryTag.new
+tag_itinerary5.itinerary = itin5
+tag_itinerary5.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary5.tag = Tag.find_by(name: "City")
+tag_itinerary5.tag = Tag.find_by(name: "Food")
+tag_itinerary5.save!
+
 i = 0
 day = Day.new(
   order: i + 1,
@@ -706,6 +741,13 @@ country_itinerary6.itinerary = itin6
 country_itinerary6.country = Country.find_by(name: "Mexico")
 country_itinerary6.save!
 
+tag_itinerary6 = ItineraryTag.new
+tag_itinerary6.itinerary = itin6
+tag_itinerary6.tag = Tag.find_by(name: "Adventure")
+tag_itinerary6.tag = Tag.find_by(name: "Nature Retreat")
+tag_itinerary6.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary6.save!
+
 i = 0
 
 # resume here
@@ -736,6 +778,13 @@ country_itinerary7.itinerary = itin7
 country_itinerary7.country = Country.find_by(name: "Czech Republic")
 country_itinerary7.save!
 
+tag_itinerary7 = ItineraryTag.new
+tag_itinerary7.itinerary = itin7
+tag_itinerary7.tag = Tag.find_by(name: "Food")
+tag_itinerary7.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary7.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary7.save!
+
 3.times do |i|
   day = Day.new(
     order: i + 1,
@@ -762,6 +811,12 @@ country_itinerary8 = CountryItinerary.new
 country_itinerary8.itinerary = itin8
 country_itinerary8.country = Country.find_by(name: "Colombia")
 country_itinerary8.save!
+
+tag_itinerary8 = ItineraryTag.new
+tag_itinerary8.itinerary = itin8
+tag_itinerary8.tag = Tag.find_by(name: "City")
+tag_itinerary8.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary8.save!
 
 3.times do |i|
   day = Day.new(
@@ -790,6 +845,13 @@ country_itinerary9.itinerary = itin9
 country_itinerary9.country = Country.find_by(name: "Mexico")
 country_itinerary9.save!
 
+tag_itinerary9 = ItineraryTag.new
+tag_itinerary9.itinerary = itin9
+tag_itinerary9.tag = Tag.find_by(name: "Food")
+tag_itinerary9.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary9.tag = Tag.find_by(name: "City")
+tag_itinerary9.save!
+
 3.times do |i|
   day = Day.new(
     order: i + 1,
@@ -817,6 +879,15 @@ country_itinerary10.itinerary = itin10
 country_itinerary10.country = Country.find_by(name: "Portugal")
 country_itinerary10.save!
 
+tag_itinerary10 = ItineraryTag.new
+tag_itinerary10.itinerary = itin10
+tag_itinerary10.tag = Tag.find_by(name: "Beach")
+tag_itinerary10.tag = Tag.find_by(name: "Adventure")
+tag_itinerary10.tag = Tag.find_by(name: "Active Holiday")
+tag_itinerary10.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary10.tag = Tag.find_by(name: "City")
+tag_itinerary10.save!
+
 3.times do |i|
   day = Day.new(
     order: i + 1,
@@ -841,5 +912,6 @@ end
 
 puts "Created #{Itinerary.count} itineraries..."
 puts "Created #{CountryItinerary.count} country_itineraries..."
+puts "Created #{ItineraryTag.count} tag_itineraries..."
 
 puts "Finished!"
