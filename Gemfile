@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
 gem 'faker'
+gem 'socialization'
 
 
 gem 'autoprefixer-rails', '10.2.5'

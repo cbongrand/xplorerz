@@ -217,6 +217,8 @@ GEM
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    socialization (1.2.3)
+      activerecord
     spring (3.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -284,6 +286,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   simple_form
+  socialization
   spring
   turbolinks (~> 5)
   tzinfo-data

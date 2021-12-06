@@ -1,0 +1,13 @@
+<% if @itinerary.user != current_user %>
+   <%= form_with url: "/likes", method: :post do |form| %>
+      <%= form.hidden_field :itinerary_id, value: @itinerary.id %>
+      <%= form.submit "like" %>
+    <% end %>
+<% end %>
+
+
+<%# <% elsif @itinerary.user == current_user && @user.likes?(@itinerary) == fasle %>
+    <%# <%= form_with url: "/unlikes", method: :post do |form| %>
+      <%# <%= form.hidden_field :itinerary_id, value: @itinerary.id %>
+      <%# <%= form.submit "unlike" %>
+    <%# <% end %>
