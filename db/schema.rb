@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_12_06_163224) do
     t.text "restaurant_info"
     t.text "activity_info"
     t.text "extra_info"
+    t.integer "order"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
