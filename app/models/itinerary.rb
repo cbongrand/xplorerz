@@ -6,6 +6,7 @@ class Itinerary < ApplicationRecord
   has_many :tags, through: :initerary_tags
   has_many :users, through: :bookings
   has_many :bookings
+  acts_as_likeable
   validates :title, presence: true
   validates :description, presence: true
 end

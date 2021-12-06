@@ -41,6 +41,17 @@ class ItinerariesController < ApplicationController
 
   def show; end
 
+  # Find out if an objects likes
+  def liked?
+    @user = current_user
+    @itinerary.liked_by?(@user)
+  end
+
+  # All likers
+  def all_likes
+    @itinerary.likers(User.all)
+  end
+
   #### add delete function
 
   def destroy
