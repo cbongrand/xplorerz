@@ -17,9 +17,12 @@
                 <span class="fa-layers fa-fw">
                   <i  class="fas fa-heart like-heart "></i>
                   <span class="fa-layers-text fa-inverse" data-fa-transform="grow-6 right-19" style="font-weight:700">
-                    1
+                   <%= @itinerary.likers(User.all).count %>
                   </span>
                 </span>
+                <div class="like-button">
+                  <%= render 'shared/like_button' %>
+                </div>
             </div>
           </div>
         </div>
@@ -47,12 +50,6 @@
         <%= render 'shared/button' %>
       </div>
     </div>
-    <div class="flip-card-back">
-       <div>
-       <p>more info</p>
-       </div>
-    </div>
-
   </div>
 </div>
 

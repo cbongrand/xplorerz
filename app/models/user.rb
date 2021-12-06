@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :booked_itineraries, through: :bookings, class_name: 'Itinerary', source: :itinerary
+  acts_as_liker
+
 
   # created itineraries
   has_many :itineraries
