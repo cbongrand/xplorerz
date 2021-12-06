@@ -86,6 +86,7 @@
   border-top-right-radius: 16.2px;
   text-align: center;
   height: 117.6px;
+  width: 210px;
   color: white;
   vertical-align: middle;
   background-size: cover;
@@ -162,5 +163,9 @@
 }
 
 .card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.card-little:hover {
   box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }

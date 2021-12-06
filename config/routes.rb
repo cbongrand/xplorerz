@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :days, only: %i[edit update]
 
+  post "/likes", to: "users#like"
+  post "/unlikes", to: "users#unlike"
   get "/profile", to: "pages#profile"
   get "/credits", to: "pages#credits"
   patch "/credits", to: "pages#purchase"

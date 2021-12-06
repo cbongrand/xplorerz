@@ -49,6 +49,25 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  # Find out if an objects likes
+  def liked?
+    @user = current_user
+    @itinerary.liked_by?(@user)
+  end
+
+  # All likers
+  def all_likes
+    @itinerary.likers(User.all)
+  end
+
+  #### add delete function
+
+  def destroy
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.destroy
+    redirect_to profile_path
+  end
+
   private
 
   def find_itinerary
