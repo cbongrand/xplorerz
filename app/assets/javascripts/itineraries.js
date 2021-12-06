@@ -1,5 +1,5 @@
 const heart = document.querySelector(".like-heart");
 
-heart.addEventListener("click", () => {
-  console.log("you liked")
+heart.addEventListener("click", (event) => {
+  console.log(event)
 })
