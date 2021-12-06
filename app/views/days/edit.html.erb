@@ -1,28 +1,27 @@
 <div class="days-form">
-  <% if @itinerary.days.count >= 1 %>
-    <div>
-      <%= link_to "Finish", itinerary_path(@itinerary), class: "btn button-1" %>
-    </div>
-  <% end %>
   <div class="days-form-content">
-    <p> Edit day <%= @itinerary.days.index(@day) + 1 %> </p>
+    <div class="top-form">
+      <div class="top-link">
+        <% if @itinerary.days.index(@day) != 0 %>
+          <%= link_to "Go Back", edit_day_path(@itinerary.days[@itinerary.days.count - 2]), method: :get%>
+        <% else %>
+          <%= link_to "Go Back", edit_itinerary_path(@itinerary), method: :get%>
+        <% end %>
+      </div>
+      <div class="top-header">
+        <h4> Day <%= @itinerary.days.index(@day) + 1 %> </h4>
+        <br>
+      </div>
+    </div>
     <%= simple_form_for @day do |f| %>
       <p><%= f.input :city %> <%= f.input :description %></p>
       <%= f.input :restaurant_info %>
       <%= f.input :activity_info %>
       <%= f.input :extra_info %>
-
-      <%= f.input :order %>
-      <%= f.submit "Submit", class: "btn button-1" %>
-      <% if @itinerary.days.index(@day) != 0 %>
-        <%= link_to "Go Back", edit_day_path(@itinerary.days[@itinerary.days.count - 2]), method: :get, class: "btn button-1" %>
-      <% else %>
-        <%= link_to "Go Back", edit_itinerary_path(@itinerary), method: :get, class: "btn button-1" %>
-      <% end %>
-      <div class="day-buttons">
+      <div class="end-page-buttons">
+        <%= f.submit "Submit", class: "btn button-1" %>
         <%= f.submit "Add day", class: "btn button-2" %>
       </div>
-
     <% end %>
   </div>
 </div>
