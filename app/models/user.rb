@@ -10,4 +10,7 @@ class User < ApplicationRecord
   # created itineraries
   has_many :itineraries
   validates :email, uniqueness: true
+
+  # profile photo
+  has_one_attached :photo
 end
