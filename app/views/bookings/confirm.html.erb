@@ -5,7 +5,13 @@
       <div class="col-6">
         <div class="card">
 
-          <div class="cardbanner">
+          <div class="cardbanner"
+            <% if @booking.itinerary.photo.attached? %>
+              style="background-image: url('<%= cl_image_path booking.photo.key, height: 300, crop: :fill %>')"
+            <% else %>
+              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1552980870-139c7b393f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80')"
+            <% end %>
+          >
             <span><%= @booking.itinerary.title %></span>
           </div>
 
