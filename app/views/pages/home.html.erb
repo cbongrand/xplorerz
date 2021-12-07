@@ -5,8 +5,13 @@
     <h1 id="banner-slogan">Browse and share the best itineraries</h1>
     <form action="/itineraries">
       <div class="banner-search">
-        <input list="datalistOptions" id="search-bar" type="text" placeholder="Where do you plan to go?" name="query">
-        <button id="search-submit-btn" type="submit"><i class="fas fa-search"></i></button>
+      <select name="query" id="search-bar" required>
+      <option value="" disabled selected hidden ><span id="placeholder">Where do you plan to go?</span></option>
+        <% Country.all.each do |country| %>
+            <option value=<%= country.name%>><%= country.name %></option>
+        <% end %>
+      </select>
+      <button id="search-submit-btn" type="submit"><i class="fas fa-search"></i></button>
       </div>
     </form>
   </div>
@@ -42,7 +47,6 @@
                 </span>
                 <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
               </div>
-                <%= link_to "", itinerary_path(itinerary), class: "stretched-link" %>
             </div>
             <%= link_to "", itinerary_path(itinerary), class: "stretched-link" %>
           </div>

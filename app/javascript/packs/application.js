@@ -23,14 +23,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initUpdateLikesOnClick } from '../channels/itineraries';
-
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  initUpdateLikesOnClick();
-});
+// import { initUpdateLikesOnClick } from '../channels/itineraries';
 
 import { initMapbox } from '../plugins/init_mapbox';
 

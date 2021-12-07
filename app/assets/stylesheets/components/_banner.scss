@@ -73,6 +73,17 @@
   position: relative;
 }
 
+.banner-search select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+select:invalid {
+  color: rgb(162, 162, 162);
+}
+
 .banner-objects {
   display: flex;
   align-items: left;

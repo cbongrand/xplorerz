@@ -354,9 +354,11 @@ country_itinerary1.save!
 tag_itinerary1 = ItineraryTag.new
 tag_itinerary1.itinerary = itin1
 tag_itinerary1.tag = Tag.find_by(name: "Beach")
+tag_itinerary1.save!
 tag_itinerary1 = ItineraryTag.new
 tag_itinerary1.itinerary = itin1
 tag_itinerary1.tag = Tag.find_by(name: "Tropical")
+tag_itinerary1.save!
 tag_itinerary1 = ItineraryTag.new
 tag_itinerary1.itinerary = itin1
 tag_itinerary1.tag = Tag.find_by(name: "Private")
@@ -378,6 +380,9 @@ day1.itinerary = itin1
 day1.save!
 puts "Day #{day1.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day2 = Day.new(
   order: i + 1,
   city: "Cartagena - Islas Rosarias",
@@ -392,6 +397,9 @@ day2.itinerary = itin1
 day2.save!
 puts "Day #{day2.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day3 = Day.new(
   order: i + 1,
   city: "Cartagena - Islas Rosarias",
@@ -405,6 +413,9 @@ day3 = Day.new(
 day3.itinerary = itin1
 day3.save!
 puts "Day #{day3.id} has been created."
+
+puts "Order #{i} has been created."
+i += 1
 
 day4 = Day.new(
   order: i + 1,
@@ -443,9 +454,11 @@ country_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
 tag_itinerary2.tag = Tag.find_by(name: "Hiking")
+tag_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
 tag_itinerary2.tag = Tag.find_by(name: "Adventure")
+tag_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
 tag_itinerary2.tag = Tag.find_by(name: "Active Holiday")
@@ -466,6 +479,9 @@ day.itinerary = itin2
 day.save!
 puts "Day #{day.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day = Day.new(
   order: i + 1,
   city: "Ica",
@@ -480,6 +496,9 @@ day.itinerary = itin2
 day.save!
 puts "Day #{day.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day = Day.new(
   order: i + 1,
   city: "Arequipa",
@@ -493,6 +512,9 @@ day = Day.new(
 day.itinerary = itin2
 day.save!
 puts "Day #{day.id} has been created."
+
+puts "Order #{i} has been created."
+i += 1
 
 day = Day.new(
   order: i + 1,
@@ -522,9 +544,11 @@ country_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
 tag_itinerary3.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
 tag_itinerary3.tag = Tag.find_by(name: "Food")
+tag_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
 tag_itinerary3.tag = Tag.find_by(name: "Secret Gem")
@@ -545,6 +569,9 @@ day = Day.new(
 day.itinerary = itin3
 day.save!
 puts "Day #{day.id} has been created."
+
+puts "Order #{i} has been created."
+i += 1
 
 day = Day.new(
   order: i + 1,
@@ -583,7 +610,13 @@ country_itinerary4.save!
 tag_itinerary4 = ItineraryTag.new
 tag_itinerary4.itinerary = itin4
 tag_itinerary4.tag = Tag.find_by(name: "Food")
+tag_itinerary4.save!
+tag_itinerary4 = ItineraryTag.new
+tag_itinerary4.itinerary = itin4
 tag_itinerary4.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary4.save!
+tag_itinerary4 = ItineraryTag.new
+tag_itinerary4.itinerary = itin4
 tag_itinerary4.tag = Tag.find_by(name: "Secret Gem")
 tag_itinerary4.save!
 
@@ -602,9 +635,12 @@ day.itinerary = itin4
 day.save!
 puts "Day #{day.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day = Day.new(
   order: i + 1,
-  city: "Oaxaca de Juarez - Ocotlán de Morelos",
+  city: "Ocotlán de Morelos",
   description: "On Monday, go to Ocotlán de Morelos",
   restaurant_info: "Try the local barbacoa",
   activity_info: "On Monday, all local artesanías sellers move to Ocotlán de Morelos",
@@ -616,9 +652,10 @@ day.itinerary = itin4
 day.save!
 puts "Day #{day.id} has been created."
 
+i += 1
 day = Day.new(
   order: i + 1,
-  city: "Oaxaca de Juarez - Zaachila",
+  city: "Zaachila",
   description: "On Tuesday, go to Zaachila",
   restaurant_info: "Try the local pulque",
   activity_info: "On Tuesday, all local artesanías sellers move to Zaachila",
@@ -630,9 +667,12 @@ day.itinerary = itin4
 day.save!
 puts "Day #{day.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day = Day.new(
   order: i + 1,
-  city: "Oaxaca de Juarez - Santa María Atzompa",
+  city: "Santa María Atzompa",
   description: "On Wednesday, go to Santa María Atzompa. You can also visit local ruins here.",
   restaurant_info: "Try the local mezcal",
   activity_info: "On Wednesday, all local artesanías sellers move to Santa María Atzompa",
@@ -644,9 +684,12 @@ day.itinerary = itin4
 day.save!
 puts "Day #{day.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day = Day.new(
   order: i + 1,
-  city: "Oaxaca de Juarez - San Bartolo Coyotepec",
+  city: "San Bartolo Coyotepec",
   description: "On Thursday, go to San Bartolo Coyotepec. You can also visit the local temple",
   restaurant_info: "Try the local marmelita de huitlacoche",
   activity_info: "On Thursday, all local artesanías sellers move to San Bartolo Coyotepec",
@@ -658,9 +701,12 @@ day.itinerary = itin4
 day.save!
 puts "Day #{day.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day = Day.new(
   order: i + 1,
-  city: "Oaxaca de Juarez - Cuilápam de Guerrero",
+  city: "Cuilápam de Guerrero",
   description: "On Friday, go to Cuilápam de Guerrero.",
   restaurant_info: "Try the local chapulines with chille & lime",
   activity_info: "On Friday, all local artesanías sellers move to Cuilápam de Guerrero",
@@ -695,9 +741,11 @@ country_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
 tag_itinerary5.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
 tag_itinerary5.tag = Tag.find_by(name: "City")
+tag_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
 tag_itinerary5.tag = Tag.find_by(name: "Food")
@@ -718,6 +766,9 @@ day.itinerary = itin5
 day.save!
 puts "Day #{day.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day = Day.new(
   order: i + 1,
   city: "Barcelona",
@@ -731,6 +782,9 @@ day = Day.new(
 day.itinerary = itin5
 day.save!
 puts "Day #{day.id} has been created."
+
+puts "Order #{i} has been created."
+i += 1
 
 day = Day.new(
   order: i + 1,
@@ -760,17 +814,17 @@ country_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
 tag_itinerary6.tag = Tag.find_by(name: "Adventure")
+tag_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
 tag_itinerary6.tag = Tag.find_by(name: "Nature Retreat")
+tag_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
 tag_itinerary6.tag = Tag.find_by(name: "Secret Gem")
 tag_itinerary6.save!
 
 i = 0
-
-# resume here
 
 day = Day.new(
   order: i + 1,
@@ -786,6 +840,9 @@ day.itinerary = itin6
 day.save!
 puts "Day #{day.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day = Day.new(
   order: i + 1,
   city: "Palenque",
@@ -799,6 +856,9 @@ day = Day.new(
 day.itinerary = itin6
 day.save!
 puts "Day #{day.id} has been created."
+
+puts "Order #{i} has been created."
+i += 1
 
 day = Day.new(
   order: i + 1,
@@ -828,14 +888,17 @@ country_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
 tag_itinerary7.tag = Tag.find_by(name: "Food")
+tag_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
 tag_itinerary7.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
 tag_itinerary7.tag = Tag.find_by(name: "Secret Gem")
 tag_itinerary7.save!
 
+i = 0
 day = Day.new(
   order: i + 1,
   city: "Prague",
@@ -849,6 +912,9 @@ day = Day.new(
 day.itinerary = itin7
 day.save!
 puts "Day #{day.id} has been created."
+
+puts "Order #{i} has been created."
+i += 1
 
 day = Day.new(
   order: i + 1,
@@ -864,6 +930,9 @@ day.itinerary = itin7
 day.save!
 puts "Day #{day.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day = Day.new(
   order: i + 1,
   city: "Nepomuk",
@@ -877,6 +946,9 @@ day = Day.new(
 day.itinerary = itin7
 day.save!
 puts "Day #{day.id} has been created."
+
+puts "Order #{i} has been created."
+i += 1
 
 day = Day.new(
   order: i + 1,
@@ -906,10 +978,13 @@ country_itinerary8.save!
 tag_itinerary8 = ItineraryTag.new
 tag_itinerary8.itinerary = itin8
 tag_itinerary8.tag = Tag.find_by(name: "City")
+tag_itinerary8.save!
 tag_itinerary8 = ItineraryTag.new
 tag_itinerary8.itinerary = itin8
 tag_itinerary8.tag = Tag.find_by(name: "Local Tips")
 tag_itinerary8.save!
+
+i = 0
 
 day = Day.new(
   order: i + 1,
@@ -925,6 +1000,9 @@ day.itinerary = itin8
 day.save!
 puts "Day #{day.id} has been created."
 
+puts "Order #{i} has been created."
+i += 1
+
 day = Day.new(
   order: i + 1,
   city: "Medellin",
@@ -938,6 +1016,9 @@ day = Day.new(
 day.itinerary = itin8
 day.save!
 puts "Day #{day.id} has been created."
+
+puts "Order #{i} has been created."
+i += 1
 
 day = Day.new(
   order: i + 1,
