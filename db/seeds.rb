@@ -13,9 +13,7 @@ Itinerary.destroy_all
 User.destroy_all
 Country.destroy_all
 
-User.create(email: "whatevs@whatevs.com", password: "123456")
-
-40.times do
+5.times do
   puts "Creating user..."
   user = User.new(
     first_name: Faker::Name.first_name,
@@ -354,9 +352,11 @@ country_itinerary1.save!
 tag_itinerary1 = ItineraryTag.new
 tag_itinerary1.itinerary = itin1
 tag_itinerary1.tag = Tag.find_by(name: "Beach")
+tag_itinerary1.save!
 tag_itinerary1 = ItineraryTag.new
 tag_itinerary1.itinerary = itin1
 tag_itinerary1.tag = Tag.find_by(name: "Tropical")
+tag_itinerary1.save!
 tag_itinerary1 = ItineraryTag.new
 tag_itinerary1.itinerary = itin1
 tag_itinerary1.tag = Tag.find_by(name: "Private")
@@ -383,7 +383,7 @@ i += 1
 
 day2 = Day.new(
   order: i + 1,
-  city: "Cartagena - Islas Rosarias",
+  city: "Islas del Rosario",
   description: "Take your Colombian adventure to a next level by booking a stay at a private island of Islas Rosarias.",
   restaurant_info: "You can book Casa Eden along with its incredible meals that include e.g. Arepas de huevo & fresh juice for breakfast.",
   activity_info: 'Casa Eden has direct entrance to the sea (private beach), in addition, you can ask for renting a kayak or visit the local coral reef.',
@@ -400,7 +400,7 @@ i += 1
 
 day3 = Day.new(
   order: i + 1,
-  city: "Cartagena - Islas Rosarias",
+  city: "Islas del Rosario",
   description: "Spend the next day on the Isla mayor (Papaya), where you get another gist of the Caribbean paradise. Return to Cartagena in the evening.",
   restaurant_info: "You can get a local fish at the Papaya island. On return to  Cartagena, dine in Restaurante Celele",
   activity_info: 'You will get to experience a different side of the Caribbean, one that begs in for a glass of rum and coke.',
@@ -452,9 +452,11 @@ country_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
 tag_itinerary2.tag = Tag.find_by(name: "Hiking")
+tag_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
 tag_itinerary2.tag = Tag.find_by(name: "Adventure")
+tag_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
 tag_itinerary2.tag = Tag.find_by(name: "Active Holiday")
@@ -514,7 +516,7 @@ i += 1
 
 day = Day.new(
   order: i + 1,
-  city: "Arequipa - Lagunas Salidas",
+  city: "Santa Lucia de Salinas",
   description: "Spend the day in magical salt lakes near Arequipa!",
   restaurant_info: "Recommended to take some snacks with you as the salt lakes are pretty far from any civilisation. Possibly, you can ask your driver to stop in a local restaurant.",
   activity_info: "Salt lakes don't only offer amazing scenic views, but are also rich on local wildlife such as wild llamas and flamencos.",
@@ -540,9 +542,11 @@ country_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
 tag_itinerary3.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
 tag_itinerary3.tag = Tag.find_by(name: "Food")
+tag_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
 tag_itinerary3.tag = Tag.find_by(name: "Secret Gem")
@@ -604,7 +608,13 @@ country_itinerary4.save!
 tag_itinerary4 = ItineraryTag.new
 tag_itinerary4.itinerary = itin4
 tag_itinerary4.tag = Tag.find_by(name: "Food")
+tag_itinerary4.save!
+tag_itinerary4 = ItineraryTag.new
+tag_itinerary4.itinerary = itin4
 tag_itinerary4.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary4.save!
+tag_itinerary4 = ItineraryTag.new
+tag_itinerary4.itinerary = itin4
 tag_itinerary4.tag = Tag.find_by(name: "Secret Gem")
 tag_itinerary4.save!
 
@@ -729,9 +739,11 @@ country_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
 tag_itinerary5.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
 tag_itinerary5.tag = Tag.find_by(name: "City")
+tag_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
 tag_itinerary5.tag = Tag.find_by(name: "Food")
@@ -800,9 +812,11 @@ country_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
 tag_itinerary6.tag = Tag.find_by(name: "Adventure")
+tag_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
 tag_itinerary6.tag = Tag.find_by(name: "Nature Retreat")
+tag_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
 tag_itinerary6.tag = Tag.find_by(name: "Secret Gem")
@@ -846,7 +860,7 @@ i += 1
 
 day = Day.new(
   order: i + 1,
-  city: "Selva Lacandona",
+  city: "Lacanjá",
   description: "Discover one of the most remote tribes in Mexico!",
   restaurant_info: "There is a restaurant in the premises of the cabins",
   activity_info: "You will spend the day in the magical Lacandon jungle, immersed in the local tribal village. Take a swim in the numerous waterfalls!",
@@ -872,9 +886,11 @@ country_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
 tag_itinerary7.tag = Tag.find_by(name: "Food")
+tag_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
 tag_itinerary7.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
 tag_itinerary7.tag = Tag.find_by(name: "Secret Gem")
@@ -960,6 +976,7 @@ country_itinerary8.save!
 tag_itinerary8 = ItineraryTag.new
 tag_itinerary8.itinerary = itin8
 tag_itinerary8.tag = Tag.find_by(name: "City")
+tag_itinerary8.save!
 tag_itinerary8 = ItineraryTag.new
 tag_itinerary8.itinerary = itin8
 tag_itinerary8.tag = Tag.find_by(name: "Local Tips")
