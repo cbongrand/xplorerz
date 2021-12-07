@@ -1,6 +1,4 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @itinerary.photo.key, height: 300, crop: :fill %>')">
-    <h1 id="banner-slogan-show"><%=@itinerary.title%></h1>
-</div>
+
 
 <div class="show-info-1">
   <div class="show-info-1-text">
@@ -38,7 +36,7 @@
 </div>
 <div class="trip-description">
   <h2 id="trip-description-header">Trip description</h1>
-  <h6 id="trip-description">During a trip to Costa Rica, you will understand that the festive cacophony of Latin America touches the trees in the heart: the forest here is carnival, it has invented Harlequin costumes, blue feathers, giant red flowers. If you raise your head, you see green, warm. Wet leaves, thick, fat and generous. We are in a cocoon. Volcanoes and primary forests, mangroves and infinite beaches fringed with palm trees: if Eden is a country, it is perhaps Costa Rica which embodies it best . <%=@itinerary.description%></h6>
+  <h6 id="trip-description"><%=@itinerary.description%></h6>
 </div>
 
   <div class="day-container">
@@ -46,7 +44,7 @@
         <% @itinerary.days.each do |day| %>
       <h2 class="day-header1">Day <%=day.order%></h2>
       <h4 class="day-header2"><%= day.city %></h4>
-      <div class="day-description">During a trip to Costa Rica, you will understand that the festive cacophony of Latin America touches the trees in the heart: the forest here is carnival, it has invented Harlequin costumes, blue feathers, giant red flowers. If you raise your head, you see green, warm. Wet leaves, thick, fat and generous. We are in a cocoon. Volcanoes and primary forests, mangroves and infinite beaches fringed with palm trees: if Eden is a country, it is perhaps Costa<%= day.description %></div>
+      <div class="day-description"><%= day.description %></div>
       <% if @itinerary.booked?(current_user) %>
       <div class="day-purchased">
         <div class="day-restaurant"><i class="fas fa-utensils"></i> <%=day.restaurant_info%></div>
