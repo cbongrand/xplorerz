@@ -354,9 +354,11 @@ country_itinerary1.save!
 tag_itinerary1 = ItineraryTag.new
 tag_itinerary1.itinerary = itin1
 tag_itinerary1.tag = Tag.find_by(name: "Beach")
+tag_itinerary1.save!
 tag_itinerary1 = ItineraryTag.new
 tag_itinerary1.itinerary = itin1
 tag_itinerary1.tag = Tag.find_by(name: "Tropical")
+tag_itinerary1.save!
 tag_itinerary1 = ItineraryTag.new
 tag_itinerary1.itinerary = itin1
 tag_itinerary1.tag = Tag.find_by(name: "Private")
@@ -452,9 +454,11 @@ country_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
 tag_itinerary2.tag = Tag.find_by(name: "Hiking")
+tag_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
 tag_itinerary2.tag = Tag.find_by(name: "Adventure")
+tag_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
 tag_itinerary2.tag = Tag.find_by(name: "Active Holiday")
@@ -540,9 +544,11 @@ country_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
 tag_itinerary3.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
 tag_itinerary3.tag = Tag.find_by(name: "Food")
+tag_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
 tag_itinerary3.tag = Tag.find_by(name: "Secret Gem")
@@ -604,7 +610,13 @@ country_itinerary4.save!
 tag_itinerary4 = ItineraryTag.new
 tag_itinerary4.itinerary = itin4
 tag_itinerary4.tag = Tag.find_by(name: "Food")
+tag_itinerary4.save!
+tag_itinerary4 = ItineraryTag.new
+tag_itinerary4.itinerary = itin4
 tag_itinerary4.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary4.save!
+tag_itinerary4 = ItineraryTag.new
+tag_itinerary4.itinerary = itin4
 tag_itinerary4.tag = Tag.find_by(name: "Secret Gem")
 tag_itinerary4.save!
 
@@ -729,9 +741,11 @@ country_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
 tag_itinerary5.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
 tag_itinerary5.tag = Tag.find_by(name: "City")
+tag_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
 tag_itinerary5.tag = Tag.find_by(name: "Food")
@@ -800,9 +814,11 @@ country_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
 tag_itinerary6.tag = Tag.find_by(name: "Adventure")
+tag_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
 tag_itinerary6.tag = Tag.find_by(name: "Nature Retreat")
+tag_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
 tag_itinerary6.tag = Tag.find_by(name: "Secret Gem")
@@ -872,9 +888,11 @@ country_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
 tag_itinerary7.tag = Tag.find_by(name: "Food")
+tag_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
 tag_itinerary7.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
 tag_itinerary7.tag = Tag.find_by(name: "Secret Gem")
@@ -960,6 +978,7 @@ country_itinerary8.save!
 tag_itinerary8 = ItineraryTag.new
 tag_itinerary8.itinerary = itin8
 tag_itinerary8.tag = Tag.find_by(name: "City")
+tag_itinerary8.save!
 tag_itinerary8 = ItineraryTag.new
 tag_itinerary8.itinerary = itin8
 tag_itinerary8.tag = Tag.find_by(name: "Local Tips")
