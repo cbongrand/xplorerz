@@ -1,6 +1,3 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @itinerary.photo.key, height: 300, crop: :fill %>')">
-    <h1 id="banner-slogan-show"><%=@itinerary.title%></h1>
-</div>
 
 <div class="show-info-1">
   <div class="show-info-1-text">
@@ -26,15 +23,11 @@
 </div>
 
 <div class="show-tags">
+  <% @itinerary.tags.each do |tag| %>
   <div class="show-tag">
-    Tag 1
+    <%= tag.name %>
   </div>
-  <div class="show-tag">
-    Tag 2
-  </div>
-  <div class="show-tag">
-    Tag 3
-  </div>
+  <% end %>
 </div>
 <div class="trip-description">
   <h2 id="trip-description-header">Trip description</h1>
