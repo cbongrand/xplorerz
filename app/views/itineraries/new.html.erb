@@ -7,6 +7,8 @@
       <%= f.input :countries, collection: Country.all %>
 
       <%= f.input :description %>
+      <%= f.input :photo, as: :file,
+                  required: true %>
       <%= f.submit "Next", class: "btn button-1 itinerary-form-btn" %>
     <% end %>
   </div>

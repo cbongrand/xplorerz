@@ -40,7 +40,15 @@ class ItinerariesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @days = Itinerary.find(params[:id]).days
+    @markers = @days.geocoded.map do |day|
+      {
+        lat: day.latitude,
+        lng: day.longitude
+      }
+    end
+  end
 
   # Find out if an objects likes
   def liked?
@@ -68,6 +76,6 @@ class ItinerariesController < ApplicationController
   end
 
   def itinerary_params
-    params.require(:itinerary).permit(:title, :description)
+    params.require(:itinerary).permit(:title, :description, :photo)
   end
 end

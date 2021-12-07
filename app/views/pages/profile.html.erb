@@ -1,14 +1,19 @@
 <div class="container-profile-page">
   <div class="profile-information">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class:"avatar-large"%>
-    <p>Name:</p>
+    <%= cl_image_tag current_user.photo.key, :class => 'avatar-large' %>
+    <p id="name-profile">
     <%= current_user.first_name %> <%= current_user.last_name %>
-    <p>Description:</p>
-    <%= current_user.description %>
-    <p>Email:</p>
+    </p>
+    <p id="email-profile">
     <%= current_user.email %>
-    <p>Credits:</p>
-    <p>2</p>
+    </p>
+    <p id="description-profile">
+    <%= current_user.description %>
+    </p>
+    <div class="gems">
+    <p id="gems-profile">Xplorerz gems:</p>
+    <p id="gems-profile-number">2</p>
+    </div>
   </div>
   <div class="profile-items">
     <div class="booking-index">
@@ -61,6 +66,7 @@
                   <%= link_to "", itinerary_path(itinerary), class: "stretched-link" %>
                 </div>
               </div>
+              <h6><%= link_to "Edit itinerary", edit_itinerary2_path(itinerary) %></h6>
         <% end %>
       </div>
     </div>

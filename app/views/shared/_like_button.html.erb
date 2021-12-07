@@ -1,3 +1,4 @@
+
 <% if @itinerary.user != current_user && @itinerary.user.likes?(@itinerary) == false %>
   <%= form_with url: "/likes", method: :post do |form| %>
     <%= form.hidden_field :itinerary_id, value: @itinerary.id %>

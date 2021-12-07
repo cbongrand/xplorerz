@@ -6,4 +6,6 @@ class Day < ApplicationRecord
   validates :activity_info, presence: true
   # validates :order, presence: true
   validates :extra_info, presence: true
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_city?
 end

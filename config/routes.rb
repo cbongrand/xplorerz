@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get "/credits", to: "pages#credits"
   patch "/credits", to: "pages#purchase"
   get "/bookings/:id/confirm", to: "bookings#confirm", as: 'booking_confirmation'
+  get "/itineraries/:id/edit", to: "itineraries#edit", as: "edit_itinerary2"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

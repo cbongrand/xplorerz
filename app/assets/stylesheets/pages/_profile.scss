@@ -1,6 +1,6 @@
 .container-profile-page{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-bottom: 3%;
 }
 
@@ -27,8 +27,25 @@
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 1rem;
+  color: #494949;
 }
 
-.booking-index {
-  text-align: center;
+#name-profile {
+  font-weight: 600;
+  margin: 5px 0 0 0;
+}
+
+#email-profile {
+  margin: 0px 0 15px 0;
+  color: #494949;
+}
+
+#description-profile {
+  margin: 0px 0 15px 0;
+  color: #4FADBB;
+}
+
+.gems {
+  font-weight: 600;
+  color: #494949;
 }
