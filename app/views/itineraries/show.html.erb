@@ -17,9 +17,13 @@
                    <%= @itinerary.likers(User.all).count %>
                   </span>
                 </span>
+              <% if @itinerary.booked?(current_user) %>
               <div class="like-button">
-                  <%= render 'shared/like_button' %>
-                </div>
+                <%= render 'shared/like_button' %>
+              </div>
+              <% else %>
+                <h4></h4>
+              <% end %>
 
     </div>
   </div>
@@ -39,27 +43,32 @@
 
   <div class="day-container">
     <div class="day-informations">
-        <% @itinerary.days.each do |day| %>
-      <h2 class="day-header1">Day <%=day.order%></h2>
-      <h4 class="day-header2"><%= day.city %></h4>
-      <div class="day-description"><%= day.description %></div>
-      <% if @itinerary.booked?(current_user) %>
-      <div class="day-purchased">
-        <div class="day-restaurant"><i class="fas fa-utensils"></i> <%=day.restaurant_info%></div>
-        <div class="day-activity"><i class="fas fa-star"></i> <%=day.activity_info%></div>
-        <div class="day-extra"><i class="fas fa-user-secret"></i> <%=day.extra_info%></div>
-      </div>
-      <% else %>
-      <div class="unpurchased">
-        <%= link_to "Unlock this itinerary", itinerary_bookings_path(@itinerary), method: :post, class: "btn purchase-btn" %>
-      </div>
-      <% end %>
+      <% @itinerary.days.each do |day| %>
+        <h2 class="day-header1">Day <%=day.order%></h2>
+        <h4 class="day-header2"><%= day.city %></h4>
+        <div class="day-description"><%= day.description %></div>
+        <% if @itinerary.booked?(current_user) || @itinerary.user == current_user %>
+          <div class="day-purchased">
+            <div class="day-restaurant"><i class="fas fa-utensils"></i> <%=day.restaurant_info%></div>
+            <div class="day-activity"><i class="fas fa-star"></i> <%=day.activity_info%></div>
+            <div class="day-extra"><i class="fas fa-user-secret"></i> <%=day.extra_info%></div>
+          </div>
         <% end %>
+      <% end %>
+      <% if @itinerary.user == current_user%>
+        <%= render 'shared/button' %>
+      <% elsif !@itinerary.booked?(current_user)%>
+        <div class="unpurchased">
+          <%= render 'shared/button' %>
+        </div>
+      <% end %>
     </div>
+
       <div id="map"
-     style="width: 400px; height: 500px; margin: 0 10px 40px 60px; position: sticky; top: 140px"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        style="width: 400px; height: 500px; margin: 0 10px 40px 60px; position: sticky; top: 140px"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+     </div>
     </div>
 </div>
 
