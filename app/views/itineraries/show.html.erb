@@ -20,7 +20,7 @@
                 <span class="fa-layers fa-fw">
                   <i  class="fas fa-heart like-heart "></i>
                   <span class="fa-layers-text fa-inverse" data-fa-transform="grow-6 right-19" style="font-weight:700">
-                   <%= @itinerary.likers(User.all).count %>
+                   <%= @itinerary.likers_count %>
                   </span>
                 </span>
               <% if @itinerary.booked?(current_user) %>
