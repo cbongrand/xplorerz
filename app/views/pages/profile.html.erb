@@ -22,7 +22,7 @@
       </div>
       <div class="d-flex flex-wrap">
         <% @booked_itineraries.each do |booking| %>
-            <div class="col-4">
+            <div class="col mb-2 d-flex justify-content-center">
               <div class="card-little">
                 <div class="cardbanner-little">
                   <span><%= booking.title %></span>
@@ -35,9 +35,8 @@
                     <h6><%= booking.days.map{|day| day.city}.uniq.join(", ") %></h6>
                     <h5><%= booking.days.count %> DAYS</h5>
                   </div>
-                  <%= link_to "", itinerary_path(booking), class: "stretched-link" %>
+                <%= link_to "", itinerary_path(booking), class: "stretched-link" %>
                 </div>
-                <%# <%= link_to "X", itinerary_path(itinerary), class: "stretched-link" %>
               </div>
             </div>
         <% end %>
@@ -49,7 +48,7 @@
       </div>
       <div class="d-flex flex-wrap">
         <% @current_user.itineraries.each do |itinerary| %>
-              <div class="col-4">
+              <div class="col mb-2 d-flex justify-content-center">
                 <div class="card-little">
                   <div class="cardbanner-little">
                     <span><%= itinerary.title %></span>
