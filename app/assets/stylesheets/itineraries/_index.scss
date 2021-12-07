@@ -23,3 +23,9 @@
 
   // overflow-y: scroll;
 
+.form-control-file, .form-control-range {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-left: 9px;
+}
