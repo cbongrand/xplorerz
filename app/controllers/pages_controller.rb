@@ -2,12 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    # @days = []
     @itineraries = Itinerary.all.limit(3)
-    # # @itinerary = Itinerary.find(params[:id])
-    # @itineraries.each do |x|
-    #   @days << Day.where(x.id)
-    # end
+    countries_id = CountryItinerary.pluck("DISTINCT country_id")
+    @countries = Country.where(id: countries_id).pluck(:name)
   end
 
   def profile

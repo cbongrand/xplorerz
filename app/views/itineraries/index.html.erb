@@ -7,11 +7,12 @@
 <div class="page-title">
   <h1 class="index-header">Itineraries</h1>
 </div>
-<div class="itin-index">
+
+<div class="itin-index mb-5">
   <% @itineraries.each_slice(3) do |slice| %>
     <div class="row">
       <% slice.each do |itinerary| %>
-        <div class="col-4">
+        <div class="col">
         <div class="card mt-4">
           <div class="cardbanner"
           <% if itinerary.photo.attached? %>
