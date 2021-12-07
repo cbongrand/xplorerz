@@ -1,4 +1,5 @@
 class DaysController < ApplicationController
+
   # before_action :pluralize
 
   def new
