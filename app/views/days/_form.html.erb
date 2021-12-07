@@ -14,7 +14,7 @@
       </div>
     </div>
     <%= simple_form_for [ @itinerary, @day ] do |f| %>
-      <p><%= f.input :city %> <%= f.input :description %></p>
+      <%= f.input :city %> <%= f.input :description %>
       <%= f.input :restaurant_info %>
       <%= f.input :activity_info %>
       <%= f.input :extra_info %>

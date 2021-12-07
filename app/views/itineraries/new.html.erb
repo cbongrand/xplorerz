@@ -4,6 +4,8 @@
     <%= simple_form_for @itinerary do |f| %>
       <%= f.label "Create itinerary", class: "itinerary-form-title" %>
       <%= f.input :title %>
+      <%= f.input :countries, collection: Country.all %>
+
       <%= f.input :description %>
       <%= f.submit "Next", class: "btn button-1 itinerary-form-btn" %>
     <% end %>

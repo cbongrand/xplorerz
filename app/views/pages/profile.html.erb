@@ -28,10 +28,11 @@
                   </div>
                   <div class="card-infos-2-little-only-country">
                     <h6><%= booking.days.map{|day| day.city}.uniq.join(", ") %></h6>
-                    <h5><%= booking.days.count %> <%= @day_text %></h5>
+                    <h5><%= booking.days.count %> DAYS</h5>
                   </div>
                   <%= link_to "", itinerary_path(booking), class: "stretched-link" %>
                 </div>
+                <%# <%= link_to "X", itinerary_path(itinerary), class: "stretched-link" %>
               </div>
             </div>
         <% end %>
