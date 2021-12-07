@@ -1,5 +1,7 @@
 
 
+
+
 <div class="show-info-1">
   <div class="show-info-1-text">
     <h4><%= @itinerary.countries.map{|country| country.name}.uniq.join(" - ")%></h4>
@@ -24,15 +26,11 @@
 </div>
 
 <div class="show-tags">
+  <% @itinerary.tags.each do |tag| %>
   <div class="show-tag">
-    Tag 1
+    <%= tag.name %>
   </div>
-  <div class="show-tag">
-    Tag 2
-  </div>
-  <div class="show-tag">
-    Tag 3
-  </div>
+  <% end %>
 </div>
 <div class="trip-description">
   <h2 id="trip-description-header">Trip description</h1>
