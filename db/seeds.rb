@@ -28,6 +28,56 @@ User.create(email: "whatevs@whatevs.com", password: "123456")
   puts "User #{user.id} has been created."
 end
 
+# tags
+
+TAGS = [
+  "Adventure",
+  "Nature Retreat",
+  "Water Sports",
+  "Food",
+  "Nature-friendly",
+  "Sport",
+  "Winter Sports",
+  "Summer Sports",
+  "Hiking",
+  "City",
+  "Animals",
+  "Secret Gem",
+  "Family-friendly",
+  "Tropical",
+  "Local Tips",
+  "Active Holiday",
+  "Private",
+  "Beach",
+  "Snow",
+  "Forest",
+  "National Park"
+]
+
+COLORS = [
+  '#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
+  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A',
+  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC',
+  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680',
+  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
+  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'
+]
+
+puts "Creating tags..."
+
+TAGS.each do |tag|
+  Tag.create(
+    name: tag,
+    color: COLORS.sample
+  )
+end
+
+puts "Done! #{Tag.count} tags created!"
+
 # countries
 
 COUNTRIES = [
@@ -292,7 +342,7 @@ puts "Creating itineraries..."
 
 itin1 = Itinerary.create(
   title: "Colombia Coast",
-  description: "Discover the Colombian Caribbean!",
+  description: "The Caribbean Coast is the first region that showed the beauty of Colombia to the world with the golden walls of the old city center in Cartagena, the sultry Bachata movements in small bars, the white sandy beaches of Rosario islands and the green maze of Tayrona National Park. Framed by its stunning bay, Cartagena de Indias is one of the most beautiful, well-preserved cities in the Americas; a treasure that is currently one of the most heavily frequented tourist destinations in Colombia.",
   user: User.all.sample
 )
 
@@ -300,6 +350,17 @@ country_itinerary1 = CountryItinerary.new
 country_itinerary1.itinerary = itin1
 country_itinerary1.country = Country.find_by(name: "Colombia")
 country_itinerary1.save!
+
+tag_itinerary1 = ItineraryTag.new
+tag_itinerary1.itinerary = itin1
+tag_itinerary1.tag = Tag.find_by(name: "Beach")
+tag_itinerary1 = ItineraryTag.new
+tag_itinerary1.itinerary = itin1
+tag_itinerary1.tag = Tag.find_by(name: "Tropical")
+tag_itinerary1 = ItineraryTag.new
+tag_itinerary1.itinerary = itin1
+tag_itinerary1.tag = Tag.find_by(name: "Private")
+tag_itinerary1.save!
 
 i = 0
 
@@ -370,7 +431,7 @@ end
 
 itin2 = Itinerary.create(
   title: "Magical Peru",
-  description: "Discover the beauties of Peru!",
+  description: "Peru counts with 28 individual climates. This creates a diverse ecosystem and natural variety, all in one country. You can see snow in the Andes, and not far away you can sandboard in the desert by the Huacachina Oasis. You can see Penguins at Ballestas Islands next to the dry and desert-like town of Paracas, and you can row peacefully in the Amazonian jungle rivers. You can hike up to a summit in the Andes, or you can go down to the deepest canyons in the world – Cañón del Colca and Cañón del Cotahuasi. The varieties and combinations are unlimited. Peru makes it perfect to do many short budget trips that will allow you to experience this natural variety.",
   user: User.all.sample
 )
 
@@ -378,6 +439,17 @@ country_itinerary2 = CountryItinerary.new
 country_itinerary2.itinerary = itin2
 country_itinerary2.country = Country.find_by(name: "Peru")
 country_itinerary2.save!
+
+tag_itinerary2 = ItineraryTag.new
+tag_itinerary2.itinerary = itin2
+tag_itinerary2.tag = Tag.find_by(name: "Hiking")
+tag_itinerary2 = ItineraryTag.new
+tag_itinerary2.itinerary = itin2
+tag_itinerary2.tag = Tag.find_by(name: "Adventure")
+tag_itinerary2 = ItineraryTag.new
+tag_itinerary2.itinerary = itin2
+tag_itinerary2.tag = Tag.find_by(name: "Active Holiday")
+tag_itinerary2.save!
 
 i = 0
 day = Day.new(
@@ -438,7 +510,7 @@ puts "Day #{day.id} has been created."
 
 itin3 = Itinerary.create(
   title: "Wine in Provence",
-  description: "Tour of the best wineries in Provence!",
+  description: "Wine has been made here for over 2600 years, making Provence the oldest wine-producing region of France. It is also the only place to focus on Rosé and is home to the only research institute dedicated to the style. Rocky mountain racing roads, wine, and lavender are the distinctive hallmarks of Provence.",
   user: User.all.sample
 )
 
@@ -446,6 +518,17 @@ country_itinerary3 = CountryItinerary.new
 country_itinerary3.itinerary = itin3
 country_itinerary3.country = Country.find_by(name: "France")
 country_itinerary3.save!
+
+tag_itinerary3 = ItineraryTag.new
+tag_itinerary3.itinerary = itin3
+tag_itinerary3.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary3 = ItineraryTag.new
+tag_itinerary3.itinerary = itin3
+tag_itinerary3.tag = Tag.find_by(name: "Food")
+tag_itinerary3 = ItineraryTag.new
+tag_itinerary3.itinerary = itin3
+tag_itinerary3.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary3.save!
 
 i = 0
 
@@ -488,7 +571,7 @@ end
 
 itin4 = Itinerary.create(
   title: "Oaxaca City Food Markets",
-  description: "The perfect guide for surrounding village markets in Oaxaca, MX!",
+  description: "For market lovers in Mexico, there’s no better state than Oaxaca. Sure, Mexico City offers strong competition and just about every town and village will have their own weekly tianguis, selling fruits and household odds and ends, but nothing competes with the famed, sprawling indoor and street markets in heavily indigenous Oaxaca. Here are the best markets in the region where you can find anything from one-of-a-kind artwork to locally produced coffee.",
   user: User.all.sample
 )
 
@@ -496,6 +579,13 @@ country_itinerary4 = CountryItinerary.new
 country_itinerary4.itinerary = itin4
 country_itinerary4.country = Country.find_by(name: "Mexico")
 country_itinerary4.save!
+
+tag_itinerary4 = ItineraryTag.new
+tag_itinerary4.itinerary = itin4
+tag_itinerary4.tag = Tag.find_by(name: "Food")
+tag_itinerary4.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary4.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary4.save!
 
 i = 0
 day = Day.new(
@@ -593,7 +683,7 @@ end
 
 itin5 = Itinerary.create(
   title: "Barcelona on fire!",
-  description: "Discover the hidden gems of the popular party capital of Europe!",
+  description: "Let’s face it, in a city as popular as Barcelona, it can be tricky finding a new hang out not everyone has already heard about. Fortunately there are still a handful of places which aren’t on all the guide-books…yet! Read on to discover some of the coolest hidden gems in Barcelona, from speak-easy bars to secret out-door hang outs.",
   user: User.all.sample
 )
 
@@ -601,6 +691,17 @@ country_itinerary5 = CountryItinerary.new
 country_itinerary5.itinerary = itin5
 country_itinerary5.country = Country.find_by(name: "Spain")
 country_itinerary5.save!
+
+tag_itinerary5 = ItineraryTag.new
+tag_itinerary5.itinerary = itin5
+tag_itinerary5.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary5 = ItineraryTag.new
+tag_itinerary5.itinerary = itin5
+tag_itinerary5.tag = Tag.find_by(name: "City")
+tag_itinerary5 = ItineraryTag.new
+tag_itinerary5.itinerary = itin5
+tag_itinerary5.tag = Tag.find_by(name: "Food")
+tag_itinerary5.save!
 
 i = 0
 day = Day.new(
@@ -647,7 +748,7 @@ puts "Day #{day.id} has been created."
 
 itin6 = Itinerary.create(
   title: "Chiapas Jungle",
-  description: "Get an authentic experience from Chiapas!",
+  description: "Anyone who says Mexican time runs sloooow hasn’t walked with a Maya in the jungle. Palenque is one of the first references that comes to mind when talking about the Mayan culture and its many vestiges. The Lacandón rain forest spills across the Usumacinta River into Guatemala from Mexico’s southernmost state, Chiapas, where about a quarter of the population is indigenous. Relatively few visitors to Mexico make it to Chiapas, and far fewer make it here, though there are gorgeous waterfalls, excellent Maya ruins, the occasional jaguar spotting, and eco-camps with the Lacandón people, a Maya group that now numbers fewer than 1,000.",
   user: User.all.sample
 )
 
@@ -656,19 +757,58 @@ country_itinerary6.itinerary = itin6
 country_itinerary6.country = Country.find_by(name: "Mexico")
 country_itinerary6.save!
 
+tag_itinerary6 = ItineraryTag.new
+tag_itinerary6.itinerary = itin6
+tag_itinerary6.tag = Tag.find_by(name: "Adventure")
+tag_itinerary6 = ItineraryTag.new
+tag_itinerary6.itinerary = itin6
+tag_itinerary6.tag = Tag.find_by(name: "Nature Retreat")
+tag_itinerary6 = ItineraryTag.new
+tag_itinerary6.itinerary = itin6
+tag_itinerary6.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary6.save!
+
 i = 0
 
 # resume here
 
 day = Day.new(
   order: i + 1,
-  city: Faker::Address.city,
-  description: Faker::Lorem.sentence,
-  restaurant_info: Faker::Restaurant.name,
-  activity_info: Faker::Hobby.activity,
-  extra_info: Faker::Games::WorldOfWarcraft.quote,
-  latitude: Faker::Address.latitude,
-  longitude: Faker::Address.longitude
+  city: "Palenque",
+  description: "Explore the jungle of Palenque!",
+  restaurant_info: "Get breakfast in Café Haki & lunch in Casa Antoliana",
+  activity_info: "Head to see the Palenque ruins with a mayan guide, who will take you to a walk in the jungle!",
+  extra_info: "To schedule the tour, contact Mario +52 1 916 137 2211. Stay in jungle palace for the night!",
+  latitude: "17.5110° N",
+  longitude: "91.9930° W"
+)
+day.itinerary = itin6
+day.save!
+puts "Day #{day.id} has been created."
+
+day = Day.new(
+  order: i + 1,
+  city: "Palenque",
+  description: "Explore the culture of mayan rituals!",
+  restaurant_info: "Pack your snacks to cook them on fire",
+  activity_info: "Go and experience the atmosphere of Mayan Temazcal, while spending the night in the middle of a jungle!",
+  extra_info: "To schedule the visit, contact Don Nico +52 1 916 120 0209",
+  latitude: "41.3874° N",
+  longitude: "2.1686° E"
+)
+day.itinerary = itin6
+day.save!
+puts "Day #{day.id} has been created."
+
+day = Day.new(
+  order: i + 1,
+  city: "Selva Lacandona",
+  description: "Discover one of the most remote tribes in Mexico!",
+  restaurant_info: "There is a restaurant in the premises of the cabins",
+  activity_info: "You will spend the day in the magical Lacandon jungle, immersed in the local tribal village. Take a swim in the numerous waterfalls!",
+  extra_info: "Get accommodation in Centro Ecoturismo Maya +52 1 961 657 4929",
+  latitude: "16°38'09 N",
+  longitude: "19°42'07° W"
 )
 day.itinerary = itin6
 day.save!
@@ -676,9 +816,8 @@ puts "Day #{day.id} has been created."
 
 itin7 = Itinerary.create(
   title: "Ultimate Guide to Czech Beer",
-  description: "Discover the authentic taste of Czech breweries.",
+  description: "The Czechs drink more beer than any other nation, downing approximately a pint a day for every man, woman and child in the country – in fact, more beer is drunk here than water. Czech beer (pivo) ranks among the best on the planet and the country remains the true home of most of the lager drunk around the world today.",
   user: User.all.sample
-  # right now, we are selecting just one country
 )
 
 country_itinerary7 = CountryItinerary.new
@@ -686,25 +825,76 @@ country_itinerary7.itinerary = itin7
 country_itinerary7.country = Country.find_by(name: "Czech Republic")
 country_itinerary7.save!
 
-3.times do |i|
-  day = Day.new(
-    order: i + 1,
-    city: Faker::Address.city,
-    description: Faker::Lorem.sentence,
-    restaurant_info: Faker::Restaurant.name,
-    activity_info: Faker::Hobby.activity,
-    extra_info: Faker::Games::WorldOfWarcraft.quote,
-    latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude
-  )
-  day.itinerary = itin7
-  day.save!
-  puts "Day #{day.id} has been created."
-end
+tag_itinerary7 = ItineraryTag.new
+tag_itinerary7.itinerary = itin7
+tag_itinerary7.tag = Tag.find_by(name: "Food")
+tag_itinerary7 = ItineraryTag.new
+tag_itinerary7.itinerary = itin7
+tag_itinerary7.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary7 = ItineraryTag.new
+tag_itinerary7.itinerary = itin7
+tag_itinerary7.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary7.save!
+
+day = Day.new(
+  order: i + 1,
+  city: "Prague",
+  description: "Start the journey in the Czech capital - in the infamous artesanal brewery U Fleku",
+  restaurant_info: "U Fleku, Křemencova 11, 110 00 Nové Město, Czechia",
+  activity_info: "Try the local bear together with their 'Fleck's treat' specialty",
+  extra_info: "https://en.ufleku.cz/interesting-facts/",
+  latitude: "50.0755° N",
+  longitude: "14.4378° E"
+)
+day.itinerary = itin7
+day.save!
+puts "Day #{day.id} has been created."
+
+day = Day.new(
+  order: i + 1,
+  city: "Broumy",
+  description: "Continue your beer tour to a small town Broumy southwest of Prague to experience the elected number 1 Czech artesanal Beer - Matuška!",
+  restaurant_info: "Pivovar Matuška, U Radnice 115, 267 42 Broumy, Czechia",
+  activity_info: "Matuška is infamous between the Czechs but virtually unknown beyond the Czech border - take advantage of that and try all of their flavours!",
+  extra_info: "https://shop.pivovarmatuska.cz/",
+  latitude: "49.9551° N",
+  longitude: "13.8523° E"
+)
+day.itinerary = itin7
+day.save!
+puts "Day #{day.id} has been created."
+
+day = Day.new(
+  order: i + 1,
+  city: "Nepomuk",
+  description: "Next stop is a minibrewery Zlatá Kráva - Nepomuk, a young but quickly growing brewery further in the South of Czechia!",
+  restaurant_info: "Zlatá Kráva, nám. Augustina Němejce 416, 335 01 Nepomuk, Czechia",
+  activity_info: "Zlatá Kráva is located in a region optimal for cycling - take advantage of that and explare the local ponds!",
+  extra_info: "https://www.zlatakrava.cz/",
+  latitude: "49.4862° N",
+  longitude: "13.5823° E"
+)
+day.itinerary = itin7
+day.save!
+puts "Day #{day.id} has been created."
+
+day = Day.new(
+  order: i + 1,
+  city: "Pilsen",
+  description: "Last stop is the infamous Czech city of beer - Pilsen!",
+  restaurant_info: "Beer Factory, Dominikánská 13/8, 301 00 Plzeň 3-Vnitřní Město, Czechia",
+  activity_info: "Go and have a tour in the Pillsner Urquell brewery only so you can compare the commercial giant with the smaller, artensanal Beer Factory!",
+  extra_info: "http://beerfactoryplzen.cz/",
+  latitude: "49.7384° N",
+  longitude: "13.3736° E"
+)
+day.itinerary = itin7
+day.save!
+puts "Day #{day.id} has been created."
 
 itin8 = Itinerary.create(
   title: "Surroundings of Medellin",
-  description: "Discover the infamous city of Pablo Escobar!",
+  description: "Medellin, Colombia was once a place where no tourist dared to visit and widely considered to be the most dangerous city on earth. Thankfully, things have changed drastically in recent years, and Medellin now welcomes tourists with open arms.",
   user: User.all.sample
 )
 
@@ -713,83 +903,148 @@ country_itinerary8.itinerary = itin8
 country_itinerary8.country = Country.find_by(name: "Colombia")
 country_itinerary8.save!
 
-3.times do |i|
-  day = Day.new(
-    order: i + 1,
-    city: Faker::Address.city,
-    description: Faker::Lorem.sentence,
-    restaurant_info: Faker::Restaurant.name,
-    activity_info: Faker::Hobby.activity,
-    extra_info: Faker::Games::WorldOfWarcraft.quote,
-    latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude
-  )
-  day.itinerary = itin8
-  day.save!
-  puts "Day #{day.id} has been created."
-end
+tag_itinerary8 = ItineraryTag.new
+tag_itinerary8.itinerary = itin8
+tag_itinerary8.tag = Tag.find_by(name: "City")
+tag_itinerary8 = ItineraryTag.new
+tag_itinerary8.itinerary = itin8
+tag_itinerary8.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary8.save!
 
-itin9 = Itinerary.create(
-  title: "Mexico City Streetfood Tour",
-  description: "Learn where to get the best tacos de pastor in CDMX!",
-  user: User.all.sample
+day = Day.new(
+  order: i + 1,
+  city: "Medellin",
+  description: "On your first day, head to the Communa 13 and take the graffiti tour with the local guide",
+  restaurant_info: "Eat in La 70, two stations from Communa 13 (in Laureles)",
+  activity_info: "The guide will take you to all graffiti art galeries, explain the complicated history and introduce you all the local artists!",
+  extra_info: "Be ready to pay around COP 20,000",
+  latitude: "6.2476° N",
+  longitude: "75.5658° W"
 )
+day.itinerary = itin8
+day.save!
+puts "Day #{day.id} has been created."
 
-country_itinerary9 = CountryItinerary.new
-country_itinerary9.itinerary = itin9
-country_itinerary9.country = Country.find_by(name: "Mexico")
-country_itinerary9.save!
-
-3.times do |i|
-  day = Day.new(
-    order: i + 1,
-    city: Faker::Address.city,
-    description: Faker::Lorem.sentence,
-    restaurant_info: Faker::Restaurant.name,
-    activity_info: Faker::Hobby.activity,
-    extra_info: Faker::Games::WorldOfWarcraft.quote,
-    latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude
-  )
-  day.itinerary = itin9
-  day.save!
-  puts "Day #{day.id} has been created."
-end
-
-itin10 = Itinerary.create(
-  title: "Hitchhike in Portugal!",
-  description: "The ultimate guide for backpackers in Portugal!",
-  user: User.all.sample
+day = Day.new(
+  order: i + 1,
+  city: "Medellin",
+  description: "On your second day, head to El Poblado and enjoy the upbeat atmosphere of the neighbourhood",
+  restaurant_info: "Eat in Mondongo's 70!",
+  activity_info: "Stay until the night to experience the wide nightlife scene",
+  extra_info: "Check Soy Local Medellin for accommodation!",
+  latitude: "6.2476° N",
+  longitude: "75.5658° W"
 )
+day.itinerary = itin8
+day.save!
+puts "Day #{day.id} has been created."
 
-country_itinerary10 = CountryItinerary.new
-country_itinerary10.itinerary = itin10
-country_itinerary10.country = Country.find_by(name: "Portugal")
-country_itinerary10.save!
+day = Day.new(
+  order: i + 1,
+  city: "Medellin",
+  description: "On your third day, take the cable car to La Sierra — one of the city’s newest cable car lines",
+  restaurant_info: "make sure to stop by Astor Reposteria on Junnin Street for the best chocolate cake you might ever have",
+  activity_info: "Walk around and enjoy the splendid natural environment",
+  extra_info: "You will have to buy the local metro card for COP 2,000!",
+  latitude: "6.2476° N",
+  longitude: "75.5658° W"
+)
+day.itinerary = itin8
+day.save!
+puts "Day #{day.id} has been created."
 
-3.times do |i|
-  day = Day.new(
-    order: i + 1,
-    city: Faker::Address.city,
-    description: Faker::Lorem.sentence,
-    restaurant_info: Faker::Restaurant.name,
-    activity_info: Faker::Hobby.activity,
-    extra_info: Faker::Games::WorldOfWarcraft.quote,
-    latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude
-  )
-  day.itinerary = itin10
-  day.save!
-  puts "Day #{day.id} has been created."
-  puts "Creating booking..."
-  booking = Booking.new
-  booking.user = User.all.sample
-  booking.itinerary = itin10
-  booking.save!
-  puts "Booking #{booking.id} has been created."
-end
-
+# itin9 = Itinerary.create(
+#   title: "Mexico City Streetfood Tour",
+#   description: "Learn where to get the best tacos de pastor in CDMX!",
+#   user: User.all.sample
+# )
+#
+# country_itinerary9 = CountryItinerary.new
+# country_itinerary9.itinerary = itin9
+# country_itinerary9.country = Country.find_by(name: "Mexico")
+# country_itinerary9.save!
+#
+# tag_itinerary9 = ItineraryTag.new
+# tag_itinerary9.itinerary = itin9
+# tag_itinerary9.tag = Tag.find_by(name: "Food")
+# tag_itinerary9.tag = Tag.find_by(name: "Local Tips")
+# tag_itinerary9.tag = Tag.find_by(name: "City")
+# tag_itinerary9.save!
+#
+# day = Day.new(
+#   order: i + 1,
+#   city: "Mexico City",
+#   description: "On your third day, take the cable car to La Sierra — one of the city’s newest cable car lines",
+#   restaurant_info: "make sure to stop by Astor Reposteria on Junnin Street for the best chocolate cake you might ever have",
+#   activity_info: "Walk around and enjoy the splendid natural environment",
+#   extra_info: "You will have to buy the local metro card for COP 2,000!",
+#   latitude: "6.2476° N",
+#   longitude: "75.5658° W"
+# )
+# day.itinerary = itin9
+# day.save!
+# puts "Day #{day.id} has been created."
+#
+# # 3.times do |i|
+#   day = Day.new(
+#     order: i + 1,
+#     city: Faker::Address.city,
+#     description: Faker::Lorem.sentence,
+#     restaurant_info: Faker::Restaurant.name,
+#     activity_info: Faker::Hobby.activity,
+#     extra_info: Faker::Games::WorldOfWarcraft.quote,
+#     latitude: Faker::Address.latitude,
+#     longitude: Faker::Address.longitude
+#   )
+#   day.itinerary = itin9
+#   day.save!
+#   puts "Day #{day.id} has been created."
+# end
+#
+# itin10 = Itinerary.create(
+#   title: "Hitchhike in Portugal!",
+#   description: "The ultimate guide for backpackers in Portugal!",
+#   user: User.all.sample
+# )
+#
+# country_itinerary10 = CountryItinerary.new
+# country_itinerary10.itinerary = itin10
+# country_itinerary10.country = Country.find_by(name: "Portugal")
+# country_itinerary10.save!
+#
+# tag_itinerary10 = ItineraryTag.new
+# tag_itinerary10.itinerary = itin10
+# tag_itinerary10.tag = Tag.find_by(name: "Beach")
+# tag_itinerary10.tag = Tag.find_by(name: "Adventure")
+# tag_itinerary10.tag = Tag.find_by(name: "Active Holiday")
+# tag_itinerary10.tag = Tag.find_by(name: "Local Tips")
+# tag_itinerary10.tag = Tag.find_by(name: "City")
+# tag_itinerary10.save!
+#
+# 3.times do |i|
+#   day = Day.new(
+#     order: i + 1,
+#     city: Faker::Address.city,
+#     description: Faker::Lorem.sentence,
+#     restaurant_info: Faker::Restaurant.name,
+#     activity_info: Faker::Hobby.activity,
+#     extra_info: Faker::Games::WorldOfWarcraft.quote,
+#     latitude: Faker::Address.latitude,
+#     longitude: Faker::Address.longitude
+#   )
+#   day.itinerary = itin10
+#   day.save!
+#   puts "Day #{day.id} has been created."
+#   puts "Creating booking..."
+#   booking = Booking.new
+#   booking.user = User.all.sample
+#   booking.itinerary = itin10
+#   booking.save!
+#   puts "Booking #{booking.id} has been created."
+# end
+#
 puts "Created #{Itinerary.count} itineraries..."
 puts "Created #{CountryItinerary.count} country_itineraries..."
+puts "Created #{ItineraryTag.count} tag_itineraries..."
 
 puts "Finished!"

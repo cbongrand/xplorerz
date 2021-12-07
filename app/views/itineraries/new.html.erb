@@ -5,6 +5,8 @@
       <%= f.label "Create itinerary", class: "itinerary-form-title" %>
       <%= f.input :title %>
       <%= f.input :description %>
+      <%= f.input :photo, as: :file,
+                  required: true %>
       <%= f.submit "Next", class: "btn button-1 itinerary-form-btn" %>
     <% end %>
   </div>

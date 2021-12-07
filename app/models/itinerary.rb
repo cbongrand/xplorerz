@@ -3,7 +3,8 @@ class Itinerary < ApplicationRecord
   has_many :days, dependent: :destroy
   has_many :country_itineraries
   has_many :countries, through: :country_itineraries
-  has_many :tags, through: :initerary_tags
+  has_many :itinerary_tags
+  has_many :tags, through: :itinerary_tags
   has_many :users, through: :bookings
   has_many :bookings
   acts_as_likeable
@@ -14,4 +15,6 @@ class Itinerary < ApplicationRecord
     current_user_bookings = current_user.booked_itineraries
     current_user_bookings.any? { |user_booking| user_booking.id == id }
   end
+  
+  has_one_attached :photo
 end
