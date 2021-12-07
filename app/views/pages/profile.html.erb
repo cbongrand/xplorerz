@@ -1,14 +1,19 @@
 <div class="container-profile-page">
   <div class="profile-information">
     <%= cl_image_tag current_user.photo.key, :class => 'avatar-large' %>
-    <p>Name:</p>
+    <p id="name-profile">
     <%= current_user.first_name %> <%= current_user.last_name %>
-    <p>Description:</p>
-    <%= current_user.description %>
-    <p>Email:</p>
+    </p>
+    <p id="email-profile">
     <%= current_user.email %>
-    <p>Credits:</p>
-    <p>2</p>
+    </p>
+    <p id="description-profile">
+    <%= current_user.description %>
+    </p>
+    <div class="gems">
+    <p id="gems-profile">Xplorerz gems:</p>
+    <p id="gems-profile-number">2</p>
+    </div>
   </div>
   <div class="profile-items">
     <div class="booking-index">
@@ -28,7 +33,7 @@
                   </div>
                   <div class="card-infos-2-little-only-country">
                     <h6><%= booking.days.map{|day| day.city}.uniq.join(", ") %></h6>
-                    <h5><%= booking.days.count %> <%= @day_text %></h5>
+                    <h5><%= booking.days.count %> DAYS</h5>
                   </div>
                   <%= link_to "", itinerary_path(booking), class: "stretched-link" %>
                 </div>
