@@ -13,7 +13,7 @@
             <div class="card-infos-1">
               <h4><%= @booking.itinerary.countries.map{|country| country.name}.uniq.join(" - ") %></h4>
               <div class="cards-tag">
-                <%= @booking.itinerary.tags.map{|tag| tag.name}.uniq.join(" - ") %>
+                <%= @booking.itinerary.tags.map{|tag| tag.name}.uniq.join(" | ") %>
               </div>
             </div>
             <div class="card-infos-2">

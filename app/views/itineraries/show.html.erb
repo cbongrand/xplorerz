@@ -20,7 +20,7 @@
                 <span class="fa-layers fa-fw">
                   <i  class="fas fa-heart like-heart "></i>
                   <span class="fa-layers-text fa-inverse" data-fa-transform="grow-6 right-19" style="font-weight:700">
-                   <%= @itinerary.likers(User.all).count %>
+                   <%= @itinerary.likers_count %>
                   </span>
                 </span>
               <% if @itinerary.booked?(current_user) %>
@@ -47,6 +47,14 @@
   <h6 id="trip-description"><%=@itinerary.description%></h6>
 </div>
 
+<% if @itinerary.user == current_user%>
+        <%= render 'shared/button' %>
+      <% elsif !@itinerary.booked?(current_user)%>
+        <div class="unpurchased d-flex justify-content-center">
+          <%= render 'shared/button' %>
+        </div>
+      <% end %>
+
   <div class="day-container">
     <div class="day-informations">
       <% @itinerary.days.each do |day| %>
@@ -61,17 +69,10 @@
           </div>
         <% end %>
       <% end %>
-      <% if @itinerary.user == current_user%>
-        <%= render 'shared/button' %>
-      <% elsif !@itinerary.booked?(current_user)%>
-        <div class="unpurchased">
-          <%= render 'shared/button' %>
-        </div>
-      <% end %>
     </div>
 
       <div id="map"
-        style="width: 400px; height: 500px; margin: 0 10px 40px 60px; position: sticky; top: 140px"
+        style="width: 400px; height: 75vh; margin: 0 10px 40px 60px; position: sticky; top: 140px"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
      </div>

@@ -4,9 +4,11 @@
     <%= simple_form_for @itinerary do |f| %>
       <%= f.label "Create itinerary", class: "itinerary-form-title" %>
       <%= f.input :title %>
+      <%= f.input :countries, collection: Country.all %>
+      <%= f.input :tags, collection: Tag.all %>
       <%= f.input :description %>
       <%= f.input :photo, as: :file,
-                  required: true %>
+
       <%= f.submit "Continue", class: "btn button-1 itinerary-form-btn" %>
       <%# link_to "Next", new_itinerary_day_path(@itinerary) %>
     <% end %>

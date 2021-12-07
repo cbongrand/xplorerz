@@ -2,7 +2,8 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background: rgb(79,173,187);
+  background: linear-gradient(0deg, rgba(79,173,187,0.0802696078431373) 0%, rgba(255,255,255,0.5914740896358543) 100%);
 }
 
 .footer {
