@@ -57,11 +57,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 0 20px 0;
+  padding: 30px 0 30px 0;
 }
 
 .show-tag {
-  padding: 10px;
+  padding: 3px 10px 3px 10px;
+  border-radius: 20px;
+  margin: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 
 .trip-description {
@@ -69,6 +73,10 @@
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
+    padding: 20px 100px 40px 100px;
+    #trip-description-header {
+      margin-bottom: 3%;
+    }
 }
 
 .day-container {
@@ -112,6 +120,15 @@
 }
 
 .day-activity {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  font-size: 14px;
+  margin-bottom: 13px;
+}
+
+.day-restaurant {
+  font-size: 14px;
+  margin-bottom: 13px;
+}
+
+.day-extra {
+  font-size: 14px;
 }
