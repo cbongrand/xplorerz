@@ -8,6 +8,7 @@
   height: 400px;
   padding: 2% 4% 4% 4%;
   margin-left: 80px;
+  margin-top: 20px;
   margin-right: 80px;
   text-align: center;
   border: 1px solid;
@@ -16,6 +17,7 @@
   box-shadow: 2px 3px rgb(236, 236, 236);
   position: sticky;
   top: 11rem;
+  max-width: 300px;
 }
 
 .profile-information p {
