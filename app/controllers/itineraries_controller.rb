@@ -27,7 +27,6 @@ class ItinerariesController < ApplicationController
   def create
     @itinerary = Itinerary.new(itinerary_params)
     @itinerary.user = current_user
-    @itinerary.countries << Country.find(params[:itinerary][:countries])
     @itinerary.save
     if @itinerary.save
       redirect_to new_itinerary_day_path(@itinerary)
@@ -85,6 +84,6 @@ class ItinerariesController < ApplicationController
   end
 
   def itinerary_params
-    params.require(:itinerary).permit(:title, :description, :photo)
+    params.require(:itinerary).permit(:title, :description, :photo, country_ids: [], tag_ids: [])
   end
 end
