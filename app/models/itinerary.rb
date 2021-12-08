@@ -10,7 +10,7 @@ class Itinerary < ApplicationRecord
   acts_as_likeable
   validates :title, presence: true
   validates :description, presence: true
-  scope :trendy, -> {order(likers_count: :desc).limit(3)}
+  scope :trendy, -> { order(likers_count: :desc).limit(3) }
 
 
   def booked?(current_user)
