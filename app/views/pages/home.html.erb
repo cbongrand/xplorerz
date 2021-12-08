@@ -48,7 +48,11 @@
                     <%= itinerary.likers_count %>
                   </span>
                 </span>
-                <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+                <% if itinerary.user.photo.present? %>
+                  <%= cl_image_tag itinerary.user.photo.key, class:"avatar-bordered" %>
+                <% else %>
+                  <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+                <% end %>
               </div>
             </div>
             <%= link_to "", itinerary_path(itinerary), class: "stretched-link" %>
