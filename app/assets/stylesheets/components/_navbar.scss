@@ -33,8 +33,10 @@
     color: #1DB0BD;
     padding: 15px;
     font-weight: 500;
+    opacity: 0.85;
   }
   a:hover{
-    opacity: 0.8;
+    transition: 0.4s;
+    opacity: 0.7;
   }
 }
