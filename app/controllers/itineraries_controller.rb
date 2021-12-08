@@ -8,13 +8,15 @@ class ItinerariesController < ApplicationController
     @tags = Tag.where(id: tags_id).pluck(:name)
     if params[:query].present? && params[:filter].present?
       @query = params[:query]
+      @country = Country.find(params[:query])
       @filter = params[:filter]
-      sql_query = "countries.name ILIKE :query AND tags.name ILIKE :filter"
-      @itineraries = Itinerary.joins(:countries, :tags).where(sql_query, query: "%#{params[:query]}%", filter: "%#{params[:filter]}%")
+      sql_query = "countries.id = :query AND tags.name ILIKE :filter"
+      @itineraries = Itinerary.joins(:countries, :tags).where(sql_query, query: params[:query], filter: "%#{params[:filter]}%")
     elsif params[:query].present? && !params[:filter].present?
       @query = params[:query]
-      sql_query = "countries.name ILIKE :query"
-      @itineraries = Itinerary.joins(:countries).where(sql_query, query: "%#{params[:query]}%")
+      @country = Country.find(params[:query])
+      sql_query = "countries.id = :query"
+      @itineraries = Itinerary.joins(:countries).where(sql_query, query: params[:query])
     else
       @itineraries = Itinerary.all
     end

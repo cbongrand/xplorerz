@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     @itineraries = Itinerary.all.limit(3)
     countries_id = CountryItinerary.pluck("DISTINCT country_id")
-    @countries = Country.where(id: countries_id).pluck(:name)
+    @countries = Country.where(id: countries_id)
   end
 
   def profile

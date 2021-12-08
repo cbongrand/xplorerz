@@ -1,6 +1,6 @@
 <div class="banner-index">
   <div class="banner-objects">
-    <h1 id="banner-slogan-index"><%=@countries.select {|country| country.gsub( /..{2}$/, '' ) == params[:query]}.join if params[:query].present?%></h1>
+    <h1 id="banner-slogan-index"><%=@country.name if @country.present?%></h1>
   </div>
 </div>
 
