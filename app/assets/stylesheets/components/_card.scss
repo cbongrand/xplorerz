@@ -19,6 +19,7 @@
   vertical-align: middle;
   background-size: cover;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)  ;
+  flex-shrink: 0;
   span {
     display: table-cell;
     font-size: 200%;
@@ -30,6 +31,9 @@
 
 .card-infos {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 
@@ -42,6 +46,7 @@
 }
 
 .card-infos-2 {
+  flex-grow: 1;
   h5 {
     padding-top: 5px;
     font-size: 13px;
@@ -50,12 +55,17 @@
   h6 {
     padding-top: 5px;
     font-size: 13px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    height: 37.4px;
+    overflow: hidden;
   }
+
 }
 
 .card-infos-3 {
   display: flex;
-  padding-top: 30px;
   justify-content: space-between;
   align-items: center;
   .fa-heart {
