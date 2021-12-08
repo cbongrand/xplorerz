@@ -7,11 +7,12 @@
 <div class="page-title">
   <h1 class="index-header">Itineraries</h1>
 </div>
-<div class="itin-index">
+
+<div class="itin-index mb-5">
   <% @itineraries.each_slice(3) do |slice| %>
     <div class="row">
       <% slice.each do |itinerary| %>
-        <div class="col-4">
+        <div class="col">
         <div class="card mt-4">
           <div class="cardbanner"
           <% if itinerary.photo.attached? %>
@@ -20,7 +21,7 @@
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1552980870-139c7b393f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80')"
           <% end %>
           >
-            <span><%= itinerary.title %></span>
+          <span><%= itinerary.title %></span>
           </div>
           <div class="card-infos">
             <div class="card-infos-1">
