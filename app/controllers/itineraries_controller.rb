@@ -2,7 +2,16 @@ class ItinerariesController < ApplicationController
   before_action :find_itinerary, only: %i[edit show update]
 
   def index
-    if params[:query].present?
+    countries_id = CountryItinerary.pluck("DISTINCT country_id")
+    @countries = Country.where(id: countries_id).pluck(:name)
+    tags_id = ItineraryTag.pluck("DISTINCT tag_id")
+    @tags = Tag.where(id: tags_id).pluck(:name)
+    if params[:query].present? && params[:filter].present?
+      @query = params[:query]
+      @filter = params[:filter]
+      sql_query = "countries.name ILIKE :query AND tags.name ILIKE :filter"
+      @itineraries = Itinerary.joins(:countries, :tags).where(sql_query, query: "%#{params[:query]}%", filter: "%#{params[:filter]}%")
+    elsif params[:query].present? && !params[:filter].present?
       @query = params[:query]
       sql_query = "countries.name ILIKE :query"
       @itineraries = Itinerary.joins(:countries).where(sql_query, query: "%#{params[:query]}%")

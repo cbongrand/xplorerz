@@ -30,22 +30,16 @@ end
 
 TAGS = [
   "Adventure",
-  "Nature Retreat",
-  "Water Sports",
+  "Nature",
+  "Surf",
   "Food",
   "Nature-friendly",
-  "Sport",
-  "Winter Sports",
-  "Summer Sports",
+  "Sports",
   "Hiking",
   "City",
   "Animals",
-  "Secret Gem",
-  "Family-friendly",
+  "Family",
   "Tropical",
-  "Local Tips",
-  "Active Holiday",
-  "Private",
   "Beach",
   "Snow",
   "Forest",
@@ -79,251 +73,222 @@ puts "Done! #{Tag.count} tags created!"
 # countries
 
 COUNTRIES = [
-  "Afghanistan",
-  "Aland Islands",
-  "Albania",
-  "Algeria",
-  "American Samoa",
-  "Andorra",
-  "Angola",
-  "Anguilla",
-  "Antarctica",
-  "Antigua And Barbuda",
-  "Argentina",
-  "Armenia",
-  "Aruba",
-  "Australia",
-  "Austria",
-  "Azerbaijan",
-  "Bahamas",
-  "Bahrain",
-  "Bangladesh",
-  "Barbados",
-  "Belarus",
-  "Belgium",
-  "Belize",
-  "Benin",
-  "Bermuda",
-  "Bhutan",
-  "Bolivia",
-  "Bosnia and Herzegowina",
-  "Botswana",
-  "Bouvet Island",
-  "Brazil",
-  "British Indian Ocean Territory",
-  "Brunei Darussalam",
-  "Bulgaria",
-  "Burkina Faso",
-  "Burundi",
-  "Cambodia",
-  "Cameroon",
-  "Canada",
-  "Cape Verde",
-  "Cayman Islands",
-  "Central African Republic",
-  "Chad",
-  "Chile",
-  "China",
-  "Christmas Island",
-  "Cocos (Keeling) Islands",
-  "Colombia",
-  "Comoros",
-  "Congo",
-  "Congo, the Democratic Republic of the",
-  "Cook Islands",
-  "Costa Rica",
-  "Cote d'Ivoire",
-  "Croatia",
-  "Cuba",
-  "Cyprus",
-  "Czech Republic",
-  "Denmark",
-  "Djibouti",
-  "Dominica",
-  "Dominican Republic",
-  "Ecuador",
-  "Egypt",
-  "El Salvador",
-  "Equatorial Guinea",
-  "Eritrea",
-  "Estonia",
-  "Ethiopia",
-  "Falkland Islands (Malvinas)",
-  "Faroe Islands",
-  "Fiji",
-  "Finland",
-  "France",
-  "French Guiana",
-  "French Polynesia",
-  "French Southern Territories",
-  "Gabon",
-  "Gambia",
-  "Georgia",
-  "Germany",
-  "Ghana",
-  "Gibraltar",
-  "Greece",
-  "Greenland",
-  "Grenada",
-  "Guadeloupe",
-  "Guam",
-  "Guatemala",
-  "Guernsey",
-  "Guinea",
-  "Guinea-Bissau",
-  "Guyana",
-  "Haiti",
-  "Heard and McDonald Islands",
-  "Holy See (Vatican City State)",
-  "Honduras",
-  "Hong Kong",
-  "Hungary",
-  "Iceland",
-  "India",
-  "Indonesia",
-  "Iran, Islamic Republic of",
-  "Iraq",
-  "Ireland",
-  "Isle of Man",
-  "Israel",
-  "Italy",
-  "Jamaica",
-  "Japan",
-  "Jersey",
-  "Jordan",
-  "Kazakhstan",
-  "Kenya",
-  "Kiribati",
-  "Korea, Democratic People's Republic of",
-  "Korea, Republic of",
-  "Kuwait",
-  "Kyrgyzstan",
-  "Lao People's Democratic Republic",
-  "Latvia",
-  "Lebanon",
-  "Lesotho",
-  "Liberia",
-  "Libyan Arab Jamahiriya",
-  "Liechtenstein",
-  "Lithuania",
-  "Luxembourg",
-  "Macao",
-  "Macedonia, The Former Yugoslav Republic Of",
-  "Madagascar",
-  "Malawi",
-  "Malaysia",
-  "Maldives",
-  "Mali",
-  "Malta",
-  "Marshall Islands",
-  "Martinique",
-  "Mauritania",
-  "Mauritius",
-  "Mayotte",
-  "Mexico",
-  "Micronesia, Federated States of",
-  "Moldova, Republic of",
-  "Monaco",
-  "Mongolia",
-  "Montenegro",
-  "Montserrat",
-  "Morocco",
-  "Mozambique",
-  "Myanmar",
-  "Namibia",
-  "Nauru",
-  "Nepal",
-  "Netherlands",
-  "Netherlands Antilles",
-  "New Caledonia",
-  "New Zealand",
-  "Nicaragua",
-  "Niger",
-  "Nigeria",
-  "Niue",
-  "Norfolk Island",
-  "Northern Mariana Islands",
-  "Norway",
-  "Oman",
-  "Pakistan",
-  "Palau",
-  "Palestinian Territory, Occupied",
-  "Panama",
-  "Papua New Guinea",
-  "Paraguay",
-  "Peru",
-  "Philippines",
-  "Pitcairn",
-  "Poland",
-  "Portugal",
-  "Puerto Rico",
-  "Qatar",
-  "Reunion",
-  "Romania",
-  "Russian Federation",
-  "Rwanda",
-  "Saint Barthelemy",
-  "Saint Helena",
-  "Saint Kitts and Nevis",
-  "Saint Lucia",
-  "Saint Pierre and Miquelon",
-  "Saint Vincent and the Grenadines",
-  "Samoa",
-  "San Marino",
-  "Sao Tome and Principe",
-  "Saudi Arabia",
-  "Senegal",
-  "Serbia",
-  "Seychelles",
-  "Sierra Leone",
-  "Singapore",
-  "Slovakia",
-  "Slovenia",
-  "Solomon Islands",
-  "Somalia",
-  "South Africa",
-  "South Georgia and the South Sandwich Islands",
-  "Spain",
-  "Sri Lanka",
-  "Sudan",
-  "Suriname",
-  "Svalbard and Jan Mayen",
-  "Swaziland",
-  "Sweden",
-  "Switzerland",
-  "Syrian Arab Republic",
-  "Taiwan, Province of China",
-  "Tajikistan",
-  "Tanzania, United Republic of",
-  "Thailand",
-  "Timor-Leste",
-  "Togo",
-  "Tokelau",
-  "Tonga",
-  "Trinidad and Tobago",
-  "Tunisia",
-  "Turkey",
-  "Turkmenistan",
-  "Turks and Caicos Islands",
-  "Tuvalu",
-  "Uganda",
-  "Ukraine",
-  "United Arab Emirates",
-  "United Kingdom",
-  "United States",
-  "United States Minor Outlying Islands",
-  "Uruguay",
-  "Uzbekistan",
-  "Vanuatu",
-  "Venezuela",
-  "Viet Nam",
-  "Virgin Islands, British",
-  "Virgin Islands, U.S.",
-  "Wallis and Futuna",
-  "Western Sahara",
-  "Yemen",
-  "Zambia",
-  "Zimbabwe"
+  "Afghanistan 🇦🇫",
+  "Aland Islands 🇦🇽",
+  "Albania 🇦🇱",
+  "Algeria 🇩🇿",
+  "American Samoa 🇦🇸",
+  "Andorra 🇦🇩",
+  "Angola 🇦🇴",
+  "Anguilla 🇦🇮",
+  "Antarctica 🇦🇶",
+  "Antigua And Barbuda 🇦🇬",
+  "Argentina 🇦🇷",
+  "Armenia 🇦🇲",
+  "Aruba 🇦🇼",
+  "Australia 🇦🇺",
+  "Austria 🇦🇹",
+  "Azerbaijan 🇦🇿",
+  "Bahamas 🇧🇸",
+  "Bahrain 🇧🇭",
+  "Bangladesh 🇧🇩",
+  "Barbados 🇧🇧",
+  "Belarus 🇧🇾",
+  "Belgium 🇧🇪",
+  "Belize 🇧🇿",
+  "Benin 🇧🇯",
+  "Bermuda 🇧🇲",
+  "Bhutan 🇧🇹",
+  "Bolivia 🇧🇴",
+  "Bosnia and Herzegowina 🇧🇦",
+  "Brazil 🇧🇷",
+  "Brunei 🇧🇳",
+  "Bulgaria 🇧🇬",
+  "Burkina Faso 🇧🇫",
+  "Burundi 🇧🇮",
+  "Cambodia 🇰🇭",
+  "Cameroon 🇨🇲",
+  "Canada 🇨🇦",
+  "Cape Verde 🇨🇻",
+  "Cayman Islands 🇰🇾",
+  "Central African Republic 🇨🇫",
+  "Chile 🇨🇱",
+  "China 🇨🇳",
+  "Colombia 🇨🇴",
+  "Comoros 🇰🇲",
+  "Congo 🇨🇬",
+  "Cook Islands 🇨🇰",
+  "Costa Rica 🇨🇷",
+  "Cote d'Ivoire 🇨🇮",
+  "Croatia 🇭🇷",
+  "Cuba 🇨🇺",
+  "Cyprus 🇨🇾",
+  "Czech Republic 🇨🇿",
+  "Denmark 🇩🇰",
+  "Djibouti 🇩🇯",
+  "Dominican Republic 🇩🇴",
+  "Ecuador 🇪🇨",
+  "Egypt 🇪🇬",
+  "El Salvador 🇸🇻",
+  "Equatorial Guinea 🇬🇶",
+  "Eritrea 🇪🇷",
+  "Estonia 🇪🇪",
+  "Ethiopia 🇪🇹",
+  "Faroe Islands 🇫🇴",
+  "Fiji 🇫🇯",
+  "Finland 🇫🇮",
+  "France 🇫🇷",
+  "French Guiana 🇬🇫",
+  "French Polynesia 🇵🇫",
+  "Gabon 🇬🇦",
+  "Gambia 🇬🇲",
+  "Georgia 🇬🇪",
+  "Germany 🇩🇪",
+  "Ghana 🇬🇭",
+  "Gibraltar 🇬🇮",
+  "Greece 🇬🇷",
+  "Greenland 🇬🇱",
+  "Grenada 🇬🇩",
+  "Guadeloupe 🇬🇵",
+  "Guam 🇬🇺",
+  "Guatemala 🇬🇹",
+  "Guernsey 🇬🇬",
+  "Guinea 🇬🇳",
+  "Guinea-Bissau 🇬🇼",
+  "Guyana 🇬🇾",
+  "Haiti 🇭🇹",
+  "Vatican 🇻🇦",
+  "Honduras 🇭🇳",
+  "Hong Kong 🇭🇰",
+  "Hungary 🇭🇺",
+  "Iceland 🇮🇸",
+  "India 🇮🇳",
+  "Indonesia 🇮🇩",
+  "Iran 🇮🇷",
+  "Iraq 🇮🇶",
+  "Ireland 🇮🇪",
+  "Isle of Man 🇮🇲",
+  "Israel 🇮🇱",
+  "Italy 🇮🇹",
+  "Jamaica 🇯🇲",
+  "Japan 🇯🇵",
+  "Jersey 🇯🇪",
+  "Jordan 🇯🇴",
+  "Kazakhstan 🇰🇿",
+  "Kenya 🇰🇪",
+  "Kiribati 🇰🇮",
+  "South Korea 🇰🇷",
+  "North Korea 🇰🇵",
+  "Kuwait 🇰🇼",
+  "Kyrgyzstan 🇰🇬",
+  "Laos 🇱🇦",
+  "Latvia 🇱🇻",
+  "Lebanon 🇱🇧",
+  "Lesotho 🇱🇸",
+  "Liberia 🇱🇷",
+  "Libya 🇱🇾",
+  "Liechtenstein 🇱🇮",
+  "Lithuania 🇱🇹",
+  "Luxembourg 🇱🇺",
+  "Macao 🇲🇴",
+  "Madagascar 🇲🇬",
+  "Malawi 🇲🇼",
+  "Malaysia 🇲🇾",
+  "Maldives 🇲🇻",
+  "Mali 🇲🇱",
+  "Malta 🇲🇹",
+  "Marshall Islands 🇲🇭",
+  "Martinique 🇲🇶",
+  "Mauritania 🇲🇷",
+  "Mauritius 🇲🇺",
+  "Mayotte 🇾🇹",
+  "Mexico 🇲🇽",
+  "Moldova 🇲🇩",
+  "Monaco 🇲🇨",
+  "Mongolia 🇲🇳",
+  "Montenegro 🇲🇪",
+  "Morocco 🇲🇦",
+  "Mozambique 🇲🇿",
+  "Myanmar 🇲🇲",
+  "Namibia 🇳🇦",
+  "Nauru 🇳🇷",
+  "Nepal 🇳🇵",
+  "Netherlands 🇳🇱",
+  "New Caledonia 🇳🇨",
+  "New Zealand 🇳🇿",
+  "Nicaragua 🇳🇮",
+  "Niger 🇳🇪",
+  "Nigeria 🇳🇬",
+  "Niue 🇳🇺",
+  "Norfolk Island 🇳🇫",
+  "Northern Mariana Islands 🇲🇵",
+  "Norway 🇳🇴",
+  "Oman 🇴🇲",
+  "Pakistan 🇵🇰",
+  "Palau 🇵🇼",
+  "Palestinian Territories 🇵🇸",
+  "Panama 🇵🇦",
+  "Papua New Guinea 🇵🇬",
+  "Paraguay 🇵🇾",
+  "Peru 🇵🇪",
+  "Philippines 🇵🇭",
+  "Poland 🇵🇱",
+  "Portugal 🇵🇹",
+  "Puerto Rico 🇵🇷",
+  "Qatar 🇶🇦",
+  "Reunion 🇷🇪",
+  "Romania 🇷🇴",
+  "Russia 🇷🇺",
+  "Rwanda 🇷🇼",
+  "Saudi Arabia 🇸🇦",
+  "Senegal 🇸🇳",
+  "Serbia 🇷🇸",
+  "Seychelles 🇸🇨",
+  "Sierra Leone 🇸🇱",
+  "Singapore 🇸🇬",
+  "Slovakia 🇸🇰",
+  "Slovenia 🇸🇮",
+  "Solomon Islands 🇸🇧",
+  "Somalia 🇸🇴",
+  "South Africa 🇿🇦",
+  "Spain 🇪🇸",
+  "Sri Lanka 🇱🇰",
+  "St. Barthélemy 🇧🇱",
+  "St. Lucia 🇱🇨",
+  "Sudan 🇸🇩",
+  "Suriname 🇸🇷",
+  "Sweden 🇸🇪",
+  "Switzerland 🇨🇭",
+  "Syria 🇸🇾",
+  "Taiwan 🇹🇼",
+  "Tajikistan 🇹🇯",
+  "Tanzania 🇹🇿",
+  "Thailand 🇹🇭",
+  "Timor-Leste 🇹🇱",
+  "Togo 🇹🇬",
+  "Tokelau 🇹🇰",
+  "Tonga 🇹🇴",
+  "Trinidad and Tobago 🇹🇹",
+  "Tunisia 🇹🇳",
+  "Turkey 🇹🇷",
+  "Turkmenistan 🇹🇲",
+  "Turks and Caicos Islands 🇹🇨",
+  "Tuvalu 🇹🇻",
+  "Uganda 🇺🇬",
+  "Ukraine 🇺🇦",
+  "United Arab Emirates 🇦🇪",
+  "United Kingdom 🇬🇧",
+  "United States 🇺🇸",
+  "Uruguay 🇺🇾",
+  "Uzbekistan 🇺🇿",
+  "Vanuatu 🇻🇺",
+  "Venezuela 🇻🇪",
+  "Viet Nam 🇻🇳",
+  "Wallis and Futuna 🇼🇫",
+  "Western Sahara 🇪🇭",
+  "Yemen 🇾🇪",
+  "Zambia 🇿🇲",
+  "Zimbabwe 🇿🇼"
 ]
 
 puts "Creating countries..."
@@ -346,7 +311,7 @@ itin1 = Itinerary.create(
 
 country_itinerary1 = CountryItinerary.new
 country_itinerary1.itinerary = itin1
-country_itinerary1.country = Country.find_by(name: "Colombia")
+country_itinerary1.country = Country.find_by(name: "Colombia 🇨🇴")
 country_itinerary1.save!
 
 tag_itinerary1 = ItineraryTag.new
@@ -359,7 +324,7 @@ tag_itinerary1.tag = Tag.find_by(name: "Tropical")
 tag_itinerary1.save!
 tag_itinerary1 = ItineraryTag.new
 tag_itinerary1.itinerary = itin1
-tag_itinerary1.tag = Tag.find_by(name: "Private")
+tag_itinerary1.tag = Tag.find_by(name: "Surf")
 tag_itinerary1.save!
 
 i = 0
@@ -446,7 +411,7 @@ itin2 = Itinerary.create(
 
 country_itinerary2 = CountryItinerary.new
 country_itinerary2.itinerary = itin2
-country_itinerary2.country = Country.find_by(name: "Peru")
+country_itinerary2.country = Country.find_by(name: "Peru 🇵🇪")
 country_itinerary2.save!
 
 tag_itinerary2 = ItineraryTag.new
@@ -459,7 +424,7 @@ tag_itinerary2.tag = Tag.find_by(name: "Adventure")
 tag_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
-tag_itinerary2.tag = Tag.find_by(name: "Active Holiday")
+tag_itinerary2.tag = Tag.find_by(name: "Animals")
 tag_itinerary2.save!
 
 i = 0
@@ -536,12 +501,12 @@ itin3 = Itinerary.create(
 
 country_itinerary3 = CountryItinerary.new
 country_itinerary3.itinerary = itin3
-country_itinerary3.country = Country.find_by(name: "France")
+country_itinerary3.country = Country.find_by(name: "France 🇫🇷")
 country_itinerary3.save!
 
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
-tag_itinerary3.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary3.tag = Tag.find_by(name: "Sports")
 tag_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
@@ -549,7 +514,7 @@ tag_itinerary3.tag = Tag.find_by(name: "Food")
 tag_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
-tag_itinerary3.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary3.tag = Tag.find_by(name: "City")
 tag_itinerary3.save!
 
 i = 0
@@ -602,7 +567,7 @@ itin4 = Itinerary.create(
 
 country_itinerary4 = CountryItinerary.new
 country_itinerary4.itinerary = itin4
-country_itinerary4.country = Country.find_by(name: "Mexico")
+country_itinerary4.country = Country.find_by(name: "Mexico 🇲🇽")
 country_itinerary4.save!
 
 tag_itinerary4 = ItineraryTag.new
@@ -611,11 +576,11 @@ tag_itinerary4.tag = Tag.find_by(name: "Food")
 tag_itinerary4.save!
 tag_itinerary4 = ItineraryTag.new
 tag_itinerary4.itinerary = itin4
-tag_itinerary4.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary4.tag = Tag.find_by(name: "Sports")
 tag_itinerary4.save!
 tag_itinerary4 = ItineraryTag.new
 tag_itinerary4.itinerary = itin4
-tag_itinerary4.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary4.tag = Tag.find_by(name: "Surf")
 tag_itinerary4.save!
 
 i = 0
@@ -733,12 +698,12 @@ itin5 = Itinerary.create(
 
 country_itinerary5 = CountryItinerary.new
 country_itinerary5.itinerary = itin5
-country_itinerary5.country = Country.find_by(name: "Spain")
+country_itinerary5.country = Country.find_by(name: "Spain 🇪🇸")
 country_itinerary5.save!
 
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
-tag_itinerary5.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary5.tag = Tag.find_by(name: "Animals")
 tag_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
@@ -806,7 +771,7 @@ itin6 = Itinerary.create(
 
 country_itinerary6 = CountryItinerary.new
 country_itinerary6.itinerary = itin6
-country_itinerary6.country = Country.find_by(name: "Mexico")
+country_itinerary6.country = Country.find_by(name: "Mexico 🇲🇽")
 country_itinerary6.save!
 
 tag_itinerary6 = ItineraryTag.new
@@ -815,11 +780,11 @@ tag_itinerary6.tag = Tag.find_by(name: "Adventure")
 tag_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
-tag_itinerary6.tag = Tag.find_by(name: "Nature Retreat")
+tag_itinerary6.tag = Tag.find_by(name: "Family")
 tag_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
-tag_itinerary6.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary6.tag = Tag.find_by(name: "Sports")
 tag_itinerary6.save!
 
 i = 0
@@ -880,7 +845,7 @@ itin7 = Itinerary.create(
 
 country_itinerary7 = CountryItinerary.new
 country_itinerary7.itinerary = itin7
-country_itinerary7.country = Country.find_by(name: "Czech Republic")
+country_itinerary7.country = Country.find_by(name: "Czech Republic 🇨🇿")
 country_itinerary7.save!
 
 tag_itinerary7 = ItineraryTag.new
@@ -889,11 +854,11 @@ tag_itinerary7.tag = Tag.find_by(name: "Food")
 tag_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
-tag_itinerary7.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary7.tag = Tag.find_by(name: "City")
 tag_itinerary7.save!
 tag_itinerary7 = ItineraryTag.new
 tag_itinerary7.itinerary = itin7
-tag_itinerary7.tag = Tag.find_by(name: "Secret Gem")
+tag_itinerary7.tag = Tag.find_by(name: "Snow")
 tag_itinerary7.save!
 
 i = 0
@@ -970,7 +935,7 @@ itin8 = Itinerary.create(
 
 country_itinerary8 = CountryItinerary.new
 country_itinerary8.itinerary = itin8
-country_itinerary8.country = Country.find_by(name: "Colombia")
+country_itinerary8.country = Country.find_by(name: "Colombia 🇨🇴")
 country_itinerary8.save!
 
 tag_itinerary8 = ItineraryTag.new
@@ -979,7 +944,7 @@ tag_itinerary8.tag = Tag.find_by(name: "City")
 tag_itinerary8.save!
 tag_itinerary8 = ItineraryTag.new
 tag_itinerary8.itinerary = itin8
-tag_itinerary8.tag = Tag.find_by(name: "Local Tips")
+tag_itinerary8.tag = Tag.find_by(name: "Animals")
 tag_itinerary8.save!
 
 i = 0
