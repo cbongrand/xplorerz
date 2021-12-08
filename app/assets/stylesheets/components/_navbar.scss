@@ -18,3 +18,23 @@
 .navbar-lewagon .navbar-brand img {
   width: 180px;
 }
+
+.navbar-nav {
+  display: contents;
+}
+
+.navbar-avatar {
+  margin-left: 20px;
+}
+
+.itin-create {
+  a {
+    text-decoration: none;
+    color: #1DB0BD;
+    padding: 15px;
+    font-weight: 500;
+  }
+  a:hover{
+    opacity: 0.8;
+  }
+}
