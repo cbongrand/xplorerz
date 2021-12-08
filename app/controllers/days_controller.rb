@@ -12,7 +12,7 @@ class DaysController < ApplicationController
     @itinerary = Itinerary.find(params[:itinerary_id])
     @day.itinerary = @itinerary
     if @day.save
-      redirect_to new_itinerary_day_path(@itinerary)
+      redirect_to params[:commit] == "Finish" ? @itinerary : new_itinerary_day_path(@itinerary)
     else
       render :new
     end

@@ -43,7 +43,8 @@ TAGS = [
   "Beach",
   "Snow",
   "Forest",
-  "National Park"
+  "National Park",
+  "Other",
 ]
 
 COLORS = [
