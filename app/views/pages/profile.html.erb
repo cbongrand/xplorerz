@@ -81,13 +81,23 @@
                     <span><%= itinerary.title %></span>
                   </div>
                   <div class="card-infos-little">
-                    <div class="card-infos-1-little-only-country">
-                      <h4><%= itinerary.countries.map{|country| country.name}.uniq.join(" - ") %></h4>
-                    </div>
-                    <div class="card-infos-2-little-only-country">
-                      <h6><%= itinerary.days.map{|day| day.city}.uniq.join(", ") %></h6>
-                      <h5><%= itinerary.days.count %> DAYS</h5>
-                    </div>
+                      <div class="card-infos-1-little-only-country">
+                        <% if itinerary.countries.count >= 1 %>
+                        <h4>Multiple countries</h4>
+                      </div>
+                      <div class="card-infos-2-little-only-country">
+                        <h6><%= itinerary.countries.map{|country| country.name}.uniq.join(" - ") %></h6>
+                        <h5><%= itinerary.days.count %> DAYS</h5>
+                      </div>
+                    <% else %>
+                      <div class="card-infos-1-little-only-country">
+                        <h4><%= itinerary.countries.map{|country| country.name}.uniq.join(" - ") %></h4>
+                      </div>
+                      <div class="card-infos-2-little-only-country">
+                        <h6><%= itinerary.days.map{|day| day.city}.uniq.join(", ") %></h6>
+                        <h5><%= itinerary.days.count %> DAYS</h5>
+                      </div>
+                    <% end %>
                   </div>
                   <%= link_to "", itinerary_path(itinerary), class: "stretched-link" %>
                 </div>
