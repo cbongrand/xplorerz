@@ -55,8 +55,8 @@
 
   <div class="day-container">
     <div class="day-informations">
-      <% @itinerary.days.each do |day| %>
-        <h2 class="day-header1">Day <%=day.order%></h2>
+      <% @itinerary.days.each_with_index do |day, index| %>
+        <h2 class="day-header1">Day <%=day.order || index + 1%></h2>
         <h4 class="day-header2"><%= day.city %></h4>
         <div class="day-description"><%= day.description %></div>
         <% if @itinerary.booked?(current_user) || @itinerary.user == current_user %>

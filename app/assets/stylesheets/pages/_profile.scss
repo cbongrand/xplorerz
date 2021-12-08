@@ -16,8 +16,7 @@
   border-color: lightgray;
   box-shadow: 2px 3px rgb(236, 236, 236);
   position: sticky;
-  top: 11rem;
-  max-width: 300px;
+  top: 9rem;
 }
 
 .profile-information p {
@@ -39,6 +38,7 @@
 #email-profile {
   margin: 0px 0 15px 0;
   color: #494949;
+  font-size: 14px;
 }
 
 #description-profile {
@@ -52,5 +52,5 @@
 }
 
 .profile-items {
-  min-width: 54%;
+  width: 50%;
 }
