@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
         quantity: 1
       }],
       # this determines where the stripe will go after completing the payment
-      success_url: "#{ENV['DOMAIN_URL']}/bookings/#{@itinerary.id}/confirm",
+      success_url: "#{ENV['DOMAIN_URL']}/bookings/#{@booking.id}/confirm",
       cancel_url: "#{ENV['DOMAIN_URL']}/itineraries/#{@itinerary.id}"
     )
 
