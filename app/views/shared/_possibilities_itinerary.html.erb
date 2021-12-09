@@ -1,5 +1,5 @@
 <% if @itinerary.user == current_user %>
-   <%= link_to "Edit", edit_itinerary_path(@itinerary), method: :get, class: "btn purchase-btn" %>
+   <%= link_to "Edit itinerary", edit_itinerary_path(@itinerary), method: :get, class: "edit-itinerary" %>
 <% else %>
   <%= form_tag itinerary_bookings_path(@itinerary) do %>
     <%= hidden_field_tag 'itinerary_id', @itinerary.id %>

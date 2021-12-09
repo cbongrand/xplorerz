@@ -21,7 +21,7 @@
       <div class="end-page-buttons">
         <%= f.submit "Add day", class: "btn button-2" %>
         <% if @itinerary.days.count >= 1 %>
-        <%= link_to "Finish", itinerary_path(@itinerary), class: "btn button-1" %>
+          <%= f.button :submit, "Finish", class: "btn button-1", style: "width: auto" %>
         <% end %>
       </div>
     <% end %>

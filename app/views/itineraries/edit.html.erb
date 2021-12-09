@@ -1,17 +1,15 @@
-<h3>You are just a couple steps away!</h3>
 <div class="days-form">
   <div class="days-form-content">
     <%= simple_form_for @itinerary do |f| %>
-      <%= f.label "Create itinerary", class: "itinerary-form-title" %>
+      <%= f.label "Edit itinerary", class: "itinerary-form-title" %>
       <%= f.input :title %>
-      <%= f.association :countries %>
-      <%= f.association :tags%>
+      <%= f.input :country_ids, label: "Countries", collection: Country.all, input_html: { data: { controller: 'select2' }, multiple: true}, required: true %>
+      <%= f.input :tag_ids, label: "Tags", collection: Tag.all, input_html: { data: { controller: 'select2' }, multiple: true}, required: true %>
       <%= f.input :description %>
       <%= f.input :photo, as: :file,
                   required: true,
                   id: "photo-btn" %>
       <%= f.submit "Continue", class: "btn button-1 itinerary-form-btn" %>
-      <%# link_to "Next", new_itinerary_day_path(@itinerary) %>
     <% end %>
   </div>
 </div>

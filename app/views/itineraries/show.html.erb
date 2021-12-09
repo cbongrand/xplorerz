@@ -33,7 +33,7 @@
 
 <div class="show-tags">
   <% @itinerary.tags.each do |tag| %>
-  <div class="show-tag">
+  <div class="show-tag" style="color:<%= tag.color %>; border: solid 1px <%= tag.color %>">
     <%= tag.name %>
   </div>
   <% end %>
@@ -45,25 +45,33 @@
 
 <% if @itinerary.user == current_user%>
   <div class="purchased d-flex justify-content-center">
-  <%= render 'shared/button' %>
+  <%= render 'shared/possibilities_itinerary' %>
    </div>
 <% elsif !@itinerary.booked?(current_user)%>
   <div class="unpurchased d-flex justify-content-center">
-    <%= render 'shared/button' %>
+    <%= render 'shared/possibilities_itinerary' %>
   </div>
 <% end %>
 
   <div class="day-container">
     <div class="day-informations">
-      <% @itinerary.days.each do |day| %>
-        <h2 class="day-header1">Day <%=day.order%></h2>
+      <% @itinerary.days.each_with_index do |day, index| %>
+        <h2 class="day-header1 mb-1">Day <%=day.order || index + 1%></h2>
         <h4 class="day-header2"><%= day.city %></h4>
+        <% if @itinerary.user == current_user%>
+        <div class="purchased d-flex justify-content-center">
+        <%= link_to "Edit day", edit_day_path(day), method: :get, class: "edit-itinerary" %>
+        </div>
+        <% end %>
         <div class="day-description"><%= day.description %></div>
         <% if @itinerary.booked?(current_user) || @itinerary.user == current_user %>
           <div class="day-purchased">
-            <div class="day-restaurant"><i class="fas fa-utensils"></i> <%=day.restaurant_info%></div>
-            <div class="day-activity"><i class="fas fa-star"></i> <%=day.activity_info%></div>
-            <div class="day-extra"><i class="fas fa-user-secret"></i> <%=day.extra_info%></div>
+          <i class="fas fa-utensils"></i>
+            <div class="day-restaurant"><%=day.restaurant_info%></div>
+            <i class="fas fa-star"></i>
+            <div class="day-activity"> <%=day.activity_info%></div>
+            <i class="fas fa-user-secret"></i>
+            <div class="day-extra"><%=day.extra_info%></div>
           </div>
         <% end %>
       <% end %>
