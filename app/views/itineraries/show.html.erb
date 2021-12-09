@@ -19,13 +19,13 @@
       <span class="fa-layers fa-fw like-heart">
         <i  class="<%= current_user.likes?(@itinerary) ? "fas fa-heart": "far fa-heart" %>"></i>
         <span class="fa-layers-text fa-inverse" data-fa-transform="grow-6 right-19" style="font-weight:700">
-          <%= @itinerary.likers_count %>
+          <%#= @itinerary.likers_count %>
         </span>
       </span>
       <% if @itinerary.booked?(current_user) %>
-      <div class="like-button">
-        <%= render 'shared/like_button' %>
-      </div>
+        <div class="like-button">
+          <%= render 'shared/like_button' %>
+        </div>
       <% end %>
     </div>
   </div>
