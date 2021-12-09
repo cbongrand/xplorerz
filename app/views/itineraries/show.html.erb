@@ -52,6 +52,7 @@
   </div>
 <% end %>
 
+
   <div class="day-container">
     <div class="day-informations">
       <% @itinerary.days.each_with_index do |day, index| %>
@@ -84,5 +85,14 @@
     </div>
   </div>
 </div>
+
+<% if (@itinerary.user != current_user) && (!@itinerary.booked?(current_user))%>
+  <div class="purchase-cont">
+  <%= form_tag itinerary_bookings_path(@itinerary) do %>
+    <%= hidden_field_tag 'itinerary_id', @itinerary.id %>
+    <%= submit_tag 'Purchase full itinerary', class: "btn purchase-btn" %>
+  <% end %>
+ </div>
+<% end %>
 
 <script scr="itineraries.js"></script>

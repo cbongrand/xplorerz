@@ -30,8 +30,7 @@ class BookingsController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
-        name: "@itinerary.sku",
-        images: ['http://onehdwallpaper.com/wp-content/uploads/2015/07/Teddy-Bears-HD-Images.jpg'],
+        name: "Full version of #{@itinerary.title}",
         amount: 300,
         currency: 'usd',
         quantity: 1
