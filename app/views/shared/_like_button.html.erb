@@ -1,12 +1,13 @@
-
-<% if @itinerary.user != current_user && @itinerary.user.likes?(@itinerary) == false %>
-  <%= form_with url: "/likes", method: :post do |form| %>
+<div class ="d-none">
+  <% unless @itinerary.user != current_user && current_user.likes?(@itinerary) %>
+  <%= form_with url: "/likes", method: :post, id: 'likes_form', data: {liked:true} do |form| %>
     <%= form.hidden_field :itinerary_id, value: @itinerary.id %>
     <%= form.submit "like" %>
   <% end %>
-<% elsif @itinerary.user != current_user && @itinerary.user.likes?(@itinerary) == true %>
-  <%= form_with url: "/unlikes", method: :post do |form| %>
+<% else %>
+  <%= form_with url: "/unlikes", method: :post, id: 'likes_form', data: {liked:false} do |form| %>
     <%= form.hidden_field :itinerary_id, value: @itinerary.id %>
-    <%= form.submit "unlike" %>
+    <%= form.submit "unlike"  %>
   <% end %>
 <% end %>
+</div>
