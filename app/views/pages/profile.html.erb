@@ -81,8 +81,8 @@
                     <span><%= itinerary.title %></span>
                   </div>
                   <div class="card-infos-little">
+                    <% if itinerary.countries.count > 1 %>
                       <div class="card-infos-1-little-only-country">
-                        <% if itinerary.countries.count > 1 %>
                         <h4>Multiple countries</h4>
                       </div>
                       <div class="card-infos-2-little-only-country">
