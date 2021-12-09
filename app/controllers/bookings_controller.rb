@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
 
   def confirm
     @booking = Booking.find(params[:id])
-    @booking.update(state: 'paid')
   end
 
   def create
