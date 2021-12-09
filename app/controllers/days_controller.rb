@@ -30,7 +30,7 @@ class DaysController < ApplicationController
   def update
     @day = Day.find(params[:id])
     if @day.update(day_params)
-      redirect_to new_itinerary_day_path(@day.itinerary)
+      redirect_to itinerary_path(@day.itinerary)
     else
       render :new
     end
