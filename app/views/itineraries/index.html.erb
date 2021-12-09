@@ -20,6 +20,11 @@
       </div>
     </form>
 
+<% if @itineraries.count == 0 %>
+  <div class="no-itin">
+    No itinerary matches this search 😢
+  </div>
+<% end %>
 
 <div class="itin-index mb-5">
   <% @itineraries.each_slice(3) do |slice| %>
