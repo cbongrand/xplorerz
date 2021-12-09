@@ -3,7 +3,7 @@
 
     <%# This will still need connecting to the particular itinerary %>
       <div class="col-6">
-        <div class="card">
+        <div class="card no-hover">
 
           <div class="cardbanner"
             <% if @booking.itinerary.photo.attached? %>
@@ -32,7 +32,6 @@
                 </span>
                 <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
               </div>
-              <%= link_to "", itinerary_path(@booking.itinerary), class: "stretched-link" %>
             </div>
           </div>
         </div>
