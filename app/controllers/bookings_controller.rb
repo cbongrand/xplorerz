@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
       payment_method_types: ['card'],
       line_items: [{
         name: "@itinerary.sku",
-        # images: ['http://onehdwallpaper.com/wp-content/uploads/2015/07/Teddy-Bears-HD-Images.jpg'],
+        images: ['http://onehdwallpaper.com/wp-content/uploads/2015/07/Teddy-Bears-HD-Images.jpg'],
         amount: 300,
         currency: 'usd',
         quantity: 1

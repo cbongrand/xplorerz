@@ -1,6 +1,6 @@
 class ItinerariesController < ApplicationController
   before_action :find_itinerary, only: %i[edit show update]
-  after_action :update_stu, only: :create
+  after_action :update_sku, only: :create
   after_action :update_price, only: :create
 
   def index
@@ -91,8 +91,8 @@ class ItinerariesController < ApplicationController
     params.require(:itinerary).permit(:title, :description, :photo, country_ids: [], tag_ids: [])
   end
 
-  def update_stu
-    @itinerary.stu = "itin#{:id}"
+  def update_sku
+    @itinerary.sku = "itin#{:id}"
     @itinerary.save
   end
 
