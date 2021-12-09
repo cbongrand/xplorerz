@@ -27,9 +27,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // import { initUpdateLikesOnClick } from '../channels/itineraries';
 
 import { initMapbox } from '../plugins/init_mapbox';
-
+import { initHeartClick } from '../plugins/heart_clicker';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initHeartClick();
 })
 
 import "controllers"

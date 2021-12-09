@@ -1,9 +1,17 @@
 .fa-heart {
-    color: red;
+    color: rgb(255, 0, 0);
   }
 
 .heart {
   .fa-heart {
     font-size: 60px;
   }
+}
+
+.far{
+  font-size: 20;
+}
+
+.like-heart:hover{
+  cursor: pointer;
 }

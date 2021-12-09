@@ -9,16 +9,16 @@
 </div>
 
 <form action="/itineraries">
-      <div class="filter d-flex justify-content-center">
-      <input id="query" name="query" type="hidden" value="<%= params[:query] if params[:query].present?%>">
-      <select name="filter" id="filter-tag" required onchange="this.form.submit()">
-      <option value="<%= @filter %>" disabled selected hidden ><%= params[:filter].present? ? params[:filter] : "Add filter" %></option>
-        <% @tags.each do |tag| %>
-            <option value=<%= tag %>><%= tag %></option>
-        <% end %>
-      </select>
-      </div>
-    </form>
+  <div class="filter d-flex justify-content-center">
+  <input id="query" name="query" type="hidden" value="<%= params[:query] if params[:query].present?%>">
+  <select name="filter" id="filter-tag" required onchange="this.form.submit()">
+  <option value="<%= @filter %>" disabled selected hidden ><%= params[:filter].present? ? params[:filter] : "Add filter" %></option>
+    <% @tags.each do |tag| %>
+        <option value=<%= tag %>><%= tag %></option>
+    <% end %>
+  </select>
+  </div>
+</form>
 
 
 <div class="itin-index mb-5">
@@ -51,7 +51,11 @@
                   <%= itinerary.likers_count %>
                 </span>
               </span>
-              <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+              <% if itinerary.user.photo.present? %>
+                <%= cl_image_tag itinerary.user.photo.key, class:"avatar-bordered" %>
+              <% else %>
+                <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+              <% end %>
             </div>
               <%= link_to "", itinerary_path(itinerary), class: "stretched-link" %>
           </div>
