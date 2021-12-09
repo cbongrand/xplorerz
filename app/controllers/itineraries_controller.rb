@@ -1,5 +1,7 @@
 class ItinerariesController < ApplicationController
   before_action :find_itinerary, only: %i[edit show update]
+  after_action :update_stu, only: :create
+  after_action :update_price, only: :create
 
   def index
     countries_id = CountryItinerary.pluck("DISTINCT country_id")
@@ -8,13 +10,15 @@ class ItinerariesController < ApplicationController
     @tags = Tag.where(id: tags_id).pluck(:name)
     if params[:query].present? && params[:filter].present?
       @query = params[:query]
+      @country = Country.find(params[:query])
       @filter = params[:filter]
-      sql_query = "countries.name ILIKE :query AND tags.name ILIKE :filter"
-      @itineraries = Itinerary.joins(:countries, :tags).where(sql_query, query: "%#{params[:query]}%", filter: "%#{params[:filter]}%")
+      sql_query = "countries.id = :query AND tags.name ILIKE :filter"
+      @itineraries = Itinerary.joins(:countries, :tags).where(sql_query, query: params[:query], filter: "%#{params[:filter]}%")
     elsif params[:query].present? && !params[:filter].present?
       @query = params[:query]
-      sql_query = "countries.name ILIKE :query"
-      @itineraries = Itinerary.joins(:countries).where(sql_query, query: "%#{params[:query]}%")
+      @country = Country.find(params[:query])
+      sql_query = "countries.id = :query"
+      @itineraries = Itinerary.joins(:countries).where(sql_query, query: params[:query])
     else
       @itineraries = Itinerary.all
     end
@@ -27,7 +31,6 @@ class ItinerariesController < ApplicationController
   def create
     @itinerary = Itinerary.new(itinerary_params)
     @itinerary.user = current_user
-    @itinerary.countries << Country.find(params[:itinerary][:countries])
     @itinerary.save
     if @itinerary.save
       redirect_to new_itinerary_day_path(@itinerary)
@@ -85,6 +88,16 @@ class ItinerariesController < ApplicationController
   end
 
   def itinerary_params
-    params.require(:itinerary).permit(:title, :description, :photo)
+    params.require(:itinerary).permit(:title, :description, :photo, country_ids: [], tag_ids: [])
+  end
+
+  def update_stu
+    @itinerary.stu = "itin#{:id}"
+    @itinerary.save
+  end
+
+  def update_price
+    @itinerary.price_cents = 300
+    @itinerary.save
   end
 end

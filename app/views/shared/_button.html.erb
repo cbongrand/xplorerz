@@ -1,5 +1,9 @@
 <% if @itinerary.user == current_user %>
    <%= link_to "Edit", edit_itinerary_path(@itinerary), method: :get, class: "btn purchase-btn" %>
 <% else %>
-  <%= link_to "Purchase", itinerary_bookings_path(@itinerary), method: :post, class: "btn purchase-btn" %>
+  <%= form_tag itinerary_bookings_path(@itinerary) do %>
+    <%= hidden_field_tag 'itinerary_id', @itinerary.id %>
+    <%= submit_tag 'Purchase', class: "btn purchase-btn" %>
+  <% end %>
+  <%#= link_to "Purchase for 3 USD", itinerary_bookings_path(@itinerary), method: :post, class: "btn purchase-btn pay" %>
 <% end %>
