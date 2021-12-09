@@ -1,6 +1,13 @@
 <div class="days-form">
   <div class="days-form-content">
     <div class="top-form">
+      <div class="top-link">
+        <% if @itinerary.days.index(@day) != 0 %>
+          <%= link_to "Go Back", edit_day_path(@itinerary.days[@itinerary.days.count - 2]), method: :get%>
+        <% else %>
+          <%= link_to "Go Back", edit_itinerary_path(@itinerary), method: :get%>
+        <% end %>
+      </div>
       <div class="top-header">
         <h4> Day <%= @itinerary.days.index(@day) + 1 %> </h4>
         <br>

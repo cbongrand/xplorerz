@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   patch "/credits", to: "pages#purchase"
   get "/bookings/:id/confirm", to: "bookings#confirm", as: 'booking_confirmation'
   mount StripeEvent::Engine, at: '/stripe-webhooks'
+  get "days/:id/edit2", to: "days#edit", as: "edit_day2"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

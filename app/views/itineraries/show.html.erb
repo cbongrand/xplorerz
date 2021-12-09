@@ -39,15 +39,14 @@
   <% end %>
 </div>
 <div class="trip-description">
-  <h2 id="trip-description-header">Trip description</h1>
+  <h2 id="trip-description-header">
+    Trip description
+  </h2>
+
   <h6 id="trip-description"><%=@itinerary.description%></h6>
 </div>
 
-<% if @itinerary.user == current_user%>
-  <div class="purchased d-flex justify-content-center">
-  <%= render 'shared/possibilities_itinerary' %>
-   </div>
-<% elsif !@itinerary.booked?(current_user)%>
+<% if @itinerary.user == current_user && !@itinerary.booked?(current_user)%>
   <div class="unpurchased d-flex justify-content-center">
     <%= render 'shared/possibilities_itinerary' %>
   </div>
@@ -58,11 +57,6 @@
       <% @itinerary.days.each_with_index do |day, index| %>
         <h2 class="day-header1 mb-1">Day <%=day.order || index + 1%></h2>
         <h4 class="day-header2"><%= day.city %></h4>
-        <% if @itinerary.user == current_user%>
-        <div class="purchased d-flex justify-content-center">
-        <%= link_to "Edit day", edit_day_path(day), method: :get, class: "edit-itinerary" %>
-        </div>
-        <% end %>
         <div class="day-description"><%= day.description %></div>
         <% if @itinerary.booked?(current_user) || @itinerary.user == current_user %>
           <div class="day-purchased">
@@ -74,11 +68,16 @@
             <div class="day-extra"><%=day.extra_info%></div>
           </div>
         <% end %>
+         <% if @itinerary.user == current_user%>
+        <div class="purchased d-flex justify-content-center">
+          <%= link_to "Edit day", edit_day_path(day), method: :get, class: "edit-day" %>
+        </div>
+        <% end %>
       <% end %>
     </div>
 
       <div id="map"
-        style="width: 400px; height: 75vh; margin: 0 10px 40px 60px; position: sticky; top: 140px"
+        style="width: 400px; height: 75vh; margin: 40px 10px 40px 60px; position: sticky; top: 140px"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
      </div>
