@@ -290,7 +290,8 @@ puts "Creating itineraries..."
 itin1 = Itinerary.create(
   title: "Colombia Coast",
   description: "The Caribbean Coast is the first region that showed the beauty of Colombia to the world with the golden walls of the old city center in Cartagena, the sultry Bachata movements in small bars, the white sandy beaches of Rosario islands and the green maze of Tayrona National Park. Framed by its stunning bay, Cartagena de Indias is one of the most beautiful, well-preserved cities in the Americas; a treasure that is currently one of the most heavily frequented tourist destinations in Colombia.",
-  user: User.all.sample
+  user: User.all.sample,
+  likers_count: 30
 )
 
 country_itinerary1 = CountryItinerary.new
@@ -390,7 +391,8 @@ end
 itin2 = Itinerary.create(
   title: "Magical Peru",
   description: "Peru counts with 28 individual climates. This creates a diverse ecosystem and natural variety, all in one country. You can see snow in the Andes, and not far away you can sandboard in the desert by the Huacachina Oasis. You can see Penguins at Ballestas Islands next to the dry and desert-like town of Paracas, and you can row peacefully in the Amazonian jungle rivers. You can hike up to a summit in the Andes, or you can go down to the deepest canyons in the world – Cañón del Colca and Cañón del Cotahuasi. The varieties and combinations are unlimited. Peru makes it perfect to do many short budget trips that will allow you to experience this natural variety.",
-  user: User.all.sample
+  user: User.all.sample,
+  likers_count: 5
 )
 
 country_itinerary2 = CountryItinerary.new
@@ -480,7 +482,8 @@ puts "Day #{day.id} has been created."
 itin3 = Itinerary.create(
   title: "Wine in Provence",
   description: "Wine has been made here for over 2600 years, making Provence the oldest wine-producing region of France. It is also the only place to focus on Rosé and is home to the only research institute dedicated to the style. Rocky mountain racing roads, wine, and lavender are the distinctive hallmarks of Provence.",
-  user: User.all.sample
+  user: User.all.sample,
+  likers_count: 17
 )
 
 country_itinerary3 = CountryItinerary.new
@@ -546,7 +549,8 @@ end
 itin4 = Itinerary.create(
   title: "Oaxaca City Food Markets",
   description: "For market lovers in Mexico, there’s no better state than Oaxaca. Sure, Mexico City offers strong competition and just about every town and village will have their own weekly tianguis, selling fruits and household odds and ends, but nothing competes with the famed, sprawling indoor and street markets in heavily indigenous Oaxaca. Here are the best markets in the region where you can find anything from one-of-a-kind artwork to locally produced coffee.",
-  user: User.all.sample
+  user: User.all.sample,
+  likers_count: 9
 )
 
 country_itinerary4 = CountryItinerary.new
@@ -677,7 +681,8 @@ end
 itin5 = Itinerary.create(
   title: "Barcelona on fire!",
   description: "Let’s face it, in a city as popular as Barcelona, it can be tricky finding a new hang out not everyone has already heard about. Fortunately there are still a handful of places which aren’t on all the guide-books…yet! Read on to discover some of the coolest hidden gems in Barcelona, from speak-easy bars to secret out-door hang outs.",
-  user: User.all.sample
+  user: User.all.sample,
+  likers_count: 3
 )
 
 country_itinerary5 = CountryItinerary.new
@@ -750,7 +755,8 @@ puts "Day #{day.id} has been created."
 itin6 = Itinerary.create(
   title: "Chiapas Jungle",
   description: "Anyone who says Mexican time runs sloooow hasn’t walked with a Maya in the jungle. Palenque is one of the first references that comes to mind when talking about the Mayan culture and its many vestiges. The Lacandón rain forest spills across the Usumacinta River into Guatemala from Mexico’s southernmost state, Chiapas, where about a quarter of the population is indigenous. Relatively few visitors to Mexico make it to Chiapas, and far fewer make it here, though there are gorgeous waterfalls, excellent Maya ruins, the occasional jaguar spotting, and eco-camps with the Lacandón people, a Maya group that now numbers fewer than 1,000.",
-  user: User.all.sample
+  user: User.all.sample,
+  likers_count: 9
 )
 
 country_itinerary6 = CountryItinerary.new
@@ -824,7 +830,8 @@ puts "Day #{day.id} has been created."
 itin7 = Itinerary.create(
   title: "Ultimate Guide to Czech Beer",
   description: "The Czechs drink more beer than any other nation, downing approximately a pint a day for every man, woman and child in the country – in fact, more beer is drunk here than water. Czech beer (pivo) ranks among the best on the planet and the country remains the true home of most of the lager drunk around the world today.",
-  user: User.all.sample
+  user: User.all.sample,
+  likers_count: 99
 )
 
 country_itinerary7 = CountryItinerary.new
@@ -914,7 +921,8 @@ puts "Day #{day.id} has been created."
 itin8 = Itinerary.create(
   title: "Surroundings of Medellin",
   description: "Medellin, Colombia was once a place where no tourist dared to visit and widely considered to be the most dangerous city on earth. Thankfully, things have changed drastically in recent years, and Medellin now welcomes tourists with open arms.",
-  user: User.all.sample
+  user: User.all.sample,
+  likers_count: 2
 )
 
 country_itinerary8 = CountryItinerary.new
