@@ -19,6 +19,7 @@
       <%= f.input :activity_info %>
       <%= f.input :extra_info %>
       <div class="end-page-buttons">
+        <%= hidden_field_tag(:subaction, 'edit2_param') %>
         <%= f.submit "Submit", class: "btn button-1" %>
       </div>
     <% end %>

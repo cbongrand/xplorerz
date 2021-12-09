@@ -1,7 +1,6 @@
 class ItinerariesController < ApplicationController
-  before_action :find_itinerary, only: %i[edit show update]
-  after_action :update_sku, only: :create
-  after_action :update_price, only: :create
+  before_action :find_itinerary, only: %i[edit show update update2]
+  # after_action :update2, only: :edit2
 
   def index
     countries_id = CountryItinerary.pluck("DISTINCT country_id")
@@ -46,10 +45,20 @@ class ItinerariesController < ApplicationController
     # @itinerary.user = current_user
     @itinerary.save
     if @itinerary.save
-      redirect_to itinerary_path(@itinerary)
+      if params[:subaction].present?
+      # redirect_to itinerary_path(@itinerary) if it comes from edit
+      # redirect_to new_itinerary_day_path(@itinerary) if it comes from edit2
+        redirect_to new_itinerary_day_path(@itinerary)
+      else
+        redirect_to itinerary_path(@itinerary)
+      end
     else
       render :new
     end
+  end
+
+  def edit2
+    find_itinerary
   end
 
   def show
@@ -89,15 +98,5 @@ class ItinerariesController < ApplicationController
 
   def itinerary_params
     params.require(:itinerary).permit(:title, :description, :photo, country_ids: [], tag_ids: [])
-  end
-
-  def update_sku
-    @itinerary.sku = "itin#{:id}"
-    @itinerary.save
-  end
-
-  def update_price
-    @itinerary.price_cents = 300
-    @itinerary.save
   end
 end
