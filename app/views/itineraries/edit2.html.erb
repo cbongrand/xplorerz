@@ -1,0 +1,16 @@
+<div class="days-form">
+  <div class="days-form-content">
+    <%= simple_form_for @itinerary do |f| %>
+      <%= f.label "Edit itinerary", class: "itinerary-form-title" %>
+      <%= f.input :title %>
+      <%= f.input :country_ids, label: "Countries", collection: Country.all, input_html: { data: { controller: 'select2' }, multiple: true}, required: true %>
+      <%= f.input :tag_ids, label: "Tags", collection: Tag.all, input_html: { data: { controller: 'select2' }, multiple: true}, required: true %>
+      <%= f.input :description %>
+      <%= f.input :photo, as: :file,
+                  required: true,
+                  id: "photo-btn" %>
+      <%= hidden_field_tag(:subaction, 'edit2_param') %>
+      <%= f.submit "Continue", class: "btn button-1 itinerary-form-btn" %>
+    <% end %>
+  </div>
+</div>

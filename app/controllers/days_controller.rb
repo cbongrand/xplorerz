@@ -23,14 +23,23 @@ class DaysController < ApplicationController
     @itinerary = @day.itinerary
   end
 
+  def edit2
+    @day = Day.find(params[:id])
+    @itinerary = @day.itinerary
+  end
+
   def show
     @day = Day.find(params[:id])
   end
 
-  def update
+ def update
     @day = Day.find(params[:id])
     if @day.update(day_params)
-      redirect_to itinerary_path(@day.itinerary)
+      if params[:subaction].present?
+        redirect_to new_itinerary_day_path(@day.itinerary)
+      else
+        redirect_to itinerary_path(@day.itinerary)
+      end
     else
       render :new
     end
