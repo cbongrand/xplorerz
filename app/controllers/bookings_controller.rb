@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     # @booking.state = 'pending'
     # @booking.itinereary_sku = @itinerary.sku
     @booking.amount = @itinerary.price
-    @booking.save
+    @booking.save!
     # if @booking.save
     #   redirect_to booking_confirmation_path(@booking)
     # else
