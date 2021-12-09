@@ -7,11 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Replace with more users if required
-puts "Cleaning database..."
-Booking.destroy_all
-Itinerary.destroy_all
-User.destroy_all
-Country.destroy_all
+
 
 5.times do
   puts "Creating user..."
