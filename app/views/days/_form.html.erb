@@ -3,9 +3,9 @@
     <div class="top-form">
       <div class="top-link">
         <% if @itinerary.days.count >= 1 %>
-          <%= link_to "Go back", edit_day_path(@itinerary.days[@itinerary.days.count - 1]), method: :get %>
+          <%= link_to "Go back", edit_day2_path(@itinerary.days[@itinerary.days.count - 1]), method: :get %>
         <% else %>
-          <%= link_to "Go back", edit_itinerary_path(@itinerary), method: :get %>
+          <%= link_to "Go back", edit_itinerary2_path(@itinerary), method: :get %>
         <% end %>
       </div>
       <div class="top-header">
