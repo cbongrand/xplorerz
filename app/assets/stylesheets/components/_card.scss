@@ -163,6 +163,11 @@
   h6 {
     padding-top: 3px;
     font-size: 11px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    height: 31.4px;
+    overflow: hidden;
   }
     h5 {
     padding-top: 3px;

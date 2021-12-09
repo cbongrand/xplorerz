@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :itineraries, except: :destroy do
     resources :days, only: %i[create new]
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[new create] do
+      resources :payments, only: :new
+    end
   end
 
   resources :days, only: %i[edit update]
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
   get "/credits", to: "pages#credits"
   patch "/credits", to: "pages#purchase"
   get "/bookings/:id/confirm", to: "bookings#confirm", as: 'booking_confirmation'
-  get "/itineraries/:id/edit", to: "itineraries#edit", as: "edit_itinerary2"
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+  get "days/:id/edit2", to: "days#edit", as: "edit_day2"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

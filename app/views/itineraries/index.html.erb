@@ -39,9 +39,6 @@
           <div class="card-infos">
             <div class="card-infos-1">
               <h4><%= itinerary.countries.map{|country| country.name}.uniq.first %></h4>
-              <div class="cards-tag">
-                <%= itinerary.tags.map{|tag| tag.name}.uniq.join(" | ") %>
-              </div>
             </div>
             <div class="card-infos-2">
               <h6><%= itinerary.days.map{|day| day.city}.uniq.join(", ") %></h6>

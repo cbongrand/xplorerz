@@ -32,3 +32,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initHeartClick();
 })
+
+import "controllers"
