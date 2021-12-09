@@ -37,8 +37,8 @@ class BookingsController < ApplicationController
         quantity: 1
       }],
       # this determines where the stripe will go after completing the payment
-      success_url: "http://localhost:3000/bookings/#{@itinerary.id}/confirm",
-      cancel_url: "http://localhost:3000/itineraries/#{@itinerary.id}"
+      success_url: "#{ENV['DOMAIN_URL']}/bookings/#{@itinerary.id}/confirm",
+      cancel_url: "#{ENV['DOMAIN_URL']}/itineraries/#{@itinerary.id}"
     )
 
     @booking.update(checkout_session_id: session.id)
