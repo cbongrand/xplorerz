@@ -1,5 +1,4 @@
 meta_product_name: "Xplorerz"
-meta_title: "Product name - Product tagline"
+meta_title: "Find a itinerary for the perfect journey"
 meta_description: "Relevant description"
-meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_image: "banner-home_img.jpg" # should exist in `app/assets/images/`
