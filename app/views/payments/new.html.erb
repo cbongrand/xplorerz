@@ -36,8 +36,14 @@
           </div>
         </div>
       <div class="col-6">
+      <div class="pay-title">
         <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @booking.itinerary.title %></strong> for <strong><%= humanized_money_with_symbol @booking.amount %></strong></p>
+
+      </div>
+      <div class="pay-title">
+        <p>Purchase of <strong><%= @booking.itinerary.title %></strong> for <strong><%= humanized_money_with_symbol @booking.amount %></strong></p>
+      </div>
+
       <button id="pay" class="btn purchase-btn">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
