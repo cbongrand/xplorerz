@@ -12,13 +12,7 @@ class DaysController < ApplicationController
     @itinerary = Itinerary.find(params[:itinerary_id])
     @day.itinerary = @itinerary
     if @day.save
-      if params[:subaction].present?
-      # redirect_to itinerary_path(@itinerary) if it comes from edit
-      # redirect_to new_itinerary_day_path(@itinerary) if it comes from edit2
-        redirect_to new_itinerary_day_path(@itinerary)
-      else
-        redirect_to params[:commit] == "Finish" ? @itinerary : new_itinerary_day_path(@itinerary)
-      end
+      redirect_to params[:commit] == "Finish" ? @itinerary : new_itinerary_day_path(@itinerary)
     else
       render :new
     end
@@ -29,14 +23,23 @@ class DaysController < ApplicationController
     @itinerary = @day.itinerary
   end
 
+  def edit2
+    @day = Day.find(params[:id])
+    @itinerary = @day.itinerary
+  end
+
   def show
     @day = Day.find(params[:id])
   end
 
-  def update
+ def update
     @day = Day.find(params[:id])
     if @day.update(day_params)
-      redirect_to itinerary_path(@day.itinerary)
+      if params[:subaction].present?
+        redirect_to new_itinerary_day_path(@day.itinerary)
+      else
+        redirect_to itinerary_path(@day.itinerary)
+      end
     else
       render :new
     end
