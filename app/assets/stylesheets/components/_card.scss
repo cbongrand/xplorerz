@@ -192,3 +192,14 @@
   align-items: center;
   color: #4FADBB;
 }
+
+.no-hover:hover {
+  background-color: rgb(255, 255, 255);
+  width: 350px;
+  height: 350px;
+  border-radius: 27px;
+  border: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)  ;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

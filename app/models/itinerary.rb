@@ -19,4 +19,10 @@ class Itinerary < ApplicationRecord
     current_user_bookings = current_user.booked_itineraries
     current_user_bookings.any? { |user_booking| user_booking.id == id }
   end
+
+  #def booked?(current_user)
+    #ids = current_user.bookings.where(state: "paid").pluck(:itinerary_id)
+    #current_user_bookings = Itinerary.where(id: ids)
+    #current_user_bookings.any? { |user_booking| user_booking.id == id }
+  #end
 end
