@@ -45,11 +45,11 @@
 
 <% if @itinerary.user == current_user%>
   <div class="purchased d-flex justify-content-center">
-  <%= render 'shared/button' %>
+  <%= render 'shared/possibilities_itinerary' %>
    </div>
 <% elsif !@itinerary.booked?(current_user)%>
   <div class="unpurchased d-flex justify-content-center">
-    <%= render 'shared/button' %>
+    <%= render 'shared/possibilities_itinerary' %>
   </div>
 <% end %>
 
@@ -58,6 +58,11 @@
       <% @itinerary.days.each_with_index do |day, index| %>
         <h2 class="day-header1 mb-1">Day <%=day.order || index + 1%></h2>
         <h4 class="day-header2"><%= day.city %></h4>
+        <% if @itinerary.user == current_user%>
+        <div class="purchased d-flex justify-content-center">
+        <%= link_to "Edit day", edit_day_path(day), method: :get, class: "edit-itinerary" %>
+        </div>
+        <% end %>
         <div class="day-description"><%= day.description %></div>
         <% if @itinerary.booked?(current_user) || @itinerary.user == current_user %>
           <div class="day-purchased">
