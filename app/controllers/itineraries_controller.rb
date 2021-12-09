@@ -1,5 +1,7 @@
 class ItinerariesController < ApplicationController
   before_action :find_itinerary, only: %i[edit show update]
+  after_action :update_stu, only: :create
+  after_action :update_price, only: :create
 
   def index
     countries_id = CountryItinerary.pluck("DISTINCT country_id")
@@ -87,5 +89,15 @@ class ItinerariesController < ApplicationController
 
   def itinerary_params
     params.require(:itinerary).permit(:title, :description, :photo, country_ids: [], tag_ids: [])
+  end
+
+  def update_stu
+    @itinerary.stu = "itin#{:id}"
+    @itinerary.save
+  end
+
+  def update_price
+    @itinerary.price_cents = 300
+    @itinerary.save
   end
 end

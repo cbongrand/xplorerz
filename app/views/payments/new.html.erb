@@ -40,7 +40,19 @@
           </div>
         </div>
       <div class="col-6">
-        <h3>Congratulations <%= current_user.first_name %>! You’re now able to discover <%= @booking.itinerary.title %></h3>
+        <h1>Checkout summary</h1>
+      <p>Purchase of <strong><%= @booking.itinerary.title %></strong> for <strong><%= humanized_money_with_symbol @booking.amount %></strong></p>
+      <button id="pay" class="btn purchase-btn">Pay</button>
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @booking.checkout_session_id %>'
+          });
+        });
+      </script>
       </div>
     </div>
 </div>
