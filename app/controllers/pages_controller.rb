@@ -8,7 +8,8 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @booked_itineraries = current_user.booked_itineraries
+    bookings = current_user.bookings.select { |booking| booking.state == "paid" }
+    @booked_itineraries = bookings.map { |booking| booking.itinerary}
     @itineraries = current_user.itineraries
     @itineraries = Itinerary.all
   end
