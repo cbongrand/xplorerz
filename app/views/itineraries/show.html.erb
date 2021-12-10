@@ -17,7 +17,7 @@
   <div class="show-info-1-heart">
     <div class="heart">
       <span class="fa-layers fa-fw like-heart">
-        <i  class="<%= (current_user.likes?(@itinerary) || current_user.id == @itinerary.user_id) ? "fas fa-heart": "far fa-heart" %>"></i>
+        <i  class="<%= (current_user.likes?(@itinerary) || current_user.id == @itinerary.user_id || !@itinerary.booked_and_payed?(current_user)) ? "fas fa-heart": "far fa-heart" %>"></i>
         <span class="fa-layers-text fa-inverse" data-fa-transform="grow-6 right-19" style="font-weight:700">
           <%= @itinerary.likers_count %>
         </span>
