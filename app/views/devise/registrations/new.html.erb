@@ -1,11 +1,13 @@
 <div class="page-title">
-  <h2>Sign up</h2>
+  <div class="sign-up">
+    Sign-up
+  </div>
 </div>
 <div class="sign-in">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
+    <div class="form-inputs form-lg">
       <%= f.input :first_name,
                   required: true,
                   autofocus: true,
@@ -33,13 +35,12 @@
                   required: true %>
     </div>
 
-  <div class = "sign-in-btns">
     <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: "btn button-1 itinerary-form-btn" %>
+      <%= f.button :submit, "Sign up", class: "btn button-1 itinerary-form-btn mb-3 mt-3" %>
     </div>
   <% end %>
-    <div class = "btn button-2 log-in">
-    <%= render "devise/shared/links" %>
+    Already have an account?
+    <div class = "log-in-link">
+      <%= render "devise/shared/links" %>
     </div>
-  </div>
 </div>
