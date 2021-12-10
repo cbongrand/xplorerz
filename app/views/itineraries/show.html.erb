@@ -26,6 +26,10 @@
         <div class="like-button">
           <%= render 'shared/like_button' %>
         </div>
+      <% else %>
+        <div class="like-message">
+          <%# <p>This itinerary has been <br> liked by = @itinerary.likers_count Xplorerz! </p> %>
+        </div>
       <% end %>
     </div>
   </div>

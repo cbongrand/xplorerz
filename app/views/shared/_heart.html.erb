@@ -1,0 +1,4 @@
+<% if current_user.likes?(@itinerary) || @itinerary.user != current_user %>
+<%= "fas fa-heart" %>
+<% else %>
+<%= "far fa-heart" %>
