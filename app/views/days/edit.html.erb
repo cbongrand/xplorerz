@@ -1,17 +1,18 @@
-<div class="days-form">
-  <div class="days-form-content">
-    <div class="top-form">
-      <div class="top-header">
-        <h4> Day <%= @itinerary.days.index(@day) + 1 %> </h4>
-        <br>
-      </div>
-    </div>
+<div class="form-header">
+  What do you want to change ?
+</div>
+<div class="itinerary-form">
+  <div class="itinerary-form-content">
     <%= simple_form_for @day do |f| %>
+      <div class="inform-header mb-2">
+        Day <%= @itinerary.days.index(@day) + 1 %>
+      </div>
       <p><%= f.input :city %> <%= f.input :description %></p>
       <%= f.input :restaurant_info %>
       <%= f.input :activity_info %>
       <%= f.input :extra_info %>
       <div class="end-page-buttons">
+      <div class="necessary"></div>
         <%= f.submit "Submit", class: "btn button-1" %>
       </div>
     <% end %>

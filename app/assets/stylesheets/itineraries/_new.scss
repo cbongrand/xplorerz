@@ -16,11 +16,10 @@ h3 {
 }
 
 .itinerary-form-content {
-  background-color: rgb(230, 229, 229);
-  padding: 2%;
+  background-color: rgba(230, 229, 229, 0.508);
+  padding: 2% 3%;
   border-radius: 10px;
-  width: 550px;
-  margin-top: 3%;
+  width: 45%;
   margin-bottom: 3%;
 }
 
@@ -40,8 +39,43 @@ h3 {
 
 .itinerary-form-btn {
   text-align: center;
+  align-items: right;
 }
 
 .itinerarie-photo {
   border-radius: 0px;
+}
+
+.form-header {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  color: #4FADBB;
+  padding: 30px 0 30px 0;
+}
+
+
+.inform-header {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  color: $xplorerz-gray;
+}
+
+#itinerary_description {
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+
+#itinerary_title {
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+
+.final-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

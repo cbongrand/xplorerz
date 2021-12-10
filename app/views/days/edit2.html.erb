@@ -1,25 +1,28 @@
-<div class="days-form">
-  <div class="days-form-content">
-    <div class="top-form">
-      <div class="top-link">
-        <% if @itinerary.days.index(@day) != 0 %>
+<div class="form-header">
+  Let's add a day!
+</div>
+<div class="itinerary-form">
+  <div class="itinerary-form-content">
+    <%= simple_form_for @day do |f| %>
+      <div class="top-form">
+        <div class="top-link">
+          <% if @itinerary.days.index(@day) != 0 %>
           <%= link_to "Go Back", edit_day_path(@itinerary.days[@itinerary.days.count - 2]), method: :get%>
         <% else %>
           <%= link_to "Go Back", edit_itinerary_path(@itinerary), method: :get%>
         <% end %>
+        </div>
       </div>
-      <div class="top-header">
-        <h4> Day <%= @itinerary.days.index(@day) + 1 %> </h4>
-        <br>
+      <div class="inform-header mb-2">
+        Day <%= @itinerary.days.index(@day) + 1 %>
       </div>
-    </div>
-    <%= simple_form_for @day do |f| %>
-      <p><%= f.input :city %> <%= f.input :description %></p>
-      <%= f.input :restaurant_info %>
-      <%= f.input :activity_info %>
-      <%= f.input :extra_info %>
+      <%= f.input :city %> <%= f.input :description, label: "Day description" %>
+      <%= f.input :restaurant_info, label: "Recommended restaurant" %>
+      <%= f.input :activity_info, label: "Recommended activity" %>
+      <%= f.input :extra_info, label: "Xplorerz advice" %>
       <div class="end-page-buttons">
         <%= hidden_field_tag(:subaction, 'edit2_param') %>
+        <div class="necessary"></div>
         <%= f.submit "Next", class: "btn button-1" %>
       </div>
     <% end %>
