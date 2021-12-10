@@ -46,6 +46,8 @@ TAGS = [
   "Forest",
   "National Park",
   "Other",
+  "Romantic",
+  "Party",
 ]
 
 COLORS = [
@@ -413,7 +415,7 @@ tag_itinerary2.tag = Tag.find_by(name: "Adventure")
 tag_itinerary2.save!
 tag_itinerary2 = ItineraryTag.new
 tag_itinerary2.itinerary = itin2
-tag_itinerary2.tag = Tag.find_by(name: "Animals")
+tag_itinerary2.tag = Tag.find_by(name: "Food")
 tag_itinerary2.save!
 
 i = 0
@@ -496,7 +498,7 @@ country_itinerary3.save!
 
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
-tag_itinerary3.tag = Tag.find_by(name: "Sports")
+tag_itinerary3.tag = Tag.find_by(name: "Romantic")
 tag_itinerary3.save!
 tag_itinerary3 = ItineraryTag.new
 tag_itinerary3.itinerary = itin3
@@ -571,7 +573,7 @@ tag_itinerary4.tag = Tag.find_by(name: "Sports")
 tag_itinerary4.save!
 tag_itinerary4 = ItineraryTag.new
 tag_itinerary4.itinerary = itin4
-tag_itinerary4.tag = Tag.find_by(name: "Surf")
+tag_itinerary4.tag = Tag.find_by(name: "Family")
 tag_itinerary4.save!
 
 i = 0
@@ -695,7 +697,7 @@ country_itinerary5.save!
 
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
-tag_itinerary5.tag = Tag.find_by(name: "Animals")
+tag_itinerary5.tag = Tag.find_by(name: "Family")
 tag_itinerary5.save!
 tag_itinerary5 = ItineraryTag.new
 tag_itinerary5.itinerary = itin5
@@ -773,7 +775,7 @@ tag_itinerary6.tag = Tag.find_by(name: "Adventure")
 tag_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
-tag_itinerary6.tag = Tag.find_by(name: "Family")
+tag_itinerary6.tag = Tag.find_by(name: "Hiking")
 tag_itinerary6.save!
 tag_itinerary6 = ItineraryTag.new
 tag_itinerary6.itinerary = itin6
@@ -939,7 +941,7 @@ tag_itinerary8.tag = Tag.find_by(name: "City")
 tag_itinerary8.save!
 tag_itinerary8 = ItineraryTag.new
 tag_itinerary8.itinerary = itin8
-tag_itinerary8.tag = Tag.find_by(name: "Animals")
+tag_itinerary8.tag = Tag.find_by(name: "Romantic")
 tag_itinerary8.save!
 
 i = 0
