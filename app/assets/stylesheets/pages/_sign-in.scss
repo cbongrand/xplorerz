@@ -4,13 +4,12 @@
   border-radius: 20px;
   background-color: #eceded;
   margin: auto;
-  margin-top: 50px;
   text-align: center;
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 27px;
   padding-right: 100px;
   padding-left: 100px;
-  margin-bottom: 39px;
+  margin-bottom: 60px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -26,4 +25,17 @@
   display: flex;
   align-items: baseline;
   justify-content: space-evenly;
+}
+
+.sign-up {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  color: #4FADBB;
+  padding: 30px 0 30px 0;
+}
+
+.form-lg {
+  width: 24vw;
 }
