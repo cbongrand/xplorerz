@@ -6,12 +6,23 @@
   .fa-heart {
     font-size: 60px;
   }
+  text-align: center;
 }
 
 .like-heart:hover{
   cursor: pointer;
 }
 
-.fa-inverse{
-  color: rgb(255, 255, 255);
+// .fa-inverse{
+//   color: rgb(255, 255, 255);
+// }
+
+.fa-layers-text{
+  color: rgb(56, 56, 56);
+  font-weight: 100;
+}
+
+.like-message{
+  padding: 20px;
+  text-align: center;
 }

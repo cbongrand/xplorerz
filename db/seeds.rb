@@ -8,7 +8,6 @@
 
 # Replace with more users if required
 
-
 5.times do
   puts "Creating user..."
   user = User.new(
@@ -18,7 +17,11 @@
     password: '123456',
     description: Faker::Twitter.status
   )
-  user.photo.attach(io: File.open(Rails.root.join('app/assets/images/default_avatar.jpg')), filename: 'default_avatar.jpg')
+
+  image_url = "https://source.unsplash.com/200x200/?profile picture"
+  downloaded_image = URI.open(image_url)
+  user.photo.attach(io: downloaded_image, filename: "user-#{user.id}")
+  # user.photo.attach(io: File.open(Rails.root.join('app/assets/images/default_avatar.jpg')), filename: 'default_avatar.jpg')
 
   user.save
   puts "User #{user.id} has been created."

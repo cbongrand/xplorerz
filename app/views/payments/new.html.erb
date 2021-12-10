@@ -27,7 +27,7 @@
                 <span class="fa-layers fa-fw">
                   <i class="fas fa-heart"></i>
                   <span class="fa-layers-text fa-inverse" data-fa-transform="shrink-5 right-7" style="font-weight:700">
-                    <%= @booking.itinerary.likers(User.all).count %>
+                    <%= @booking.itinerary.likers_count %>
                   </span>
                 </span>
                 <%= cl_image_tag @booking.itinerary.user.photo.key, class:"avatar-bordered" %>
