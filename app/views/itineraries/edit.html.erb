@@ -1,15 +1,22 @@
-<div class="days-form">
-  <div class="days-form-content">
+<div class="form-header">
+  What do you want to change?
+</div>
+<div class="itinerary-form">
+  <div class="itinerary-form-content">
     <%= simple_form_for @itinerary do |f| %>
-      <%= f.label "Edit itinerary", class: "itinerary-form-title" %>
-      <%= f.input :title %>
+      <div class="inform-header mb-2">
+        Modify itinerary
+      </div>
+      <%= f.input :title, label: "Itinerary title" %>
+      <%= f.input :description %>
       <%= f.input :country_ids, label: "Countries", collection: Country.all, input_html: { data: { controller: 'select2' }, multiple: true}, required: true %>
       <%= f.input :tag_ids, label: "Tags", collection: Tag.all, input_html: { data: { controller: 'select2' }, multiple: true}, required: true %>
-      <%= f.input :description %>
-      <%= f.input :photo, as: :file,
-                  required: true,
-                  id: "photo-btn" %>
-      <%= f.submit "Continue", class: "btn button-1 itinerary-form-btn" %>
+      <div class="final-line">
+        <%= f.input :photo, as: :file,
+                    required: true,
+                    id: "photo-btn" %>
+        <%= f.submit "Submit", class: "btn button-1 itinerary-form-btn" %>
+      </div>
     <% end %>
   </div>
 </div>

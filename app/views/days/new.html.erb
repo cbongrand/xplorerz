@@ -1,28 +1,28 @@
-<div class="days-form">
-  <div class="days-form-content">
-    <div class="top-form">
-      <div class="top-link">
-        <% if @itinerary.days.count >= 1 %>
-          <%= link_to "Go back", edit_day2_path(@itinerary.days[@itinerary.days.count - 1]), method: :get %>
-        <% else %>
-          <%= link_to "Go back", edit_itinerary2_path(@itinerary), method: :get %>
-        <% end %>
-      </div>
-      <div class="top-header">
-        <h4> Day <%= @itinerary.days.count + 1 %> </h4>
-        <br>
-      </div>
-    </div>
+<div class="form-header">
+  Let's add a day!
+</div>
+<div class="itinerary-form">
+  <div class="itinerary-form-content">
     <%= simple_form_for [ @itinerary, @day ] do |f| %>
-      <%= f.input :city %> <%= f.input :description %>
-      <%= f.input :restaurant_info %>
-      <%= f.input :activity_info %>
-      <%= f.input :extra_info %>
+      <div class="top-form">
+        <div class="top-link">
+          <% if @itinerary.days.count >= 1 %>
+            <%= link_to "Go back", edit_day2_path(@itinerary.days[@itinerary.days.count - 1]), method: :get %>
+          <% else %>
+            <%= link_to "Go back", edit_itinerary2_path(@itinerary), method: :get %>
+          <% end %>
+        </div>
+      </div>
+      <div class="inform-header mb-2">
+        Day <%= @itinerary.days.count + 1 %>
+      </div>
+      <%= f.input :city %> <%= f.input :description, label: "Day description" %>
+      <%= f.input :restaurant_info, label: "Recommended restaurant" %>
+      <%= f.input :activity_info, label: "Recommended activity" %>
+      <%= f.input :extra_info, label: "Xplorerz advice" %>
       <div class="end-page-buttons">
-        <%= f.submit "Add day", class: "btn button-2" %>
-        <% if @itinerary.days.count >= 1 %>
-          <%= f.button :submit, "Finish", class: "btn button-1", style: "width: auto" %>
-        <% end %>
+        <%= f.submit "Add new day", class: "btn button-2", style: "width: auto" %>
+        <%= f.button :submit, "Finish", class: "btn button-1", style: "width: auto" %>
       </div>
     <% end %>
   </div>

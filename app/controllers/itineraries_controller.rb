@@ -58,7 +58,6 @@ class ItinerariesController < ApplicationController
   end
 
   def edit2
-    raise
     find_itinerary
   end
 
