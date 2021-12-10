@@ -2,17 +2,17 @@
   <div class="profile-information">
     <%= cl_image_tag current_user.photo.key, :class => 'avatar-large' %>
     <p id="name-profile">
-    <%= current_user.first_name %> <%= current_user.last_name %>
+      <%= current_user.first_name %> <%= current_user.last_name %>
     </p>
     <p id="email-profile">
-    <%= current_user.email %>
+      <%= current_user.email %>
     </p>
     <p id="description-profile">
-    <%= current_user.description %>
+      <%= current_user.description %>
     </p>
     <div class="gems">
-    <p id="gems-profile">Xplorerz gems:</p>
-    <p id="gems-profile-number">2</p>
+      <p id="gems-profile">Xplorerz gems:</p>
+      <p id="gems-profile-number">2</p>
     </div>
   </div>
   <div class="profile-items">
@@ -21,41 +21,41 @@
         <h4>Bought itineraries</h4>
       </div>
       <div class="d-flex flex-wrap">
-      <% if @booked_itineraries.count == 0 %>
-      <div class="col mb-5 mt-4 d-flex justify-content-center">
-        No bought itineraries yet...
-      </div>
-      <% else %>
-        <% @booked_itineraries.each do |booking| %>
-            <div class="col mb-2 d-flex justify-content-center">
-              <div class="card-little">
-                <div class="cardbanner-little"
-                  <% if booking.photo.attached? %>
-                    style="background-image: url('<%= cl_image_path booking.photo.key, height: 300, crop: :fill %>')"
-                  <% else %>
-                    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1552980870-139c7b393f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80')"
-                  <% end %>
-                >
-                  <span><%= booking.title %></span>
-                </div>
-                <div class="card-infos-little">
-                  <div class="card-infos-1-little-only-country">
-                    <h4><%= booking.countries.map{|country| country.name}.uniq.join(" - ") %></h4>
+        <% if @booked_itineraries.count == 0 %>
+          <div class="col mb-5 mt-4 d-flex justify-content-center">
+            No bought itineraries yet...
+          </div>
+        <% else %>
+          <% @booked_itineraries.each_slice(3) do |slice| %>
+            <div class="row">
+              <% slice.each do |booking| %>
+                <div class="col mb-2 d-flex justify-content-center">
+                  <div class="card-little">
+                    <div class="cardbanner-little"
+                      <% if booking.photo.attached? %>
+                        style="background-image: url('<%= cl_image_path booking.photo.key, height: 300, crop: :fill %>')"
+                      <% else %>
+                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1552980870-139c7b393f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80')"
+                      <% end %>
+                    >
+                      <span><%= booking.title %></span>
+                    </div>
+                    <div class="card-infos-little">
+                      <div class="card-infos-1-little-only-country">
+                        <h4><%= booking.countries.map{|country| country.name}.uniq.join(" - ") %></h4>
+                      </div>
+                      <div class="card-infos-2-little-only-country">
+                        <h6><%= booking.days.map{|day| day.city}.uniq.join(", ") %></h6>
+                        <h5><%= booking.days.count %> DAYS</h5>
+                      </div>
+                    </div>
+                    <%= link_to "", itinerary_path(booking), class: "stretched-link" %>
                   </div>
-                  <div class="card-infos-2-little-only-country">
-                    <h6><%= booking.days.map{|day| day.city}.uniq.join(", ") %></h6>
-                    <h5><%= booking.days.count %> DAYS</h5>
-                  </div>
-
-
                 </div>
-                <%= link_to "", itinerary_path(booking), class: "stretched-link" %>
-
-
-              </div>
+              <% end %>
             </div>
+          <% end %>
         <% end %>
-      <% end %>
       </div>
     </div>
     <div class="itin-index">
@@ -63,48 +63,51 @@
         <h4>Created itineraries</h4>
       </div>
       <div class="d-flex flex-wrap">
-      <% if @current_user.itineraries.count == 0 %>
-      <div class="col mb-2 mt-4 d-flex justify-content-center">
-        You haven't published any itineraries yet...
-      </div>
-      <% else %>
-        <% @current_user.itineraries.each do |itinerary| %>
-              <div class="col mb-2 d-flex justify-content-center">
-                <div class="card-little">
-                  <div class="cardbanner-little"
-                  <% if itinerary.photo.attached? %>
-                    style="background-image: url('<%= cl_image_path itinerary.photo.key, height: 300, crop: :fill %>')"
-                  <% else %>
-                    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1552980870-139c7b393f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80')"
-                  <% end %>
-                  >
-                    <span><%= itinerary.title %></span>
+        <% if @current_user.itineraries.count == 0 %>
+          <div class="col mb-2 mt-4 d-flex justify-content-center">
+            You haven't published any itineraries yet...
+          </div>
+        <% else %>
+          <% @current_user.itineraries.each_slice(3) do |slice| %>
+            <div class="row">
+              <% slice.each do |itinerary| %>
+                <div class="col mb-2 d-flex justify-content-center">
+                  <div class="card-little">
+                    <div class="cardbanner-little"
+                      <% if itinerary.photo.attached? %>
+                        style="background-image: url('<%= cl_image_path itinerary.photo.key, height: 300, crop: :fill %>')"
+                      <% else %>
+                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1552980870-139c7b393f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80')"
+                      <% end %>
+                    >
+                      <span><%= itinerary.title %></span>
+                    </div>
+                      <div class="card-infos-little">
+                        <% if itinerary.countries.count > 1 %>
+                          <div class="card-infos-1-little-only-country">
+                            <h4>Multiple countries</h4>
+                          </div>
+                          <div class="card-infos-2-little-only-country">
+                            <h6><%= itinerary.countries.map{|country| country.name}.uniq.join(" - ") %></h6>
+                            <h5><%= itinerary.days.count %> DAYS</h5>
+                          </div>
+                        <% else %>
+                          <div class="card-infos-1-little-only-country">
+                            <h4><%= itinerary.countries.map{|country| country.name}.uniq.join(" - ") %></h4>
+                          </div>
+                          <div class="card-infos-2-little-only-country">
+                            <h6><%= itinerary.days.map{|day| day.city}.uniq.join(", ") %></h6>
+                            <h5><%= itinerary.days.count %> DAYS</h5>
+                          </div>
+                        <% end %>
+                      </div>
+                    <%= link_to "", itinerary_path(itinerary), class: "stretched-link" %>
                   </div>
-                  <div class="card-infos-little">
-                    <% if itinerary.countries.count > 1 %>
-                      <div class="card-infos-1-little-only-country">
-                        <h4>Multiple countries</h4>
-                      </div>
-                      <div class="card-infos-2-little-only-country">
-                        <h6><%= itinerary.countries.map{|country| country.name}.uniq.join(" - ") %></h6>
-                        <h5><%= itinerary.days.count %> DAYS</h5>
-                      </div>
-                    <% else %>
-                      <div class="card-infos-1-little-only-country">
-                        <h4><%= itinerary.countries.map{|country| country.name}.uniq.join(" - ") %></h4>
-                      </div>
-                      <div class="card-infos-2-little-only-country">
-                        <h6><%= itinerary.days.map{|day| day.city}.uniq.join(", ") %></h6>
-                        <h5><%= itinerary.days.count %> DAYS</h5>
-                      </div>
-                    <% end %>
-                  </div>
-                  </div>
-                  <%= link_to "", itinerary_path(itinerary), class: "stretched-link" %>
                 </div>
-              </div>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
       </div>
     </div>
   </div>
