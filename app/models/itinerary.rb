@@ -23,10 +23,15 @@ class Itinerary < ApplicationRecord
     self.sku = 'Itinerary'
   end
 
-  def booked?(current_user)
-    current_user_bookings = current_user.booked_itineraries
-    current_user_bookings.any? { |user_booking| user_booking.id == id }
+  def booked_and_payed?(current_user)
+    current_user_itineraries = current_user.booked_itineraries
+    current_user_bookings = current_user.bookings
+    booked = current_user_itineraries.any? { |user_booking| user_booking.id == id }
+    array_of_bookings = current_user_bookings.find_all { |user_booking| user_booking.itinerary_id == id }
+    payed = array_of_bookings.any? {|user_booking| user_booking.state == "paid"}
+    booked && payed
   end
+
 
   #def booked?(current_user)
     #ids = current_user.bookings.where(state: "paid").pluck(:itinerary_id)

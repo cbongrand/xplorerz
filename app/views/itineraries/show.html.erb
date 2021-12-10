@@ -22,7 +22,7 @@
           <%= @itinerary.likers_count %>
         </span>
       </span>
-      <% if @itinerary.booked?(current_user) %>
+      <% if @itinerary.booked_and_payed?(current_user) %>
         <div class="like-button">
           <%= render 'shared/like_button' %>
         </div>
@@ -44,7 +44,7 @@
     Trip description
   </h2>
 
-  <% if @itinerary.user == current_user && !@itinerary.booked?(current_user)%>
+  <% if @itinerary.user == current_user && !@itinerary.booked_and_payed?(current_user)%>
   <div class="unpurchased d-flex justify-content-center">
     <%= render 'shared/possibilities_itinerary' %>
   </div>
@@ -58,7 +58,7 @@
         <h2 class="day-header1 mb-1">Day <%=day.order || index + 1%></h2>
         <h4 class="day-header2"><%= day.city %></h4>
         <div class="day-description"><%= day.description %></div>
-        <% if @itinerary.booked?(current_user) || @itinerary.user == current_user %>
+        <% if @itinerary.booked_and_payed?(current_user) || @itinerary.user == current_user %>
           <div class="day-purchased">
           <i class="fas fa-utensils"></i>
             <div class="day-restaurant"><%=day.restaurant_info%></div>
@@ -85,7 +85,7 @@
 </div>
 
   <div class="purchase-cont">
-<% if (@itinerary.user != current_user) && (!@itinerary.booked?(current_user))%>
+<% if (@itinerary.user != current_user) && (!@itinerary.booked_and_payed?(current_user))%>
   <%= form_tag itinerary_bookings_path(@itinerary) do %>
     <%= hidden_field_tag 'itinerary_id', @itinerary.id %>
     <%= submit_tag 'Purchase full itinerary', class: "btn purchase-btn" %>
