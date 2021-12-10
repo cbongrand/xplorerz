@@ -13,6 +13,15 @@ class Itinerary < ApplicationRecord
   validates :description, presence: true
   scope :trendy, -> { order(likers_count: :desc).limit(3) }
   monetize :price_cents
+  before_save :assign_price, :assign_sku
+
+  def assign_price
+    self.price = 3
+  end
+
+  def assign_sku
+    self.sku = 'Itinerary'
+  end
 
   def booked?(current_user)
     current_user_bookings = current_user.booked_itineraries
