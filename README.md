@@ -6,3 +6,13 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 <h5>Web application for travel itineraries 🌎</h5>
 <p>Tech stack: Ruby, Rails, CSS, Git Bootstrap, JS, PostgreSQL, Heroku</p>
 <a href="https://www.youtube.com/watch?v=BfC-h9wm-Ns&feature=youtu.be" target="_blank">See the demo here! 📹</a>
+<br>
+<br>
+<br>
+<h6>In this app, the user can</h6>
+<ul>
+  <li>Browse itineraries</li>
+  <li>Preview basic or premium version of a selected itinerary</li>
+  <li>Purchase an itinerary via Stripe</li>
+  <li>Publish an itinerary</li>
+  </ul>
